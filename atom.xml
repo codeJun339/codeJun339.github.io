@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-28T08:21:24.670Z</updated>
+  <updated>2023-11-09T07:57:20.172Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>shell截取字段的实例</title>
+    <link href="http://example.com/2023/11/08/shell%E6%88%AA%E5%8F%96%E5%AD%97%E6%AE%B5%E7%9A%84%E5%AE%9E%E4%BE%8B/"/>
+    <id>http://example.com/2023/11/08/shell%E6%88%AA%E5%8F%96%E5%AD%97%E6%AE%B5%E7%9A%84%E5%AE%9E%E4%BE%8B/</id>
+    <published>2023-11-08T02:27:05.000Z</published>
+    <updated>2023-11-09T07:57:20.172Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="shell中特殊符的使用"><a href="#shell中特殊符的使用" class="headerlink" title="shell中特殊符的使用"></a>shell中特殊符的使用</h1><p>参考: <a href="https://www.cnblogs.com/du-z/p/15322745.html">https://www.cnblogs.com/du-z/p/15322745.html</a></p><p>示例：file&#x3D;”&#x2F;dir1&#x2F;dir2&#x2F;dir3&#x2F;my.file.txt”</p><ul><li>“#”： 表示最短匹配<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file#*/&#125;：删掉第一个/ 及其左边的字符串：dir1/dir2/dir3/my.file.txt</span><br></pre></td></tr></table></figure></li><li>“##”: 表示最长匹配<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file##*/&#125;：删掉最后一个/  及其左边的字符串：my.file.txt</span><br></pre></td></tr></table></figure></li><li>“%”: 表示从右开始的第一个匹配<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file%/*&#125;：删掉最后一个 /  及其右边的字符串：/dir1/dir2/dir3</span><br></pre></td></tr></table></figure></li><li>通过从左到右的某个字节数开始截取，截取多少个字节<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file:5:5&#125;：提取第5 个字节右边的连续5个字节：/dir2</span><br></pre></td></tr></table></figure></li><li>计算变量值的长度<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo $&#123;#file&#125; </span><br><span class="line">结果：27</span><br></pre></td></tr></table></figure></li><li>变量值中的字符串替换<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file/dir/path&#125;：将第一个dir 替换为path：/path1/dir2/dir3/my.file.txt</span><br><span class="line">$&#123;file//dir/path&#125;：将全部dir 替换为path：/path1/path2/path3/my.file.txt</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;shell中特殊符的使用&quot;&gt;&lt;a href=&quot;#shell中特殊符的使用&quot; class=&quot;headerlink&quot; title=&quot;shell中特殊符的使用&quot;&gt;&lt;/a&gt;shell中特殊符的使用&lt;/h1&gt;&lt;p&gt;参考: &lt;a href=&quot;https://www.cnblo</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CAN工具使用</title>
+    <link href="http://example.com/2023/10/28/CAN%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    <id>http://example.com/2023/10/28/CAN%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/</id>
+    <published>2023-10-28T09:31:03.000Z</published>
+    <updated>2023-10-28T09:45:44.255Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装can测试工具"><a href="#安装can测试工具" class="headerlink" title="安装can测试工具"></a>安装can测试工具</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install can-utils</span><br></pre></td></tr></table></figure><h1 id="can测试流程"><a href="#can测试流程" class="headerlink" title="can测试流程"></a>can测试流程</h1><h2 id="1-加载虚拟can模块"><a href="#1-加载虚拟can模块" class="headerlink" title="1. 加载虚拟can模块"></a>1. 加载虚拟can模块</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo modprobe vcan</span><br></pre></td></tr></table></figure><h2 id="2-加载vcan0网卡"><a href="#2-加载vcan0网卡" class="headerlink" title="2. 加载vcan0网卡"></a>2. 加载vcan0网卡</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ip link add dev vcan0 type vcan</span><br></pre></td></tr></table></figure><h2 id="3-可以查到当前can网络-can0-can1，包括收发包数量、是否有错误等等"><a href="#3-可以查到当前can网络-can0-can1，包括收发包数量、是否有错误等等" class="headerlink" title="3. 可以查到当前can网络 can0 can1，包括收发包数量、是否有错误等等"></a>3. 可以查到当前can网络 can0 can1，包括收发包数量、是否有错误等等</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig -a</span><br></pre></td></tr></table></figure><h2 id="4-设置can0的波特率为800kbps-CAN网络波特率最大值为1Mbps"><a href="#4-设置can0的波特率为800kbps-CAN网络波特率最大值为1Mbps" class="headerlink" title="4. 设置can0的波特率为800kbps,CAN网络波特率最大值为1Mbps"></a>4. 设置can0的波特率为800kbps,CAN网络波特率最大值为1Mbps</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link set can0 type can --help 4.ip link set can0 up type can bitrate 800000</span><br></pre></td></tr></table></figure><h2 id="5-设置回环模式，自发自收，用于测试是硬件是否正常-loopback不一定支持"><a href="#5-设置回环模式，自发自收，用于测试是硬件是否正常-loopback不一定支持" class="headerlink" title="5. 设置回环模式，自发自收，用于测试是硬件是否正常,loopback不一定支持"></a>5. 设置回环模式，自发自收，用于测试是硬件是否正常,loopback不一定支持</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link set can0 up type can bitrate 800000 loopback on</span><br></pre></td></tr></table></figure><h2 id="6-关闭can0-网络"><a href="#6-关闭can0-网络" class="headerlink" title="6. 关闭can0 网络"></a>6. 关闭can0 网络</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link set can0 down</span><br></pre></td></tr></table></figure><h2 id="7-发送默认ID为0x1的can标准帧，数据为0x11-22-33-44-55-66-77-88-每次最大8个byte"><a href="#7-发送默认ID为0x1的can标准帧，数据为0x11-22-33-44-55-66-77-88-每次最大8个byte" class="headerlink" title="7. 发送默认ID为0x1的can标准帧，数据为0x11 22 33 44 55 66 77 88 每次最大8个byte"></a>7. 发送默认ID为0x1的can标准帧，数据为0x11 22 33 44 55 66 77 88 每次最大8个byte</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cansend can0 0x11 0x22 0x33 0x44 0x55 0x66 0x77 0x88</span><br></pre></td></tr></table></figure><h2 id="8-发送数据包"><a href="#8-发送数据包" class="headerlink" title="8. 发送数据包"></a>8. 发送数据包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cansend can0 -i 0x800 0x11 0x22 0x33 0x44 0x55 0x66 0x77 0x88 -e -e 表示扩展帧，CAN_ID最大29bit，标准帧CAN_ID最大11bit  -i表示CAN_ID</span><br></pre></td></tr></table></figure><h2 id="9-发送20个包"><a href="#9-发送20个包" class="headerlink" title="9. 发送20个包"></a>9. 发送20个包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cansend can0 -i 0x02 0x11 0x12 --loop=20 --loop 表示发送20个包</span><br></pre></td></tr></table></figure><h2 id="10-接收CAN0数据"><a href="#10-接收CAN0数据" class="headerlink" title="10. 接收CAN0数据"></a>10. 接收CAN0数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">candump can0 接收CAN0数据</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;安装can测试工具&quot;&gt;&lt;a href=&quot;#安装can测试工具&quot; class=&quot;headerlink&quot; title=&quot;安装can测试工具&quot;&gt;&lt;/a&gt;安装can测试工具&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;t</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hexo使用指导</title>
