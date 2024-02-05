@@ -20,28 +20,32 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CodeJun&#39;s Blog">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="串口应用开发1. 串口奇偶校验配置 奇校验123newtio.c_cflag |&#x3D; PARENB;newtio.c_cflag |&#x3D; PARODD;newtio.c_iflag |&#x3D; (INPCK | ISTRIP); 偶校验123newtio.c_iflag |&#x3D; (INPCK | ISTRIP);newtio.c_cflag |&#x3D; PARENB;newtio.c_cflag &amp;&#x3D; ~P">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uart测试程序">
+<meta property="og:url" content="http://example.com/2023/11/22/uart%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/index.html">
 <meta property="og:site_name" content="CodeJun&#39;s Blog">
+<meta property="og:description" content="串口应用开发1. 串口奇偶校验配置 奇校验123newtio.c_cflag |&#x3D; PARENB;newtio.c_cflag |&#x3D; PARODD;newtio.c_iflag |&#x3D; (INPCK | ISTRIP); 偶校验123newtio.c_iflag |&#x3D; (INPCK | ISTRIP);newtio.c_cflag |&#x3D; PARENB;newtio.c_cflag &amp;&#x3D; ~P">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-22T07:34:17.000Z">
+<meta property="article:modified_time" content="2024-01-17T08:18:39.175Z">
 <meta property="article:author" content="Bob">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2023/11/22/uart%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>CodeJun's Blog</title>
+  <title>uart测试程序 | CodeJun's Blog</title>
   
 
 
@@ -140,474 +144,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/05/python%E7%9A%84Excel%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Bob">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CodeJun's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/01/05/python%E7%9A%84Excel%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" class="post-title-link" itemprop="url">python的Excel数据处理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-01-05 10:07:13" itemprop="dateCreated datePublished" datetime="2024-01-05T10:07:13+08:00">2024-01-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-01-16 10:40:53" itemprop="dateModified" datetime="2024-01-16T10:40:53+08:00">2024-01-16</time>
-              </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id=""><a href="#" class="headerlink" title=""></a></h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/18/serial-8250%E9%A9%B1%E5%8A%A8%E5%88%86%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Bob">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CodeJun's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/12/18/serial-8250%E9%A9%B1%E5%8A%A8%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">serial_8250驱动分析</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-12-18 17:07:00" itemprop="dateCreated datePublished" datetime="2023-12-18T17:07:00+08:00">2023-12-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-01-17 17:26:11" itemprop="dateModified" datetime="2024-01-17T17:26:11+08:00">2024-01-17</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="驱动注册"><a href="#驱动注册" class="headerlink" title="驱动注册"></a>驱动注册</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">int driver_register(struct device_driver *drv)</span><br><span class="line">&#123;</span><br><span class="line">    int ret;</span><br><span class="line">    struct device_driver *other;</span><br><span class="line"></span><br><span class="line">    BUG_ON(!drv-&gt;bus-&gt;p);</span><br><span class="line"></span><br><span class="line">    if ((drv-&gt;bus-&gt;probe &amp;&amp; drv-&gt;probe) ||</span><br><span class="line">        (drv-&gt;bus-&gt;remove &amp;&amp; drv-&gt;remove) ||</span><br><span class="line">        (drv-&gt;bus-&gt;shutdown &amp;&amp; drv-&gt;shutdown))</span><br><span class="line">        printk(KERN_WARNING &quot;Driver &#x27;%s&#x27; needs updating - please use &quot;</span><br><span class="line">            &quot;bus_type methods\n&quot;, drv-&gt;name);</span><br><span class="line"></span><br><span class="line">    other = driver_find(drv-&gt;name, drv-&gt;bus);</span><br><span class="line">    if (other) &#123;</span><br><span class="line">        printk(KERN_ERR &quot;Error: Driver &#x27;%s&#x27; is already registered, &quot;</span><br><span class="line">            &quot;aborting...\n&quot;, drv-&gt;name);</span><br><span class="line">        return -EBUSY;</span><br><span class="line">    &#125;   </span><br><span class="line"></span><br><span class="line">    ret = bus_add_driver(drv);</span><br><span class="line">    if (ret)</span><br><span class="line">        return ret;</span><br><span class="line">    ret = driver_add_groups(drv, drv-&gt;groups);</span><br><span class="line">    if (ret) &#123;</span><br><span class="line">        bus_remove_driver(drv);</span><br><span class="line">        return ret;</span><br><span class="line">    &#125;   </span><br><span class="line">    kobject_uevent(&amp;drv-&gt;p-&gt;kobj, KOBJ_ADD);</span><br><span class="line"></span><br><span class="line">    return ret;</span><br><span class="line">&#125;</span><br><span class="line">EXPORT_SYMBOL_GPL(driver_register);</span><br><span class="line"></span><br><span class="line">static int __driver_attach(struct device *dev, void *data)</span><br><span class="line">&#123;</span><br><span class="line">    struct device_driver *drv = data;</span><br><span class="line">    int ret;</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">     * Lock device and try to bind to it. We drop the error</span><br><span class="line">     * here and always return 0, because we need to keep trying</span><br><span class="line">     * to bind to devices and some drivers will return an error</span><br><span class="line">     * simply if it didn&#x27;t support the device.</span><br><span class="line">     *</span><br><span class="line">     * driver_probe_device() will spit a warning if there</span><br><span class="line">     * is an error.</span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line">    ret = driver_match_device(drv, dev);</span><br><span class="line">    if (ret == 0) &#123;</span><br><span class="line">        /* no match */</span><br><span class="line">        return 0;</span><br><span class="line">    &#125; else if (ret == -EPROBE_DEFER) &#123;</span><br><span class="line">        dev_dbg(dev, &quot;Device match requests probe deferral\n&quot;);</span><br><span class="line">        driver_deferred_probe_add(dev);</span><br><span class="line">    &#125; else if (ret &lt; 0) &#123;</span><br><span class="line">        dev_dbg(dev, &quot;Bus failed to match device: %d&quot;, ret);</span><br><span class="line">        return ret;</span><br><span class="line">    &#125; /* ret &gt; 0 means positive match */</span><br><span class="line"></span><br><span class="line">    if (dev-&gt;parent)    /* Needed for USB */</span><br><span class="line">        device_lock(dev-&gt;parent);</span><br><span class="line">    device_lock(dev);</span><br><span class="line">    if (!dev-&gt;driver)</span><br><span class="line">        driver_probe_device(drv, dev);</span><br><span class="line">    device_unlock(dev);</span><br><span class="line">    if (dev-&gt;parent)</span><br><span class="line">        device_unlock(dev-&gt;parent);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/04/c-%E7%BC%96%E7%A8%8B%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Bob">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CodeJun's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/12/04/c-%E7%BC%96%E7%A8%8B%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">c++编程记录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-12-04 14:42:53" itemprop="dateCreated datePublished" datetime="2023-12-04T14:42:53+08:00">2023-12-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-12-25 17:45:56" itemprop="dateModified" datetime="2023-12-25T17:45:56+08:00">2023-12-25</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>问题1</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">error: cannot convert ‘std::__cxx11::basic_string&lt;char&gt;::iterator’ &#123;aka ‘__gnu_cxx::__normal_iterator&lt;char*, std::__cxx11::basic_string&lt;char&gt; &gt;’&#125; to ‘const char*’</span><br><span class="line">   29 |     FileNameNoTag.erase(std::remove(FileNameNoTag.begin(), FileNameNoTag.end(), &#x27;:&#x27;), FileNameNoTag.end());</span><br><span class="line">      |                                     ~~~~~~~~~~~~~~~~~~~^~</span><br><span class="line">      |                                                        |</span><br><span class="line">      |                                                        std::__cxx11::basic_string&lt;char&gt;::iterator &#123;aka __gnu_cxx::__normal_iterator&lt;char*, std::__cxx11::basic_string&lt;char&gt; &gt;&#125;</span><br><span class="line">In file included from /usr/include/c++/9/cstdio:42,</span><br><span class="line">                 from /usr/include/c++/9/ext/string_conversions.h:43,</span><br><span class="line">                 from /usr/include/c++/9/bits/basic_string.h:6496,</span><br><span class="line">                 from /usr/include/c++/9/string:55,</span><br><span class="line">                 from /usr/include/c++/9/bits/locale_classes.h:40,</span><br><span class="line">                 from /usr/include/c++/9/bits/ios_base.h:41,</span><br><span class="line">                 from /usr/include/c++/9/ios:42,</span><br><span class="line">                 from /usr/include/c++/9/ostream:38,</span><br><span class="line">                 from /usr/include/c++/9/iostream:39,</span><br><span class="line">                 from 2.cpp:2:</span><br><span class="line">/usr/include/stdio.h:146:32: note:   initializing argument 1 of ‘int remove(const char*)’</span><br><span class="line">  146 | extern int remove (const char *__filename) __THROW;</span><br><span class="line">      |                    ~~~~~~~~~~~~^~~~~~~~~~</span><br></pre></td></tr></table></figure>
-
-
-
-<p>问题2：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">In file included from ../drivers/media/i2c/useruto/imx390.c:19:</span><br><span class="line">../include/linux/module.h:137:7: warning: ‘cleanup_module’ specifies less restrictive attribute than its target ‘imx390_serdes_driver_exit’: ‘cold’ [-Wmissing-attributes]</span><br><span class="line">  137 |  void cleanup_module(void) __attribute__((alias(#exitfn)));</span><br><span class="line">      |       ^~~~~~~~~~~~~~</span><br><span class="line">../include/linux/device.h:1509:1: note: in expansion of macro ‘module_exit’</span><br><span class="line"> 1509 | module_exit(__driver##_exit);</span><br><span class="line">      | ^~~~~~~~~~~</span><br><span class="line">../include/linux/i2c.h:780:2: note: in expansion of macro ‘module_driver’</span><br><span class="line">  780 |  module_driver(__i2c_driver, i2c_add_driver, \</span><br><span class="line">      |  ^~~~~~~~~~~~~</span><br><span class="line">../drivers/media/i2c/useruto/imx390.c:104:1: note: in expansion of macro ‘module_i2c_driver’</span><br><span class="line">  104 | module_i2c_driver(imx390_serdes_driver);</span><br><span class="line">      | ^~~~~~~~~~~~~~~~~</span><br><span class="line">In file included from ../drivers/media/i2c/useruto/imx390.c:18:</span><br><span class="line">../drivers/media/i2c/useruto/imx390.c:104:19: note: ‘cleanup_module’ target declared here</span><br><span class="line">  104 | module_i2c_driver(imx390_serdes_driver);</span><br><span class="line">      |                   ^~~~~~~~~~~~~~~~~~~~</span><br><span class="line">../include/linux/device.h:1505:20: note: in definition of macro ‘module_driver’</span><br><span class="line"> 1505 | static void __exit __driver##_exit(void) \</span><br><span class="line">      |                    ^~~~~~~~</span><br><span class="line">../drivers/media/i2c/useruto/imx390.c:104:1: note: in expansion of macro ‘module_i2c_driver’</span><br><span class="line">  104 | module_i2c_driver(imx390_serdes_driver);</span><br><span class="line">      | ^~~~~~~~~~~~~~~~~</span><br><span class="line">In file included from ../drivers/media/i2c/useruto/imx390.c:19:</span><br><span class="line">../include/linux/module.h:131:6: warning: ‘init_module’ specifies less restrictive attribute than its target ‘imx390_serdes_driver_init’: ‘cold’ [-Wmissing-attributes]</span><br><span class="line">  131 |  int init_module(void) __attribute__((alias(#initfn)));</span><br><span class="line">      |      ^~~~~~~~~~~</span><br><span class="line">../include/linux/device.h:1504:1: note: in expansion of macro ‘module_init’</span><br><span class="line"> 1504 | module_init(__driver##_init); \</span><br><span class="line">      | ^~~~~~~~~~~</span><br><span class="line">../include/linux/i2c.h:780:2: note: in expansion of macro ‘module_driver’</span><br><span class="line">  780 |  module_driver(__i2c_driver, i2c_add_driver, \</span><br><span class="line">      |  ^~~~~~~~~~~~~</span><br><span class="line">../drivers/media/i2c/useruto/imx390.c:104:1: note: in expansion of macro ‘module_i2c_driver’</span><br><span class="line">  104 | module_i2c_driver(imx390_serdes_driver);</span><br><span class="line">      | ^~~~~~~~~~~~~~~~~</span><br><span class="line">In file included from ../drivers/media/i2c/useruto/imx390.c:18:</span><br><span class="line">../drivers/media/i2c/useruto/imx390.c:104:19: note: ‘init_module’ target declared here</span><br><span class="line">  104 | module_i2c_driver(imx390_serdes_driver);</span><br><span class="line">      |                   ^~~~~~~~~~~~~~~~~~~~</span><br><span class="line">../include/linux/device.h:1500:19: note: in definition of macro ‘module_driver’</span><br><span class="line"> 1500 | static int __init __driver##_init(void) \</span><br><span class="line">      |                   ^~~~~~~~</span><br><span class="line">../drivers/media/i2c/useruto/imx390.c:104:1: note: in expansion of macro ‘module_i2c_driver’</span><br><span class="line">  104 | module_i2c_driver(imx390_serdes_driver);</span><br><span class="line">      | ^~~~~~~~~~~~~~~~~</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/24/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Bob">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CodeJun's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/11/24/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/" class="post-title-link" itemprop="url">git使用指导</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-11-24 11:11:06 / 修改时间：16:16:52" itemprop="dateCreated datePublished" datetime="2023-11-24T11:11:06+08:00">2023-11-24</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/24/%E5%8A%A0%E5%87%8F%E4%B8%B2%E5%99%A8%E8%B0%83%E8%AF%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Bob">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CodeJun's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/11/24/%E5%8A%A0%E5%87%8F%E4%B8%B2%E5%99%A8%E8%B0%83%E8%AF%95/" class="post-title-link" itemprop="url">加减串器调试</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-11-24 10:59:24" itemprop="dateCreated datePublished" datetime="2023-11-24T10:59:24+08:00">2023-11-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-12-22 18:59:39" itemprop="dateModified" datetime="2023-12-22T18:59:39+08:00">2023-12-22</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>fps &#x3D; frames per second<br>bpp &#x3D; bits per pixel</p>
-<h1 id="加串器max96712"><a href="#加串器max96712" class="headerlink" title="加串器max96712"></a>加串器max96712</h1><h2 id="1-mipi时钟，lane数和PCLK的关系"><a href="#1-mipi时钟，lane数和PCLK的关系" class="headerlink" title="1. mipi时钟，lane数和PCLK的关系"></a>1. mipi时钟，lane数和PCLK的关系</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MIPI_CLK x LANE_CNT = PCLK x BPP</span><br></pre></td></tr></table></figure>
-<p>例如：24-bit RGB, 4 lanes, 1GHz Mipi clock, 则PCLK为166.667MHz<br>备注：GMSL1模式下PCLK限制到150MHz</p>
-<h2 id="2-video-Configuration-Link"><a href="#2-video-Configuration-Link" class="headerlink" title="2. video&#x2F;Configuration Link"></a>2. video&#x2F;Configuration Link</h2><ul>
-<li>正常模式：</li>
-<li>默认模式：<br>  video-link：需要一个有效的PCLK才能进行操作<br>  在序列化器中设置AUTO_CLINK位&#x3D;1和SEREN &#x3D; 1，这样当没有PCLK存在时，设备就会在视频链接和配置链接之间自动切换</li>
-</ul>
-<h1 id="解串器max96712寄存器"><a href="#解串器max96712寄存器" class="headerlink" title="解串器max96712寄存器"></a>解串器max96712寄存器</h1><h2 id="1-VPRBS寄存器"><a href="#1-VPRBS寄存器" class="headerlink" title="1. VPRBS寄存器"></a>1. VPRBS寄存器</h2><ul>
-<li><strong>PATGEN_CLK_SRC</strong>: Pattern generator clock source for video PRBS7, PRBS9, PRBS24, checkerboard, and gradient patterns. 0&#x3D;150MHz, 1&#x3D;375MHz (default)</li>
-<li><strong>VIDEO_LOCK</strong>：  Video channel is locked and outputting valid video data</li>
-</ul>
-<h2 id="2-BACKTOP22寄存器"><a href="#2-BACKTOP22寄存器" class="headerlink" title="2. BACKTOP22寄存器"></a>2. BACKTOP22寄存器</h2><ul>
-<li><strong>n_vs_block</strong>: Frame block: Block the first 1-15 frames after video lock</li>
-</ul>
-<h2 id="3-FSYNC-16寄存器"><a href="#3-FSYNC-16寄存器" class="headerlink" title="3. FSYNC_16寄存器"></a>3. FSYNC_16寄存器</h2><ul>
-<li><strong>FSYNC_ERR_CNT</strong>: Frame Sync Error Counter (resets to 0 when read or when FSYNC_LOCKED (0x4b6) goes high)</li>
-</ul>
-<h2 id="4-INTR7-0x2A"><a href="#4-INTR7-0x2A" class="headerlink" title="4. INTR7(0x2A)"></a>4. INTR7(0x2A)</h2><p>0x01–&gt;FSYNC_ERR_FLAG</p>
-<p>[BIT1] :REM_ERR_FLAG: Receives remote side error status (inverse of remote side ERRB pin level)</p>
-<p>[BIT0] :FSYNC_ERR_FLAG: Frame Sync Error Flag, FSYNC_ERR_CNT(00x4b0) &gt;&#x3D; FSYNC_ERR_THR(0x4B1)</p>
-<h2 id="5-VIDEO-RX8-0x108-0x11A-0x12C-0x13E-0x150-0x168-0x17A-0x18C"><a href="#5-VIDEO-RX8-0x108-0x11A-0x12C-0x13E-0x150-0x168-0x17A-0x18C" class="headerlink" title="5. VIDEO_RX8(0x108,0x11A,0x12C,0x13E,0x150,0x168,0x17A,0x18C)"></a>5. VIDEO_RX8(0x108,0x11A,0x12C,0x13E,0x150,0x168,0x17A,0x18C)</h2><p><strong>重点</strong>：关注此寄存器，监测mipi数据状态（0x62）</p>
-<p>[BIT7] :VID_BLK_LEN_ERR:	Video Rx block length error detected</p>
-<p>[BIT6] :VID_LOCK:	Video pipeline locked  0b0: video pipeline not locked 0b1:video pipeline locked</p>
-<p>[BIT5] :VID_PKT_EDT:	Video Rx sufficient packet throughput detection  0b0: insufficient packet throughput   0b1: Sufficient packer throughput</p>
-<p>[BIT4] : VID_SEQ_ERR:	Video Rx sequence error detection. 0b0: No video Rx sequence error detected	0b1: Video Rx sequence error detected</p>
-<h2 id="6-VPRBS-0x1DC-0x1FC-0x21C-0x23C-0x27C-0x29C-0x2DC"><a href="#6-VPRBS-0x1DC-0x1FC-0x21C-0x23C-0x27C-0x29C-0x2DC" class="headerlink" title="6. VPRBS(0x1DC, 0x1FC, 0x21C, 0x23C,0x27C,0x29C,0x2DC)"></a>6. VPRBS(0x1DC, 0x1FC, 0x21C, 0x23C,0x27C,0x29C,0x2DC)</h2><p><strong>重点</strong>：此寄存器监测video channel的lock状态（0x81）</p>
-<p>[BIT 0] :VIDEO_LOCK: Video channel is locker and outputing vailid video data. 0b0: Video channel is not locked 0b1: Video channel is locked.</p>
-<h2 id="7-BACKTOP1-0x400"><a href="#7-BACKTOP1-0x400" class="headerlink" title="7. BACKTOP1(0x400)"></a>7. BACKTOP1(0x400)</h2><p>[BIT7] :CSIPLL3_LOCK: CSIPLL3 lock  0b0: PLL not locked 0b1: PLL locked</p>
-<p>[BIT6] :CSIPLL2_LOCK: CSIPLL2 lock  0b0: PLL not locked 0b1: PLL locked</p>
-<p>[BIT5] :CSIPLL1_LOCK: CSIPLL1 lock  0b0: PLL not locked 0b1: PLL locked</p>
-<p>[BIT4] :CSIPLL2_LOCK: CSIPLL0 lock  0b0: CSI2 0 PLL not locked 0b1: CSI2 0 PLL locked</p>
-<p>[BIT0] :BACKTOP_EN: Backtop write logic enable.</p>
-<h2 id="8-BACKTOP11-0x40A"><a href="#8-BACKTOP11-0x40A" class="headerlink" title="8. BACKTOP11(0x40A)"></a>8. BACKTOP11(0x40A)</h2><p>[BIT7] :cmd_overflow3: Pipe 3 command FIFO overflow</p>
-<p>[BIT6] :cmd_overflow2: Pipe 2 command FIFO overflow</p>
-<p>[BIT5] :cmd_overflow1: Pipe 1 command FIFO overflow</p>
-<p>[BIT4] :cmd_overflow0: Pipe 0 command FIFO overflow</p>
-<p>[BIT3] :LMO_3: Pipe 3 line memory overflow sticky register</p>
-<p>[BIT2] :LMO_3: Pipe 2 line memory overflow sticky register</p>
-<p>[BIT1] :LMO_3: Pipe 1 line memory overflow sticky register</p>
-<p>[BIT0] :LMO_3: Pipe 0 line memory overflow sticky register</p>
-<p>备注：该寄存器正常出头的过程中也存在overflow。</p>
-<h2 id="9-BACKTOP11-0x42A"><a href="#9-BACKTOP11-0x42A" class="headerlink" title="9. BACKTOP11(0x42A)"></a>9. BACKTOP11(0x42A)</h2><p>[BIT7] :cmd_overflow7: Pipe 7 command FIFO overflow</p>
-<p>[BIT6] :cmd_overflow6: Pipe 6 command FIFO overflow</p>
-<p>[BIT5] :cmd_overflow5: Pipe 5 command FIFO overflow</p>
-<p>[BIT4] :cmd_overflow4: Pipe 4 command FIFO overflow</p>
-<p>[BIT3] :LMO_7: Pipe 7 line memory overflow sticky register</p>
-<p>[BIT2] :LMO_6: Pipe 6 line memory overflow sticky register</p>
-<p>[BIT1] :LMO_5: Pipe 5 line memory overflow sticky register</p>
-<p>[BIT0] :LMO_4: Pipe 4 line memory overflow sticky register</p>
-<h2 id="10-BACKTOP25-0x438"><a href="#10-BACKTOP25-0x438" class="headerlink" title="10. BACKTOP25(0x438)"></a>10. BACKTOP25(0x438)</h2><p>[BIT7] :mem_err7: Pipe 7 line memory error</p>
-<p>[BIT6] :mem_err6: Pipe 6 line memory error</p>
-<p>[BIT5] :mem_err5: Pipe 5 line memory error</p>
-<p>[BIT4] :mem_err4: Pipe 4 line memory error</p>
-<p>[BIT3] :mem_err3: Pipe 3 line memory error</p>
-<p>[BIT2] :mem_err2: Pipe 2 line memory error</p>
-<p>[BIT1] :mem_err1: Pipe 1 line memory error</p>
-<p>[BIT0] :mem_err0: Pipe 0 line memory error</p>
-<h2 id="11-FSYNC-22-0x4B6"><a href="#11-FSYNC-22-0x4B6" class="headerlink" title="11. FSYNC_22(0x4B6)"></a>11. FSYNC_22(0x4B6)</h2><p>[BIT7] :FSYNC_LOSS_OF_LOCK: Frame Synchronization Lost Lock</p>
-<p>[BIT6] :FSYNC_LOCKED: Frame Synchronization Lock </p>
-<h2 id="12-MIPI-TX2-0x902-0x942-0x982-0x9c2"><a href="#12-MIPI-TX2-0x902-0x942-0x982-0x9c2" class="headerlink" title="12. MIPI_TX2(0x902, 0x942, 0x982, 0x9c2)"></a>12. MIPI_TX2(0x902, 0x942, 0x982, 0x9c2)</h2><p>[BIT7:0] : STATUS: MIPI Tx Status Register</p>
-<p>– 0bxxxxxxx0: SYNC mode disabled</p>
-<p>– 0bxxxxxxx1: SYNC mode enable</p>
-<p>– 0bxxxxxx0x: Video channels not in-sync</p>
-<p>– 0bxxxxxx1x: Video channels in-sync</p>
-<p>– 0bxxxxx0xx: No loss of video sync</p>
-<p>– 0bxxxxx1xx: Video sync lost after last read of this register or reset</p>
-<p>备注：正常多个相机拼图同步，该寄存器的值为0x03, 自我感觉的低两位必须置位。</p>
-<h2 id="13-MIPI-PHY-19-0x8D0"><a href="#13-MIPI-PHY-19-0x8D0" class="headerlink" title="13. MIPI_PHY_19(0x8D0)"></a>13. MIPI_PHY_19(0x8D0)</h2><p>[BIT7:4] :csi2_tx1_pkt_cnt: Packer count of  CSI2 Controller 1</p>
-<p>[BIT3:0] :csi2_tx1_pkt_cnt: Packer count of  CSI2 Controller 0</p>
-<p>– 0bxxx1: PHY copy 0 FIFO overflow</p>
-<p>– 0bxx1x: PHY copy 0 FIFO underflow</p>
-<p>– 0bx1xx: PHY copy 1 FIFO overflow</p>
-<p>– 0b1xxx: PHY copy 1 FIFO underflow</p>
-<h2 id="14-MIPI-PHY-20-0x8D1"><a href="#14-MIPI-PHY-20-0x8D1" class="headerlink" title="14. MIPI_PHY_20(0x8D1)"></a>14. MIPI_PHY_20(0x8D1)</h2><p>[BIT7:4] :csi2_tx1_pkt_cnt: Packer count of  CSI2 Controller 3</p>
-<p>[BIT3:0] :csi2_tx1_pkt_cnt: Packer count of  CSI2 Controller 2</p>
-<p>– 0bxxx1: PHY copy 0 FIFO overflow</p>
-<p>– 0bxx1x: PHY copy 0 FIFO underflow</p>
-<p>– 0bx1xx: PHY copy 1 FIFO overflow</p>
-<p>– 0b1xxx: PHY copy 1 FIFO underflow</p>
-<h2 id="15-MIPI-PHY-21-0x8D2"><a href="#15-MIPI-PHY-21-0x8D2" class="headerlink" title="15. MIPI_PHY_21(0x8D2)"></a>15. MIPI_PHY_21(0x8D2)</h2><p>[BIT7:4] :phy1_pkt_cnt: Packet count of MIPI PHY1</p>
-<p>[BIT3:0] :phy0_pkt_cnt: Packet count of MIPI PHY0</p>
-<p>– 0bxxx1: PHY copy 0 FIFO overflow</p>
-<p>– 0bxx1x: PHY copy 0 FIFO underflow</p>
-<p>– 0bx1xx: PHY copy 1 FIFO overflow</p>
-<p>– 0b1xxx: PHY copy 1 FIFO underflow</p>
-<h2 id="16-MIPI-PHY-22-0x8D3"><a href="#16-MIPI-PHY-22-0x8D3" class="headerlink" title="16. MIPI_PHY_22(0x8D3)"></a>16. MIPI_PHY_22(0x8D3)</h2><p>[BIT7:4] :phy1_pkt_cnt: Packet count of MIPI PHY1</p>
-<p>[BIT3:0] :phy0_pkt_cnt: Packet count of MIPI PHY0</p>
-<p>– 0bxxx1: PHY copy 0 FIFO overflow</p>
-<p>– 0bxx1x: PHY copy 0 FIFO underflow</p>
-<p>– 0bx1xx: PHY copy 1 FIFO overflow</p>
-<p>– 0b1xxx: PHY copy 1 FIFO underflow</p>
-<h2 id="17-VID-PXL-CRC-ERR-INT-0x45"><a href="#17-VID-PXL-CRC-ERR-INT-0x45" class="headerlink" title="17. VID_PXL_CRC_ERR_INT(0x45)"></a>17. VID_PXL_CRC_ERR_INT(0x45)</h2><p>备注：正常出图也会存在ecc错误。</p>
-<ul>
-<li>调试2wh的2个8m相机（异常绿图），该寄存器值为0x00</li>
-<li>调试2wh的2个2m相机（图像正常），该寄存器值为0xc0</li>
-</ul>
-<h2 id="18-MIPI-PHY-0x8d0-0x8d1-0x8d2-0x8d3"><a href="#18-MIPI-PHY-0x8d0-0x8d1-0x8d2-0x8d3" class="headerlink" title="18. MIPI_PHY(0x8d0, 0x8d1, 0x8d2, 0x8d3)"></a>18. MIPI_PHY(0x8d0, 0x8d1, 0x8d2, 0x8d3)</h2><p>备注：正常出图也会存在copy FIFO overflow</p>
-<ul>
-<li>调试2wh的2个8m相机（异常绿图），该寄存器为reg[0x8d0]&#x3D;0x00, reg[0x8d1]&#x3D;0x00</li>
-<li>调试2wh的2个2m相机（图像正常），该寄存器为reg[0x8d0]&#x3D;0xc0, reg[0x8d1]&#x3D;0x0b</li>
-</ul>
-<h1 id="GMSL1外触发配置"><a href="#GMSL1外触发配置" class="headerlink" title="GMSL1外触发配置"></a>GMSL1外触发配置</h1><p>如果外接一个相机，则只配置对应那一路的gpio(0xb08, 0xc08, 0xd08, 0xe08)，否则多配或少配都会导致加串配置失败。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">0x04 0x29 0x03 0x04 0x61</span><br><span class="line">0x04 0x29 0x03 0x0a 0x63</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x04 0xa0 0x08</span><br><span class="line">0x04 0x29 0x04 0xaf 0x1f</span><br><span class="line">0x04 0x29 0x0b 0x08 0x61</span><br><span class="line">#0x04 0x29 0x0c 0x08 0x61</span><br><span class="line">#0x04 0x29 0x0d 0x08 0x61</span><br><span class="line">#0x04 0x29 0x0e 0x08 0x61</span><br><span class="line"></span><br><span class="line">/*加串器配置默认gpio都是打开的，所以不用配置寄存器0xf*/</span><br><span class="line">#0x03 0x40 0xf 0x83</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="调试问题汇总"><a href="#调试问题汇总" class="headerlink" title="调试问题汇总"></a>调试问题汇总</h1><p><strong>问题1：</strong>在调试外部出发2wh模式的时候，GMSLA, GMSLB两路拼图是正常的，但是GMSLC, GMSLD两路拼图，刚开始图像是实时正常，但是几秒钟后图像变为下图的样子并卡死，没有数据流。</p>
-<p><img src="/home/nova2021/Blog/Hexo/source/picture/1080p_2wh_err1.png"></p>
-<p>外部触发寄存器配置如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">0x04 0x29 0x04 0xa0 0x08</span><br><span class="line">0x04 0x29 0x04 0xa2 0x60</span><br><span class="line">0x04 0x29 0x04 0xaf 0x9f</span><br><span class="line">0x04 0x29 0x03 0x06 0x83</span><br><span class="line">0x04 0x29 0x03 0x3D 0x22</span><br><span class="line"></span><br><span class="line">0x04 0x40 0x02 0xbe 0x00</span><br><span class="line">0x00 1</span><br><span class="line">0x04 0x40 0x02 0xbe 0x10</span><br><span class="line">0x04 0x40 0x03 0x18 0x5E</span><br><span class="line">0x00 0.05</span><br><span class="line">0x04 0x40 0x02 0xd5 0x02</span><br><span class="line">0x04 0x40 0x02 0xd3 0x84</span><br></pre></td></tr></table></figure>
-
-<p><strong>解决办法：</strong>更新几个寄存器的配置如下，外触发相机正常出图：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">0x04 0x29 0x04 0xa0 0x08</span><br><span class="line">0x04 0x29 0x04 0xa2 0x60</span><br><span class="line">0x04 0x29 0x04 0xaf 0x9f</span><br><span class="line">0x04 0x29 0x03 0x06 0x83</span><br><span class="line">0x04 0x29 0x03 0x3D 0x22</span><br><span class="line">0x04 0x29 0x03 0x74 0x22</span><br><span class="line">0x04 0x29 0x03 0xAA 0x22</span><br><span class="line"></span><br><span class="line">0x04 0x40 0x02 0xbe 0x00</span><br><span class="line">0x00 1</span><br><span class="line">0x04 0x40 0x02 0xbe 0x10</span><br><span class="line">0x04 0x40 0x03 0x18 0x5E</span><br><span class="line">0x00 0.05</span><br><span class="line">0x04 0x40 0x02 0xd5 0x02</span><br><span class="line">0x04 0x40 0x02 0xd3 0x84</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>问题2：</strong>2个8m相机拼图，有一个相机的图像被拆分并对掉，图像实时</p>
-<p><img src="/../picture/8m_2wh_error.png"></p>
-<p><strong>问题3：</strong>这个是因为配置0x41a寄存器为0xf0导致的问题</p>
-<p><img src="/../picture/parall_err.png"></p>
-<p><strong>问题3:</strong> 这个是什么原因呢？</p>
-<p><img src="/home/nova2021/Blog/Hexo/source/picture/lep_1288_968.png"></p>
-<p>原因是分倍率没有配置正确导致，实际分倍率是1280x960， 错误配置成为1288x968</p>
-<p><img src="/../picture/spec.png"></p>
-<h1 id="常见采图命令"><a href="#常见采图命令" class="headerlink" title="常见采图命令"></a>常见采图命令</h1><ul>
-<li>Gstreamer命令采图<ol>
-<li>文件存盘</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">filename1=video1_$(date +%Y%m%d)_$(date +%H%M%S).yuv</span><br><span class="line">filename0=video0_$(date +%Y%m%d)_$(date +%H%M%S).yuv</span><br><span class="line">gst-launch-1.0 v4l2src num-buffers=450 device=/dev/video0 ! &quot;video/x-raw,format=UYVY,width=1280,height=960,framerate=30/1&quot; ! filesink location=$&#123;filename0&#125; &amp;</span><br><span class="line">gst-launch-1.0 v4l2src num-buffers=450 device=/dev/video1 ! &quot;video/x-raw,format=UYVY,width=1280,height=960,framerate=30/1&quot; ! filesink location=$&#123;filename1&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><p>hdmi预览</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gst-launch-1.0 v4l2src device=/dev/video$1 ! &quot;video/x-raw,format=UYVY,width=$2,height=$3,framerate=30/1&quot; ! xvimagesink -ev sync=false</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>调试2个2WH模式的相机问题。</p>
-<p><img src="/home/nova2021/Blog/Hexo/source/picture/image_1.png" alt="图像异常"></p>
-<p>1. </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -623,10 +163,9 @@
       <meta itemprop="name" content="CodeJun's Blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/11/22/uart%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">uart测试程序</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          uart测试程序
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -656,7 +195,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="串口应用开发"><a href="#串口应用开发" class="headerlink" title="串口应用开发"></a>串口应用开发</h2><h3 id="1-串口奇偶校验配置"><a href="#1-串口奇偶校验配置" class="headerlink" title="1. 串口奇偶校验配置"></a>1. 串口奇偶校验配置</h3><ul>
+        <h2 id="串口应用开发"><a href="#串口应用开发" class="headerlink" title="串口应用开发"></a>串口应用开发</h2><h3 id="1-串口奇偶校验配置"><a href="#1-串口奇偶校验配置" class="headerlink" title="1. 串口奇偶校验配置"></a>1. 串口奇偶校验配置</h3><ul>
 <li>奇校验<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">newtio.c_cflag |= PARENB;</span><br><span class="line">newtio.c_cflag |= PARODD;</span><br><span class="line">newtio.c_iflag |= (INPCK | ISTRIP);</span><br></pre></td></tr></table></figure></li>
 <li>偶校验<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">newtio.c_iflag |= (INPCK | ISTRIP);</span><br><span class="line">newtio.c_cflag |= PARENB;</span><br><span class="line">newtio.c_cflag &amp;= ~PARODD;</span><br></pre></td></tr></table></figure></li>
 <li>无校验<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newtio.c_cflag &amp;= ~PARENB;</span><br></pre></td></tr></table></figure></li>
@@ -672,304 +211,33 @@
 <h2 id="python串口应用实例"><a href="#python串口应用实例" class="headerlink" title="python串口应用实例"></a>python串口应用实例</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">import subprocess</span><br><span class="line">import os</span><br><span class="line">import serial  </span><br><span class="line">import time  </span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">#打开串口  </span><br><span class="line">ser1 = serial.Serial(&#x27;/dev/ttyS1&#x27;, 9600, timeout=1)  </span><br><span class="line">ser2 = serial.Serial(&#x27;/dev/ttyS2&#x27;, 9600, timeout=1)  </span><br><span class="line">  </span><br><span class="line">#发送数据  </span><br><span class="line">def send_data(ser, data):  </span><br><span class="line">    ser.write(data.encode())  </span><br><span class="line">  </span><br><span class="line">#接收数据  </span><br><span class="line">def receive_data(ser):  </span><br><span class="line">    while True:  </span><br><span class="line">        data = ser.readline().decode().strip()  </span><br><span class="line">        if data:  </span><br><span class="line">            return data  </span><br><span class="line">  </span><br><span class="line">#统计中断数 </span><br><span class="line">#ttys1Result1 = subprocess.check_output(&quot;cat /proc/interrupts | grep ttyS1 | awk &#x27;&#123;print $2&#125;&#x27;&quot;, shell=True)</span><br><span class="line">#ttys2Result1 = subprocess.check_output(&quot;cat /proc/interrupts | grep ttyS2 | awk &#x27;&#123;print $2&#125;&#x27;&quot;, shell=True)</span><br><span class="line">#print(ttys1Result1.decode())</span><br><span class="line">#print(ttys2Result1.decode())</span><br><span class="line"></span><br><span class="line">#发送开始时间</span><br><span class="line">start_time = time.time()</span><br><span class="line">#9600</span><br><span class="line">send_data(ser1, &#x27;c5c5&#x27;*240)  </span><br><span class="line">rcvData = receive_data(ser2)  </span><br><span class="line">if rcvData == &#x27;c5c5&#x27;*240:</span><br><span class="line">    print(&quot;测试通过&quot;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;测试失败&quot;)</span><br><span class="line"></span><br><span class="line">#发送结束时间</span><br><span class="line">end_time = time.time()</span><br><span class="line"></span><br><span class="line">#统计结束后的中断数</span><br><span class="line">#ttys1Result2 = subprocess.check_output(&quot;cat /proc/interrupts | grep ttyS1 | awk &#x27;&#123;print $2&#125;&#x27;&quot;, shell=True)</span><br><span class="line">#ttys2Result2 = subprocess.check_output(&quot;cat /proc/interrupts | grep ttyS2 | awk &#x27;&#123;print $2&#125;&#x27;&quot;, shell=True)</span><br><span class="line">#print(ttys1Result2.decode())</span><br><span class="line">#print(ttys2Result2.decode())</span><br><span class="line">#result1=int(ttys1Result2) - int(ttys1Result1)</span><br><span class="line">#print(result1)</span><br><span class="line">#result2=int(ttys2Result2) - int(ttys2Result1)</span><br><span class="line">#print(result2)</span><br><span class="line">#print(f&quot;发送数据到的时间: &#123;end_time - start_time&#125;秒&quot;)</span><br><span class="line">  </span><br><span class="line">#关闭串口  </span><br><span class="line">ser1.close()  </span><br><span class="line">ser2.close()</span><br></pre></td></tr></table></figure>
 
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/08/shell%E6%88%AA%E5%8F%96%E5%AD%97%E6%AE%B5%E7%9A%84%E5%AE%9E%E4%BE%8B/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Bob">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CodeJun's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/11/08/shell%E6%88%AA%E5%8F%96%E5%AD%97%E6%AE%B5%E7%9A%84%E5%AE%9E%E4%BE%8B/" class="post-title-link" itemprop="url">shell截取字段的实例</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-11-08 10:27:05" itemprop="dateCreated datePublished" datetime="2023-11-08T10:27:05+08:00">2023-11-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-11-09 15:57:20" itemprop="dateModified" datetime="2023-11-09T15:57:20+08:00">2023-11-09</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="shell中特殊符的使用"><a href="#shell中特殊符的使用" class="headerlink" title="shell中特殊符的使用"></a>shell中特殊符的使用</h1><p>参考: <a target="_blank" rel="noopener" href="https://www.cnblogs.com/du-z/p/15322745.html">https://www.cnblogs.com/du-z/p/15322745.html</a></p>
-<p>示例：file&#x3D;”&#x2F;dir1&#x2F;dir2&#x2F;dir3&#x2F;my.file.txt”</p>
-<ul>
-<li>“#”： 表示最短匹配<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file#*/&#125;：删掉第一个/ 及其左边的字符串：dir1/dir2/dir3/my.file.txt</span><br></pre></td></tr></table></figure></li>
-<li>“##”: 表示最长匹配<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file##*/&#125;：删掉最后一个/  及其左边的字符串：my.file.txt</span><br></pre></td></tr></table></figure></li>
-<li>“%”: 表示从右开始的第一个匹配<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file%/*&#125;：删掉最后一个 /  及其右边的字符串：/dir1/dir2/dir3</span><br></pre></td></tr></table></figure></li>
-<li>通过从左到右的某个字节数开始截取，截取多少个字节<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file:5:5&#125;：提取第5 个字节右边的连续5个字节：/dir2</span><br></pre></td></tr></table></figure></li>
-<li>计算变量值的长度<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo $&#123;#file&#125; </span><br><span class="line">结果：27</span><br></pre></td></tr></table></figure></li>
-<li>变量值中的字符串替换<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file/dir/path&#125;：将第一个dir 替换为path：/path1/dir2/dir3/my.file.txt</span><br><span class="line">$&#123;file//dir/path&#125;：将全部dir 替换为path：/path1/path2/path3/my.file.txt</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/11/08/shell%E6%88%AA%E5%8F%96%E5%AD%97%E6%AE%B5%E7%9A%84%E5%AE%9E%E4%BE%8B/" rel="prev" title="shell截取字段的实例">
+      <i class="fa fa-chevron-left"></i> shell截取字段的实例
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/11/24/%E5%8A%A0%E5%87%8F%E4%B8%B2%E5%99%A8%E8%B0%83%E8%AF%95/" rel="next" title="加减串器调试">
+      加减串器调试 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/28/CAN%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Bob">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CodeJun's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/28/CAN%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">CAN工具使用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-10-28 17:31:03 / 修改时间：17:45:44" itemprop="dateCreated datePublished" datetime="2023-10-28T17:31:03+08:00">2023-10-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="安装can测试工具"><a href="#安装can测试工具" class="headerlink" title="安装can测试工具"></a>安装can测试工具</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install can-utils</span><br></pre></td></tr></table></figure>
-
-<h1 id="can测试流程"><a href="#can测试流程" class="headerlink" title="can测试流程"></a>can测试流程</h1><h2 id="1-加载虚拟can模块"><a href="#1-加载虚拟can模块" class="headerlink" title="1. 加载虚拟can模块"></a>1. 加载虚拟can模块</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo modprobe vcan</span><br></pre></td></tr></table></figure>
-<h2 id="2-加载vcan0网卡"><a href="#2-加载vcan0网卡" class="headerlink" title="2. 加载vcan0网卡"></a>2. 加载vcan0网卡</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ip link add dev vcan0 type vcan</span><br></pre></td></tr></table></figure>
-<h2 id="3-可以查到当前can网络-can0-can1，包括收发包数量、是否有错误等等"><a href="#3-可以查到当前can网络-can0-can1，包括收发包数量、是否有错误等等" class="headerlink" title="3. 可以查到当前can网络 can0 can1，包括收发包数量、是否有错误等等"></a>3. 可以查到当前can网络 can0 can1，包括收发包数量、是否有错误等等</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig -a</span><br></pre></td></tr></table></figure>
-<h2 id="4-设置can0的波特率为800kbps-CAN网络波特率最大值为1Mbps"><a href="#4-设置can0的波特率为800kbps-CAN网络波特率最大值为1Mbps" class="headerlink" title="4. 设置can0的波特率为800kbps,CAN网络波特率最大值为1Mbps"></a>4. 设置can0的波特率为800kbps,CAN网络波特率最大值为1Mbps</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link set can0 type can --help 4.ip link set can0 up type can bitrate 800000</span><br></pre></td></tr></table></figure>
-<h2 id="5-设置回环模式，自发自收，用于测试是硬件是否正常-loopback不一定支持"><a href="#5-设置回环模式，自发自收，用于测试是硬件是否正常-loopback不一定支持" class="headerlink" title="5. 设置回环模式，自发自收，用于测试是硬件是否正常,loopback不一定支持"></a>5. 设置回环模式，自发自收，用于测试是硬件是否正常,loopback不一定支持</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link set can0 up type can bitrate 800000 loopback on</span><br></pre></td></tr></table></figure>
-<h2 id="6-关闭can0-网络"><a href="#6-关闭can0-网络" class="headerlink" title="6. 关闭can0 网络"></a>6. 关闭can0 网络</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link set can0 down</span><br></pre></td></tr></table></figure>
-<h2 id="7-发送默认ID为0x1的can标准帧，数据为0x11-22-33-44-55-66-77-88-每次最大8个byte"><a href="#7-发送默认ID为0x1的can标准帧，数据为0x11-22-33-44-55-66-77-88-每次最大8个byte" class="headerlink" title="7. 发送默认ID为0x1的can标准帧，数据为0x11 22 33 44 55 66 77 88 每次最大8个byte"></a>7. 发送默认ID为0x1的can标准帧，数据为0x11 22 33 44 55 66 77 88 每次最大8个byte</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cansend can0 0x11 0x22 0x33 0x44 0x55 0x66 0x77 0x88</span><br></pre></td></tr></table></figure>
-<h2 id="8-发送数据包"><a href="#8-发送数据包" class="headerlink" title="8. 发送数据包"></a>8. 发送数据包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cansend can0 -i 0x800 0x11 0x22 0x33 0x44 0x55 0x66 0x77 0x88 -e -e 表示扩展帧，CAN_ID最大29bit，标准帧CAN_ID最大11bit  -i表示CAN_ID</span><br></pre></td></tr></table></figure>
-<h2 id="9-发送20个包"><a href="#9-发送20个包" class="headerlink" title="9. 发送20个包"></a>9. 发送20个包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cansend can0 -i 0x02 0x11 0x12 --loop=20 --loop 表示发送20个包</span><br></pre></td></tr></table></figure>
-<h2 id="10-接收CAN0数据"><a href="#10-接收CAN0数据" class="headerlink" title="10. 接收CAN0数据"></a>10. 接收CAN0数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">candump can0 接收CAN0数据</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/28/%E5%9F%BA%E4%BA%8EBRPC%E6%B5%8B%E8%AF%95%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Bob">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CodeJun's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/28/%E5%9F%BA%E4%BA%8EBRPC%E6%B5%8B%E8%AF%95%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">基于BRPC测试软件开发</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-10-28 16:29:48 / 修改时间：17:16:27" itemprop="dateCreated datePublished" datetime="2023-10-28T16:29:48+08:00">2023-10-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>为了开发测试方便，我实现了一个基于brpc框架的测试软件。它主要用于远程控制和监测被测试机的状态，由于之前开发上层软件比较少，所以见此记录一下。</p>
-<h1 id="BRPC简介"><a href="#BRPC简介" class="headerlink" title="BRPC简介"></a>BRPC简介</h1><p>它把网络交互类比为“client访问server上的函数”：client向server发送request后开始等待，直到server收到、处理、回复client后，client又再度恢复并根据response做出反应。</p>
-<p><img src="/picture/rpc.png" alt="img"></p>
-<p>我们来看看上面的一些问题是如何解决的：</p>
-<p>数据需要序列化，protobuf在这方面做的不错。用户填写protobuf::Message类型的request，RPC结束后，从同为protobuf::Message类型的response中取出结果。protobuf有较好的前后兼容性，方便业务调整字段。http广泛使用json作为序列化方法。<br>用户无需关心连接如何建立，但可以选择不同的连接方式：短连接，连接池，单连接。<br>大量机器一般通过命名服务被发现，可基于DNS, ZooKeeper, etcd等实现。在百度内，我们使用BNS (Baidu Naming Service)。brpc也提供“list:&#x2F;&#x2F;“和”file:&#x2F;&#x2F;”。用户可以指定负载均衡算法，让RPC每次选出一台机器发送请求，包括: round-robin, randomized, consistent-hashing(murmurhash3 or md5)和 locality-aware.<br>连接断开时可以重试。<br>如果server没有在给定时间内回复，client会返回超时错误。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/27/hexo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Bob">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CodeJun's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/27/hexo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/" class="post-title-link" itemprop="url">Hexo使用指导</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-10-27 16:05:15" itemprop="dateCreated datePublished" datetime="2023-10-27T16:05:15+08:00">2023-10-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-28 16:21:24" itemprop="dateModified" datetime="2023-10-28T16:21:24+08:00">2023-10-28</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -1022,6 +290,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%B2%E5%8F%A3%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"><span class="nav-number">1.</span> <span class="nav-text">串口应用开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%B2%E5%8F%A3%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">1. 串口奇偶校验配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%AE%BE%E7%BD%AE%E5%81%9C%E6%AD%A2%E4%BD%8D%E5%AE%BD"><span class="nav-number">1.2.</span> <span class="nav-text">2. 设置停止位宽</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C%E4%B8%B2%E5%8F%A3%E5%BA%94%E7%94%A8%E7%9A%84%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">C串口应用的实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python%E4%B8%B2%E5%8F%A3%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">python串口应用实例</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
