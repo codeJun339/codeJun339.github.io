@@ -146,6 +146,141 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/19/%E9%A9%B1%E5%8A%A8%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%E9%82%A3%E4%BA%9B%E4%BA%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bob">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeJun's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/02/19/%E9%A9%B1%E5%8A%A8%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%E9%82%A3%E4%BA%9B%E4%BA%8B/" class="post-title-link" itemprop="url">驱动模块加载那些事</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-02-19 18:52:00 / 修改时间：19:06:09" itemprop="dateCreated datePublished" datetime="2024-02-19T18:52:00+08:00">2024-02-19</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/gatieme/article/details/75108154">https://blog.csdn.net/gatieme/article/details/75108154</a></p>
+<h1 id="模块加载"><a href="#模块加载" class="headerlink" title="模块加载"></a>模块加载</h1><h2 id="insmod方式加载"><a href="#insmod方式加载" class="headerlink" title="insmod方式加载"></a>insmod方式加载</h2><p>直接执行insmod module.ko加载</p>
+<h2 id="modprobe方式加载"><a href="#modprobe方式加载" class="headerlink" title="modprobe方式加载"></a>modprobe方式加载</h2><ul>
+<li>执行depmod</li>
+<li>执行modprobe module.ko加载</li>
+</ul>
+<h2 id="rmmod卸载"><a href="#rmmod卸载" class="headerlink" title="rmmod卸载"></a>rmmod卸载</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/19/python%E6%A1%88%E4%BE%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bob">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeJun's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/02/19/python%E6%A1%88%E4%BE%8B/" class="post-title-link" itemprop="url">python案例</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-02-19 18:07:16" itemprop="dateCreated datePublished" datetime="2024-02-19T18:07:16+08:00">2024-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-03-11 10:40:44" itemprop="dateModified" datetime="2024-03-11T10:40:44+08:00">2024-03-11</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Python基础知识"><a href="#Python基础知识" class="headerlink" title="Python基础知识"></a>Python基础知识</h1><h1 id="实现TPS62873电压配置"><a href="#实现TPS62873电压配置" class="headerlink" title="实现TPS62873电压配置"></a>实现TPS62873电压配置</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">name = sys.argv[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">if</span> name == <span class="string">&#x27;CPU&#x27;</span>:</span><br><span class="line">    i2caddr=<span class="string">&#x27;0x40&#x27;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    i2caddr=<span class="string">&#x27;0x43&#x27;</span></span><br><span class="line"></span><br><span class="line">vout = sys.argv[<span class="number">2</span>]</span><br><span class="line">vout_mv = <span class="built_in">float</span>(vout) * <span class="number">1000</span> - <span class="number">400</span></span><br><span class="line">Rvset = <span class="built_in">hex</span>(<span class="built_in">int</span>(vout_mv / <span class="number">2.5</span> + <span class="number">0.5</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;%s&quot;</span>%Rvset)</span><br><span class="line">os.system(<span class="string">&quot;i2ctransfer -f -y 3 w2@%s 0x02 0x05&quot;</span>%i2caddr)</span><br><span class="line">result=os.popen(<span class="string">&quot;i2ctransfer -f -y 3 w1@%s 0x02 r1&quot;</span>%i2caddr).read().replace(<span class="string">&quot;\n&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> result != <span class="string">&#x27;0x05&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;i2c write failed&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;i2c write 0x02 ok&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line">os.system(<span class="string">&quot;i2ctransfer -f -y 3 w2@%s 0x00 %s&quot;</span>%(i2caddr,Rvset))</span><br><span class="line">result=os.popen(<span class="string">&quot;i2ctransfer -f -y 3 w1@%s 0x00 r1&quot;</span>%i2caddr).read().replace(<span class="string">&quot;\n&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> result != Rvset:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;i2c write failed&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;i2c write 0x00 ok&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+
+<h1 id="实现json数据整理到Excel"><a href="#实现json数据整理到Excel" class="headerlink" title="实现json数据整理到Excel"></a>实现json数据整理到Excel</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> openpyxl.utils <span class="keyword">import</span> get_column_letter</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> ExcelWriter</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">to_excel_auto_column_weight</span>(<span class="params">df: pd.DataFrame, writer: ExcelWriter, sheet_name=<span class="string">&quot;Shee1&quot;</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;DataFrame保存为excel并自动设置列宽&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 数据 to 写入器，并指定sheet名称</span></span><br><span class="line">    df.to_excel(writer, sheet_name=sheet_name, index=<span class="literal">False</span>)</span><br><span class="line">    <span class="comment">#  计算每列表头的字符宽度</span></span><br><span class="line">    column_widths = (</span><br><span class="line">        df.columns.to_series().apply(<span class="keyword">lambda</span> x: <span class="built_in">len</span>(<span class="built_in">str</span>(x).encode(<span class="string">&#x27;gbk&#x27;</span>))).values</span><br><span class="line">    )</span><br><span class="line">    <span class="comment">#  计算每列的最大字符宽度</span></span><br><span class="line">    max_widths = (</span><br><span class="line">        df.astype(<span class="built_in">str</span>).applymap(<span class="keyword">lambda</span> x: <span class="built_in">len</span>(<span class="built_in">str</span>(x).encode(<span class="string">&#x27;gbk&#x27;</span>))).agg(<span class="built_in">max</span>).values</span><br><span class="line">    )</span><br><span class="line">    <span class="comment"># 取前两者中每列的最大宽度</span></span><br><span class="line">    widths = np.<span class="built_in">max</span>([column_widths, max_widths], axis=<span class="number">0</span>)</span><br><span class="line">    <span class="comment"># 指定sheet，设置该sheet的每列列宽</span></span><br><span class="line">    worksheet = writer.sheets[sheet_name]</span><br><span class="line">    <span class="keyword">for</span> i, width <span class="keyword">in</span> <span class="built_in">enumerate</span>(widths, <span class="number">1</span>):</span><br><span class="line">        <span class="comment"># openpyxl引擎设置字符宽度时会缩水0.5左右个字符，所以干脆+2使左右都空出一个字宽。</span></span><br><span class="line">        worksheet.column_dimensions[get_column_letter(i)].width = width + <span class="number">2</span></span><br><span class="line"></span><br><span class="line">DIR=<span class="string">&#x27;./data/report&#x27;</span></span><br><span class="line"></span><br><span class="line">header = [<span class="string">&#x27;PlanId&#x27;</span>, <span class="string">&#x27;测试板编号&#x27;</span>, <span class="string">&#x27;IP地址&#x27;</span>, <span class="string">&#x27;SN&#x27;</span>, <span class="string">&#x27;板子状态&#x27;</span>, <span class="string">&#x27;测试耗时&#x27;</span>, <span class="string">&#x27;NovaOs版本&#x27;</span>, <span class="string">&#x27;失败模块&#x27;</span>, <span class="string">&#x27;测试结果&#x27;</span>]</span><br><span class="line"></span><br><span class="line">DataList = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(DIR):</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> dirs:</span><br><span class="line">        sub_dir = os.path.join(root, name)</span><br><span class="line">        file = sub_dir + <span class="string">&#x27;/&#x27;</span> + <span class="string">&quot;result.json&quot;</span></span><br><span class="line">        <span class="keyword">if</span> os.path.exists(file):</span><br><span class="line">            <span class="keyword">with</span> <span class="built_in">open</span>(file, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                data = json.load(f)</span><br><span class="line">                serial = data[<span class="string">&#x27;board_results&#x27;</span>][-<span class="number">1</span>][<span class="string">&#x27;board&#x27;</span>][<span class="string">&#x27;serial&#x27;</span>]</span><br><span class="line">                ip = data[<span class="string">&#x27;board_results&#x27;</span>][-<span class="number">1</span>][<span class="string">&#x27;board&#x27;</span>][<span class="string">&#x27;ip&#x27;</span>]</span><br><span class="line">                sn = data[<span class="string">&#x27;board_results&#x27;</span>][-<span class="number">1</span>][<span class="string">&#x27;board&#x27;</span>][<span class="string">&#x27;sn&#x27;</span>]</span><br><span class="line">                board_status = data[<span class="string">&#x27;board_results&#x27;</span>][-<span class="number">1</span>][<span class="string">&#x27;board_status&#x27;</span>]</span><br><span class="line">                test_duration = data[<span class="string">&#x27;board_results&#x27;</span>][-<span class="number">1</span>][<span class="string">&#x27;test_duration&#x27;</span>]</span><br><span class="line">                test_result = data[<span class="string">&#x27;board_results&#x27;</span>][-<span class="number">1</span>][<span class="string">&#x27;test_result&#x27;</span>]</span><br><span class="line">                version = data[<span class="string">&#x27;board_results&#x27;</span>][-<span class="number">1</span>][<span class="string">&#x27;version&#x27;</span>]</span><br><span class="line">                failed_features = data[<span class="string">&#x27;board_results&#x27;</span>][-<span class="number">1</span>][<span class="string">&#x27;failed_features&#x27;</span>]</span><br><span class="line">                row=[name, serial, ip, sn, board_status, test_duration, version, failed_features, test_result]  </span><br><span class="line">                DataList.append(row)</span><br><span class="line">df = pd.DataFrame(DataList, columns=header)</span><br><span class="line"></span><br><span class="line">df.style.set_properties(**&#123;<span class="string">&#x27;text-align&#x27;</span>: <span class="string">&#x27;center&#x27;</span>&#125;).set_table_styles([ <span class="built_in">dict</span>(selector=<span class="string">&#x27;th&#x27;</span>, props=[(<span class="string">&#x27;text-align&#x27;</span>, <span class="string">&#x27;center&#x27;</span>)])])</span><br><span class="line"></span><br><span class="line"><span class="comment">#print(df[&#x27;IP地址&#x27;].unique())</span></span><br><span class="line">writer = pd.ExcelWriter(<span class="string">&#x27;report.xlsx&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> df[<span class="string">&#x27;IP地址&#x27;</span>].unique():</span><br><span class="line">    <span class="comment">#df[df[&#x27;IP地址&#x27;] == i].to_excel(writer, sheet_name=i, index=False)</span></span><br><span class="line">    tmpData=df[df[<span class="string">&#x27;IP地址&#x27;</span>] == i]</span><br><span class="line">    to_excel_auto_column_weight(tmpData, writer, i)</span><br><span class="line">    </span><br><span class="line">writer.close()</span><br><span class="line"></span><br><span class="line">now = datetime.now()</span><br><span class="line">time = now.strftime(<span class="string">&quot;%Y-%m-%d-%H_%M_%S&quot;</span>)</span><br><span class="line"></span><br><span class="line">os.system(<span class="string">f&quot;sudo tar zcvf <span class="subst">&#123;time&#125;</span>_report.tar.gz /home/slt-racetrack-server/data/ ./report.xlsx&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;sudo rm -rf /home/slt-racetrack-server/data/*&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;sudo rm -rf ./report.xlsx&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="实现json数据整理为特定格式的Excel"><a href="#实现json数据整理为特定格式的Excel" class="headerlink" title="实现json数据整理为特定格式的Excel"></a>实现json数据整理为特定格式的Excel</h1><p>截取的部分代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">directory_path = <span class="built_in">str</span>(self.test_result_root/ <span class="string">&#x27;..&#x27;</span> / <span class="string">&#x27;..&#x27;</span> / <span class="string">&#x27;report&#x27;</span>)</span><br><span class="line">dir_list = os.listdir(directory_path)</span><br><span class="line"></span><br><span class="line">self.logger.debug(<span class="string">&#x27;%s&#x27;</span>%dir_list)</span><br><span class="line"><span class="comment">#获取以“report+时间”命名的report目录</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> dir_list:</span><br><span class="line">     full_path = os.path.join(directory_path, item)</span><br><span class="line">     <span class="keyword">if</span> self.is_directory(full_path) <span class="keyword">and</span> item.startswith(<span class="string">&quot;report_&quot;</span>):</span><br><span class="line">         self.logger.debug(<span class="string">&#x27;%s&#x27;</span>%full_path)</span><br><span class="line">         <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">workbook = load_workbook(<span class="string">f&quot;<span class="subst">&#123;full_path&#125;</span>/report.xlsx&quot;</span>)</span><br><span class="line">worksheet = workbook[<span class="string">&quot;模板&quot;</span>]</span><br><span class="line"><span class="comment">#填充表单的基本信息</span></span><br><span class="line">newsheet = workbook.copy_worksheet(worksheet)</span><br><span class="line">newsheet[<span class="string">&#x27;B2&#x27;</span>] = test_plan.server_msg[<span class="number">0</span>].serial</span><br><span class="line">newsheet[<span class="string">&#x27;D2&#x27;</span>] = test_plan.server_msg[<span class="number">0</span>].ip</span><br><span class="line">newsheet[<span class="string">&#x27;F2&#x27;</span>] = test_plan.server_msg[<span class="number">0</span>].sn</span><br><span class="line">newsheet[<span class="string">&#x27;B4&#x27;</span>] = plan_id</span><br><span class="line">newsheet[<span class="string">&#x27;D4&#x27;</span>] = board_result.test_duration</span><br><span class="line">newsheet[<span class="string">&#x27;F4&#x27;</span>] = test_plan.tester</span><br><span class="line">newsheet[<span class="string">&#x27;B6&#x27;</span>] = board_result.version</span><br><span class="line"><span class="keyword">if</span> board_result.test_result == <span class="string">&#x27;FAIL&#x27;</span>:</span><br><span class="line">     newsheet[<span class="string">&#x27;F6&#x27;</span>] = <span class="string">&#x27;FAIL&#x27;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">     newsheet[<span class="string">&#x27;F6&#x27;</span>] = <span class="string">&#x27;PASS&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#以planid和sn码命名表单名称</span></span><br><span class="line">newsheet.title = <span class="built_in">str</span>(test_plan.server_msg[<span class="number">0</span>].sn + <span class="string">&#x27;_&#x27;</span> + plan_id)</span><br><span class="line"></span><br><span class="line">yamlfile = <span class="built_in">str</span>(self.test_result_root/ <span class="string">&#x27;..&#x27;</span> / <span class="string">&#x27;yaml&#x27;</span> /test_plan.server_msg[<span class="number">0</span>].ip) + <span class="string">&#x27;.yaml&#x27;</span></span><br><span class="line"></span><br><span class="line">self.logger.debug(<span class="string">&#x27;%s&#x27;</span>%yamlfile)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(yamlfile, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    data = yaml.safe_load(file)</span><br><span class="line"></span><br><span class="line"><span class="comment">#拷贝测试的log目录，方便后期打包</span></span><br><span class="line">os.system(<span class="string">&quot;cp -r %s %s&quot;</span>%(board_result.test_report,full_path))</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据测试方案，制作测试项列表   </span></span><br><span class="line">test_items = data[<span class="string">&#x27;msg&#x27;</span>][<span class="number">1</span>].get(<span class="string">&#x27;test_items&#x27;</span>, [])</span><br><span class="line"><span class="keyword">for</span> index, item <span class="keyword">in</span> <span class="built_in">enumerate</span>(test_items):</span><br><span class="line">    itemname = item.get(<span class="string">&#x27;name&#x27;</span>)</span><br><span class="line">    newsheet[ <span class="string">f&#x27;A%d&#x27;</span>%(index + <span class="number">9</span>)] =  itemname</span><br><span class="line">    newsheet[ <span class="string">f&#x27;C%d&#x27;</span>%(index + <span class="number">9</span>)] =  item.get(<span class="string">&#x27;times&#x27;</span>)</span><br><span class="line">    <span class="comment">#截取item中的test之后的字符串</span></span><br><span class="line">    start_index = itemname.find(<span class="string">&quot;test&quot;</span>) + <span class="built_in">len</span>(<span class="string">&quot;test&quot;</span>)</span><br><span class="line">    end_index = <span class="built_in">len</span>(itemname)</span><br><span class="line">    substring = itemname[start_index:end_index]</span><br><span class="line"></span><br><span class="line">    result_field = <span class="string">&#x27;none&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#遍历log目录中item的log文件是否存在，存在则截取pass或failure字段，反之则为NONE</span></span><br><span class="line">    <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(board_result.test_report):</span><br><span class="line">         <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">             <span class="keyword">if</span> re.search(substring, file, re.I) != <span class="literal">None</span>:</span><br><span class="line">                 filename = os.path.join(root, file)</span><br><span class="line">                 start_index = filename.rfind(<span class="string">&#x27;_&#x27;</span>) + <span class="number">1</span></span><br><span class="line">                 end_index = filename.find(<span class="string">&#x27;.&#x27;</span>, start_index)</span><br><span class="line">                 result_field = filename[start_index:end_index]</span><br><span class="line">                 <span class="keyword">if</span> result_field == <span class="string">&#x27;failure&#x27;</span>:</span><br><span class="line">                     newsheet[ <span class="string">f&#x27;E%d&#x27;</span>%(index + <span class="number">9</span>)] =  <span class="string">&quot;FAIL&quot;</span></span><br><span class="line">                     <span class="keyword">break</span></span><br><span class="line">                 <span class="keyword">elif</span> result_field == <span class="string">&#x27;pass&#x27;</span>:</span><br><span class="line">                     newsheet[ <span class="string">f&#x27;E%d&#x27;</span>%(index + <span class="number">9</span>)] =  <span class="string">&quot;PASS&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> result_field == <span class="string">&#x27;none&#x27;</span>:</span><br><span class="line">        newsheet[ <span class="string">f&#x27;E%d&#x27;</span>%(index + <span class="number">9</span>)] =  <span class="string">&quot;NONE&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#保存添加的sheet表 </span></span><br><span class="line">workbook.save(<span class="string">f&quot;<span class="subst">&#123;full_path&#125;</span>/report.xlsx&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="Python3中yaml操作"><a href="#Python3中yaml操作" class="headerlink" title="Python3中yaml操作"></a>Python3中yaml操作</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/04/gpio%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -438,7 +573,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-05 17:58:49" itemprop="dateModified" datetime="2024-02-05T17:58:49+08:00">2024-02-05</time>
+                <time title="修改时间：2024-03-27 13:52:35" itemprop="dateModified" datetime="2024-03-27T13:52:35+08:00">2024-03-27</time>
               </span>
 
           
@@ -452,11 +587,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ol>
-<li>git rm -r  –cache 要忽略的文件</li>
-<li>git add .</li>
-<li>git commit -m ‘update .gitignore’ </li>
-<li>git push -u origin master</li>
+          <h1 id="修改-gitignore文件方法"><a href="#修改-gitignore文件方法" class="headerlink" title="修改.gitignore文件方法"></a>修改.gitignore文件方法</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm -r  --cache 要忽略的文件</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#x27;update .gitignore&#x27; </span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="修改commit的历史信息方法"><a href="#修改commit的历史信息方法" class="headerlink" title="修改commit的历史信息方法"></a>修改commit的历史信息方法</h1><h2 id="情况一：修改最近一次commit的信息"><a href="#情况一：修改最近一次commit的信息" class="headerlink" title="情况一：修改最近一次commit的信息"></a>情况一：修改最近一次commit的信息</h2><ol>
+<li>使用git commit –amend进入命令模式修改信息</li>
+<li>^O对应的快捷键 “ Ctrl + ‘O’ “</li>
+<li>M-D对应的快捷键 “ ALT + ‘D’ ”</li>
+</ol>
+<h2 id="情况二：修改最近更早些的commit的信息"><a href="#情况二：修改最近更早些的commit的信息" class="headerlink" title="情况二：修改最近更早些的commit的信息"></a>情况二：修改最近更早些的commit的信息</h2><ol>
+<li><p>使用git log命令查找要修改的commit信息</p>
+</li>
+<li><p>使用git rebase -i HEAD~N显示要修改的信息, N表示最近的n个commit，结果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">pick 27be481ff feat(ne101): SSBSP-998: Create the ne101 project</span><br><span class="line">pick 679632f15 fix(bug):SSBSP-1018:modify dr mode</span><br><span class="line"></span><br><span class="line"># 变基 27be481ff..584136761 到 27be481ff（2 个提交）</span><br><span class="line">#</span><br><span class="line"># 命令:</span><br><span class="line"># p, pick &lt;提交&gt; = 使用提交</span><br><span class="line"># r, reword &lt;提交&gt; = 使用提交，但修改提交说明</span><br><span class="line"># e, edit &lt;提交&gt; = 使用提交，进入 shell 以便进行提交修补</span><br><span class="line"># s, squash &lt;提交&gt; = 使用提交，但融合到前一个提交</span><br><span class="line"># f, fixup &lt;提交&gt; = 类似于 &quot;squash&quot;，但丢弃提交说明日志</span><br><span class="line"># x, exec &lt;命令&gt; = 使用 shell 运行命令（此行剩余部分）</span><br><span class="line"># b, break = 在此处停止（使用 &#x27;git rebase --continue&#x27; 继续变基）</span><br><span class="line"># d, drop &lt;提交&gt; = 删除提交</span><br><span class="line"># l, label &lt;label&gt; = 为当前 HEAD 打上标记</span><br><span class="line"># t, reset &lt;label&gt; = 重置 HEAD 到该标记</span><br><span class="line"># m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]</span><br><span class="line"># .       创建一个合并提交，并使用原始的合并提交说明（如果没有指定</span><br><span class="line"># .       原始提交，使用注释部分的 oneline 作为提交说明）。使用</span><br><span class="line"># .       -c &lt;提交&gt; 可以编辑提交说明。</span><br><span class="line">#</span><br><span class="line"># 可以对这些行重新排序，将从上至下执行。</span><br><span class="line">#</span><br><span class="line"># 如果您在这里删除一行，对应的提交将会丢失。</span><br><span class="line">#</span><br><span class="line"># 然而，如果您删除全部内容，变基操作将会终止。</span><br><span class="line">#</span><br><span class="line"># 注意空提交已被注释掉</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>注：这里显示pick的顺序是最早的提交显示在上面</strong></p>
+</li>
+<li><p>这里要不要修改的commit对应的pick改为edit或者e，退出保存。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">edit 27be481ff feat(ne101): SSBSP-998: Create the ne101 project</span><br><span class="line">pick 679632f15 fix(bug):SSBSP-1018:modify dr mode</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这里会提示你使用git commit –amend修改信息，改完之后使用git rebase –continue完成</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">nova2021@nova2021-ThinkStation-K-C2:~/work/ne100_r1$ git rebase -i HEAD~3</span><br><span class="line">停止在 27be481ff... feat(ne101): SSBSP-998: Create the ne101 project</span><br><span class="line">您现在可以修补这个提交，使用</span><br><span class="line"></span><br><span class="line">  git commit --amend </span><br><span class="line"></span><br><span class="line">当您对变更感到满意，执行</span><br><span class="line"></span><br><span class="line">  git rebase --continue</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用git push命令将修改提交到远端，如果push中提示下列信息，则执行git push -f origin SSBSP-998（不推荐）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git push origin SSBSP-998</span><br><span class="line">提示下列信息：</span><br><span class="line">To 192.168.3.224:ne100-embedded-dev/ne100_r1.git</span><br><span class="line"> ! [rejected]            SSBSP-998 -&gt; SSBSP-998 (non-fast-forward)</span><br><span class="line">error: 无法推送一些引用到 &#x27;git@192.168.3.224:ne100-embedded-dev/ne100_r1.git&#x27;</span><br><span class="line">提示：更新被拒绝，因为您当前分支的最新提交落后于其对应的远程分支。</span><br><span class="line">提示：再次推送前，先与远程变更合并（如 &#x27;git pull ...&#x27;）。详见</span><br><span class="line">提示：&#x27;git push --help&#x27; 中的 &#x27;Note about fast-forwards&#x27; 小节。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>网上也推荐使用下列操作解决上述问题, 但没有实测</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin  </span><br><span class="line">git rebase origin/SSBSP-998</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -508,7 +666,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-01-26 17:32:00" itemprop="dateModified" datetime="2024-01-26T17:32:00+08:00">2024-01-26</time>
+                <time title="修改时间：2024-03-15 10:16:45" itemprop="dateModified" datetime="2024-03-15T10:16:45+08:00">2024-03-15</time>
               </span>
 
           
@@ -650,17 +808,16 @@
 <p><img src="/../picture/image-20240126112433332.png" alt="image-20240126112433332"></p>
 <p><strong>解决办法：</strong>调高MIPI每个lane的传输速率，解决问题。</p>
 <h1 id="常见采图命令"><a href="#常见采图命令" class="headerlink" title="常见采图命令"></a>常见采图命令</h1><ul>
-<li>Gstreamer命令采图<ol>
-<li>文件存盘</li>
+<li><p>Gstreamer命令采图</p>
+<ol>
+<li><p>文件存盘</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename1=video1_$(date +%Y%m%d)_$(date +%H%M%S).yuv</span><br><span class="line">filename0=video0_$(date +%Y%m%d)_$(date +%H%M%S).yuv</span><br><span class="line">gst-launch-1.0 v4l2src num-buffers=450 device=/dev/video0 ! &quot;video/x-raw,format=UYVY,width=1280,height=960,framerate=30/1&quot; ! filesink location=$&#123;filename0&#125; &amp;</span><br><span class="line">gst-launch-1.0 v4l2src num-buffers=450 device=/dev/video1 ! &quot;video/x-raw,format=UYVY,width=1280,height=960,framerate=30/1&quot; ! filesink location=$&#123;filename1&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>hdmi预览</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gst-launch-1.0 v4l2src device=/dev/video$1 ! &quot;video/x-raw,format=UYVY,width=$2,height=$3,framerate=30/1&quot; ! xvimagesink -ev sync=false</span><br></pre></td></tr></table></figure></li>
 </ol>
 </li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">filename1=video1_$(date +%Y%m%d)_$(date +%H%M%S).yuv</span><br><span class="line">filename0=video0_$(date +%Y%m%d)_$(date +%H%M%S).yuv</span><br><span class="line">gst-launch-1.0 v4l2src num-buffers=450 device=/dev/video0 ! &quot;video/x-raw,format=UYVY,width=1280,height=960,framerate=30/1&quot; ! filesink location=$&#123;filename0&#125; &amp;</span><br><span class="line">gst-launch-1.0 v4l2src num-buffers=450 device=/dev/video1 ! &quot;video/x-raw,format=UYVY,width=1280,height=960,framerate=30/1&quot; ! filesink location=$&#123;filename1&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><p>hdmi预览</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gst-launch-1.0 v4l2src device=/dev/video$1 ! &quot;video/x-raw,format=UYVY,width=$2,height=$3,framerate=30/1&quot; ! xvimagesink -ev sync=false</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
 <p>调试2个2WH模式的相机问题。</p>
 <p><img src="/home/nova2021/Blog/Hexo/source/picture/image_1.png" alt="图像异常"></p>
 <p>1. </p>
@@ -793,7 +950,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-11-09 15:57:20" itemprop="dateModified" datetime="2023-11-09T15:57:20+08:00">2023-11-09</time>
+                <time title="修改时间：2024-03-14 10:55:09" itemprop="dateModified" datetime="2024-03-14T10:55:09+08:00">2024-03-14</time>
               </span>
 
           
@@ -807,148 +964,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="shell中特殊符的使用"><a href="#shell中特殊符的使用" class="headerlink" title="shell中特殊符的使用"></a>shell中特殊符的使用</h1><p>参考: <a target="_blank" rel="noopener" href="https://www.cnblogs.com/du-z/p/15322745.html">https://www.cnblogs.com/du-z/p/15322745.html</a></p>
+          <h2 id="shell中特殊符的使用"><a href="#shell中特殊符的使用" class="headerlink" title="shell中特殊符的使用"></a>shell中特殊符的使用</h2><p>参考: <a target="_blank" rel="noopener" href="https://www.cnblogs.com/du-z/p/15322745.html">https://www.cnblogs.com/du-z/p/15322745.html</a></p>
 <p>示例：file&#x3D;”&#x2F;dir1&#x2F;dir2&#x2F;dir3&#x2F;my.file.txt”</p>
-<ul>
-<li>“#”： 表示最短匹配<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file#*/&#125;：删掉第一个/ 及其左边的字符串：dir1/dir2/dir3/my.file.txt</span><br></pre></td></tr></table></figure></li>
-<li>“##”: 表示最长匹配<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file##*/&#125;：删掉最后一个/  及其左边的字符串：my.file.txt</span><br></pre></td></tr></table></figure></li>
-<li>“%”: 表示从右开始的第一个匹配<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file%/*&#125;：删掉最后一个 /  及其右边的字符串：/dir1/dir2/dir3</span><br></pre></td></tr></table></figure></li>
-<li>通过从左到右的某个字节数开始截取，截取多少个字节<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file:5:5&#125;：提取第5 个字节右边的连续5个字节：/dir2</span><br></pre></td></tr></table></figure></li>
-<li>计算变量值的长度<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo $&#123;#file&#125; </span><br><span class="line">结果：27</span><br></pre></td></tr></table></figure></li>
-<li>变量值中的字符串替换<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file/dir/path&#125;：将第一个dir 替换为path：/path1/dir2/dir3/my.file.txt</span><br><span class="line">$&#123;file//dir/path&#125;：将全部dir 替换为path：/path1/path2/path3/my.file.txt</span><br></pre></td></tr></table></figure></li>
-</ul>
+<h3 id="“-”：-表示最短匹配"><a href="#“-”：-表示最短匹配" class="headerlink" title="“#”： 表示最短匹配"></a>“#”： 表示最短匹配</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file#*/&#125;：删掉第一个/ 及其左边的字符串：dir1/dir2/dir3/my.file.txt</span><br></pre></td></tr></table></figure>
+<h3 id="“-”-表示最长匹配"><a href="#“-”-表示最长匹配" class="headerlink" title="“##”: 表示最长匹配"></a>“##”: 表示最长匹配</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file##*/&#125;：删掉最后一个/  及其左边的字符串：my.file.txt</span><br></pre></td></tr></table></figure>
+<h3 id="“-”-表示从右开始的第一个匹配"><a href="#“-”-表示从右开始的第一个匹配" class="headerlink" title="“%”: 表示从右开始的第一个匹配"></a>“%”: 表示从右开始的第一个匹配</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file%/*&#125;：删掉最后一个 /  及其右边的字符串：/dir1/dir2/dir3</span><br></pre></td></tr></table></figure>
+<h3 id="通过从左到右的某个字节数开始截取，截取多少个字节"><a href="#通过从左到右的某个字节数开始截取，截取多少个字节" class="headerlink" title="通过从左到右的某个字节数开始截取，截取多少个字节"></a>通过从左到右的某个字节数开始截取，截取多少个字节</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file:5:5&#125;：提取第5 个字节右边的连续5个字节：/dir2</span><br></pre></td></tr></table></figure>
+<h3 id="计算变量值的长度"><a href="#计算变量值的长度" class="headerlink" title="计算变量值的长度"></a>计算变量值的长度</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo $&#123;#file&#125; </span><br><span class="line">结果：27</span><br></pre></td></tr></table></figure>
+<h3 id="变量值中的字符串替换"><a href="#变量值中的字符串替换" class="headerlink" title="变量值中的字符串替换"></a>变量值中的字符串替换</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file/dir/path&#125;：将第一个dir 替换为path：/path1/dir2/dir3/my.file.txt</span><br><span class="line">$&#123;file//dir/path&#125;：将全部dir 替换为path：/path1/path2/path3/my.file.txt</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/28/CAN%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">
+<h2 id="反向截取字符的方法"><a href="#反向截取字符的方法" class="headerlink" title="反向截取字符的方法"></a>反向截取字符的方法</h2><h3 id="rev命令是将输入行反转"><a href="#rev命令是将输入行反转" class="headerlink" title="rev命令是将输入行反转"></a>rev命令是将输入行反转</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;2024-03-13_144312-1302944-gpio_001_pass.tar.gz&quot; | rev | awk -F&#x27;-&#x27; &#x27;&#123;print $1&#125;&#x27; | rev</span><br><span class="line">结果：gpio_001_pass.tar.gz</span><br></pre></td></tr></table></figure>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Bob">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CodeJun's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/28/CAN%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">CAN工具使用</a>
-        </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
+<h3 id="实现同名排序（sort）"><a href="#实现同名排序（sort）" class="headerlink" title="实现同名排序（sort）"></a>实现同名排序（sort）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">find -name &quot;*failure*&quot; | rev | awk -F&#x27;-&#x27; &#x27;&#123;print $1&#125;&#x27; | rev | awk -F&#x27;_&#x27; &#x27;&#123;print $1&quot;_&quot;$2&#125;&#x27; | sort</span><br><span class="line">结果如下：</span><br><span class="line">hdmi_121</span><br><span class="line">hdmi_121</span><br><span class="line">hdmi_121</span><br><span class="line">hdmi_121</span><br><span class="line">hdmi_121</span><br><span class="line">hdmi_121</span><br><span class="line">rtc_004</span><br><span class="line">rtc_004</span><br><span class="line">vpu_018</span><br><span class="line">vpu_018</span><br><span class="line">vpu_018</span><br></pre></td></tr></table></figure>
 
-              <time title="创建时间：2023-10-28 17:31:03 / 修改时间：17:45:44" itemprop="dateCreated datePublished" datetime="2023-10-28T17:31:03+08:00">2023-10-28</time>
-            </span>
+<h3 id="统计同名的个数（uniq-c）"><a href="#统计同名的个数（uniq-c）" class="headerlink" title="统计同名的个数（uniq -c）"></a>统计同名的个数（uniq -c）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">find -name &quot;*failure*&quot; | rev | awk -F&#x27;-&#x27; &#x27;&#123;print $1&#125;&#x27; | rev | awk -F&#x27;_&#x27; &#x27;&#123;print $1&quot;_&quot;$2&#125;&#x27; | sort | uniq -c</span><br><span class="line">统计结果：</span><br><span class="line">  110 hdmi_121</span><br><span class="line">  2 rtc_004</span><br><span class="line">  3 vpu_018</span><br></pre></td></tr></table></figure>
 
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="安装can测试工具"><a href="#安装can测试工具" class="headerlink" title="安装can测试工具"></a>安装can测试工具</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install can-utils</span><br></pre></td></tr></table></figure>
-
-<h1 id="can测试流程"><a href="#can测试流程" class="headerlink" title="can测试流程"></a>can测试流程</h1><h2 id="1-加载虚拟can模块"><a href="#1-加载虚拟can模块" class="headerlink" title="1. 加载虚拟can模块"></a>1. 加载虚拟can模块</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo modprobe vcan</span><br></pre></td></tr></table></figure>
-<h2 id="2-加载vcan0网卡"><a href="#2-加载vcan0网卡" class="headerlink" title="2. 加载vcan0网卡"></a>2. 加载vcan0网卡</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ip link add dev vcan0 type vcan</span><br></pre></td></tr></table></figure>
-<h2 id="3-可以查到当前can网络-can0-can1，包括收发包数量、是否有错误等等"><a href="#3-可以查到当前can网络-can0-can1，包括收发包数量、是否有错误等等" class="headerlink" title="3. 可以查到当前can网络 can0 can1，包括收发包数量、是否有错误等等"></a>3. 可以查到当前can网络 can0 can1，包括收发包数量、是否有错误等等</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig -a</span><br></pre></td></tr></table></figure>
-<h2 id="4-设置can0的波特率为800kbps-CAN网络波特率最大值为1Mbps"><a href="#4-设置can0的波特率为800kbps-CAN网络波特率最大值为1Mbps" class="headerlink" title="4. 设置can0的波特率为800kbps,CAN网络波特率最大值为1Mbps"></a>4. 设置can0的波特率为800kbps,CAN网络波特率最大值为1Mbps</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link set can0 type can --help 4.ip link set can0 up type can bitrate 800000</span><br></pre></td></tr></table></figure>
-<h2 id="5-设置回环模式，自发自收，用于测试是硬件是否正常-loopback不一定支持"><a href="#5-设置回环模式，自发自收，用于测试是硬件是否正常-loopback不一定支持" class="headerlink" title="5. 设置回环模式，自发自收，用于测试是硬件是否正常,loopback不一定支持"></a>5. 设置回环模式，自发自收，用于测试是硬件是否正常,loopback不一定支持</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link set can0 up type can bitrate 800000 loopback on</span><br></pre></td></tr></table></figure>
-<h2 id="6-关闭can0-网络"><a href="#6-关闭can0-网络" class="headerlink" title="6. 关闭can0 网络"></a>6. 关闭can0 网络</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link set can0 down</span><br></pre></td></tr></table></figure>
-<h2 id="7-发送默认ID为0x1的can标准帧，数据为0x11-22-33-44-55-66-77-88-每次最大8个byte"><a href="#7-发送默认ID为0x1的can标准帧，数据为0x11-22-33-44-55-66-77-88-每次最大8个byte" class="headerlink" title="7. 发送默认ID为0x1的can标准帧，数据为0x11 22 33 44 55 66 77 88 每次最大8个byte"></a>7. 发送默认ID为0x1的can标准帧，数据为0x11 22 33 44 55 66 77 88 每次最大8个byte</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cansend can0 0x11 0x22 0x33 0x44 0x55 0x66 0x77 0x88</span><br></pre></td></tr></table></figure>
-<h2 id="8-发送数据包"><a href="#8-发送数据包" class="headerlink" title="8. 发送数据包"></a>8. 发送数据包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cansend can0 -i 0x800 0x11 0x22 0x33 0x44 0x55 0x66 0x77 0x88 -e -e 表示扩展帧，CAN_ID最大29bit，标准帧CAN_ID最大11bit  -i表示CAN_ID</span><br></pre></td></tr></table></figure>
-<h2 id="9-发送20个包"><a href="#9-发送20个包" class="headerlink" title="9. 发送20个包"></a>9. 发送20个包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cansend can0 -i 0x02 0x11 0x12 --loop=20 --loop 表示发送20个包</span><br></pre></td></tr></table></figure>
-<h2 id="10-接收CAN0数据"><a href="#10-接收CAN0数据" class="headerlink" title="10. 接收CAN0数据"></a>10. 接收CAN0数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">candump can0 接收CAN0数据</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/28/%E5%9F%BA%E4%BA%8EBRPC%E6%B5%8B%E8%AF%95%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Bob">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CodeJun's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/28/%E5%9F%BA%E4%BA%8EBRPC%E6%B5%8B%E8%AF%95%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">基于BRPC测试软件开发</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-10-28 16:29:48 / 修改时间：17:16:27" itemprop="dateCreated datePublished" datetime="2023-10-28T16:29:48+08:00">2023-10-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>为了开发测试方便，我实现了一个基于brpc框架的测试软件。它主要用于远程控制和监测被测试机的状态，由于之前开发上层软件比较少，所以见此记录一下。</p>
-<h1 id="BRPC简介"><a href="#BRPC简介" class="headerlink" title="BRPC简介"></a>BRPC简介</h1><p>它把网络交互类比为“client访问server上的函数”：client向server发送request后开始等待，直到server收到、处理、回复client后，client又再度恢复并根据response做出反应。</p>
-<p><img src="/picture/rpc.png" alt="img"></p>
-<p>我们来看看上面的一些问题是如何解决的：</p>
-<p>数据需要序列化，protobuf在这方面做的不错。用户填写protobuf::Message类型的request，RPC结束后，从同为protobuf::Message类型的response中取出结果。protobuf有较好的前后兼容性，方便业务调整字段。http广泛使用json作为序列化方法。<br>用户无需关心连接如何建立，但可以选择不同的连接方式：短连接，连接池，单连接。<br>大量机器一般通过命名服务被发现，可基于DNS, ZooKeeper, etcd等实现。在百度内，我们使用BNS (Baidu Naming Service)。brpc也提供“list:&#x2F;&#x2F;“和”file:&#x2F;&#x2F;”。用户可以指定负载均衡算法，让RPC每次选出一台机器发送请求，包括: round-robin, randomized, consistent-hashing(murmurhash3 or md5)和 locality-aware.<br>连接断开时可以重试。<br>如果server没有在给定时间内回复，client会返回超时错误。</p>
 
       
     </div>
@@ -1033,7 +1067,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
