@@ -146,6 +146,690 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/05/python%E7%9A%84Excel%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bob">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeJun's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/01/05/python%E7%9A%84Excel%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" class="post-title-link" itemprop="url">python的Excel数据处理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-01-05 10:07:13" itemprop="dateCreated datePublished" datetime="2024-01-05T10:07:13+08:00">2024-01-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-16 10:40:53" itemprop="dateModified" datetime="2024-01-16T10:40:53+08:00">2024-01-16</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/18/serial-8250%E9%A9%B1%E5%8A%A8%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bob">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeJun's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/18/serial-8250%E9%A9%B1%E5%8A%A8%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">serial_8250驱动分析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-12-18 17:07:00" itemprop="dateCreated datePublished" datetime="2023-12-18T17:07:00+08:00">2023-12-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-17 17:26:11" itemprop="dateModified" datetime="2024-01-17T17:26:11+08:00">2024-01-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="驱动注册"><a href="#驱动注册" class="headerlink" title="驱动注册"></a>驱动注册</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">int driver_register(struct device_driver *drv)</span><br><span class="line">&#123;</span><br><span class="line">    int ret;</span><br><span class="line">    struct device_driver *other;</span><br><span class="line"></span><br><span class="line">    BUG_ON(!drv-&gt;bus-&gt;p);</span><br><span class="line"></span><br><span class="line">    if ((drv-&gt;bus-&gt;probe &amp;&amp; drv-&gt;probe) ||</span><br><span class="line">        (drv-&gt;bus-&gt;remove &amp;&amp; drv-&gt;remove) ||</span><br><span class="line">        (drv-&gt;bus-&gt;shutdown &amp;&amp; drv-&gt;shutdown))</span><br><span class="line">        printk(KERN_WARNING &quot;Driver &#x27;%s&#x27; needs updating - please use &quot;</span><br><span class="line">            &quot;bus_type methods\n&quot;, drv-&gt;name);</span><br><span class="line"></span><br><span class="line">    other = driver_find(drv-&gt;name, drv-&gt;bus);</span><br><span class="line">    if (other) &#123;</span><br><span class="line">        printk(KERN_ERR &quot;Error: Driver &#x27;%s&#x27; is already registered, &quot;</span><br><span class="line">            &quot;aborting...\n&quot;, drv-&gt;name);</span><br><span class="line">        return -EBUSY;</span><br><span class="line">    &#125;   </span><br><span class="line"></span><br><span class="line">    ret = bus_add_driver(drv);</span><br><span class="line">    if (ret)</span><br><span class="line">        return ret;</span><br><span class="line">    ret = driver_add_groups(drv, drv-&gt;groups);</span><br><span class="line">    if (ret) &#123;</span><br><span class="line">        bus_remove_driver(drv);</span><br><span class="line">        return ret;</span><br><span class="line">    &#125;   </span><br><span class="line">    kobject_uevent(&amp;drv-&gt;p-&gt;kobj, KOBJ_ADD);</span><br><span class="line"></span><br><span class="line">    return ret;</span><br><span class="line">&#125;</span><br><span class="line">EXPORT_SYMBOL_GPL(driver_register);</span><br><span class="line"></span><br><span class="line">static int __driver_attach(struct device *dev, void *data)</span><br><span class="line">&#123;</span><br><span class="line">    struct device_driver *drv = data;</span><br><span class="line">    int ret;</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">     * Lock device and try to bind to it. We drop the error</span><br><span class="line">     * here and always return 0, because we need to keep trying</span><br><span class="line">     * to bind to devices and some drivers will return an error</span><br><span class="line">     * simply if it didn&#x27;t support the device.</span><br><span class="line">     *</span><br><span class="line">     * driver_probe_device() will spit a warning if there</span><br><span class="line">     * is an error.</span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line">    ret = driver_match_device(drv, dev);</span><br><span class="line">    if (ret == 0) &#123;</span><br><span class="line">        /* no match */</span><br><span class="line">        return 0;</span><br><span class="line">    &#125; else if (ret == -EPROBE_DEFER) &#123;</span><br><span class="line">        dev_dbg(dev, &quot;Device match requests probe deferral\n&quot;);</span><br><span class="line">        driver_deferred_probe_add(dev);</span><br><span class="line">    &#125; else if (ret &lt; 0) &#123;</span><br><span class="line">        dev_dbg(dev, &quot;Bus failed to match device: %d&quot;, ret);</span><br><span class="line">        return ret;</span><br><span class="line">    &#125; /* ret &gt; 0 means positive match */</span><br><span class="line"></span><br><span class="line">    if (dev-&gt;parent)    /* Needed for USB */</span><br><span class="line">        device_lock(dev-&gt;parent);</span><br><span class="line">    device_lock(dev);</span><br><span class="line">    if (!dev-&gt;driver)</span><br><span class="line">        driver_probe_device(drv, dev);</span><br><span class="line">    device_unlock(dev);</span><br><span class="line">    if (dev-&gt;parent)</span><br><span class="line">        device_unlock(dev-&gt;parent);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/04/c-%E7%BC%96%E7%A8%8B%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bob">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeJun's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/04/c-%E7%BC%96%E7%A8%8B%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">c++编程记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-12-04 14:42:53" itemprop="dateCreated datePublished" datetime="2023-12-04T14:42:53+08:00">2023-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-12-25 17:45:56" itemprop="dateModified" datetime="2023-12-25T17:45:56+08:00">2023-12-25</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>问题1</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">error: cannot convert ‘std::__cxx11::basic_string&lt;char&gt;::iterator’ &#123;aka ‘__gnu_cxx::__normal_iterator&lt;char*, std::__cxx11::basic_string&lt;char&gt; &gt;’&#125; to ‘const char*’</span><br><span class="line">   29 |     FileNameNoTag.erase(std::remove(FileNameNoTag.begin(), FileNameNoTag.end(), &#x27;:&#x27;), FileNameNoTag.end());</span><br><span class="line">      |                                     ~~~~~~~~~~~~~~~~~~~^~</span><br><span class="line">      |                                                        |</span><br><span class="line">      |                                                        std::__cxx11::basic_string&lt;char&gt;::iterator &#123;aka __gnu_cxx::__normal_iterator&lt;char*, std::__cxx11::basic_string&lt;char&gt; &gt;&#125;</span><br><span class="line">In file included from /usr/include/c++/9/cstdio:42,</span><br><span class="line">                 from /usr/include/c++/9/ext/string_conversions.h:43,</span><br><span class="line">                 from /usr/include/c++/9/bits/basic_string.h:6496,</span><br><span class="line">                 from /usr/include/c++/9/string:55,</span><br><span class="line">                 from /usr/include/c++/9/bits/locale_classes.h:40,</span><br><span class="line">                 from /usr/include/c++/9/bits/ios_base.h:41,</span><br><span class="line">                 from /usr/include/c++/9/ios:42,</span><br><span class="line">                 from /usr/include/c++/9/ostream:38,</span><br><span class="line">                 from /usr/include/c++/9/iostream:39,</span><br><span class="line">                 from 2.cpp:2:</span><br><span class="line">/usr/include/stdio.h:146:32: note:   initializing argument 1 of ‘int remove(const char*)’</span><br><span class="line">  146 | extern int remove (const char *__filename) __THROW;</span><br><span class="line">      |                    ~~~~~~~~~~~~^~~~~~~~~~</span><br></pre></td></tr></table></figure>
+
+
+
+<p>问题2：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">In file included from ../drivers/media/i2c/useruto/imx390.c:19:</span><br><span class="line">../include/linux/module.h:137:7: warning: ‘cleanup_module’ specifies less restrictive attribute than its target ‘imx390_serdes_driver_exit’: ‘cold’ [-Wmissing-attributes]</span><br><span class="line">  137 |  void cleanup_module(void) __attribute__((alias(#exitfn)));</span><br><span class="line">      |       ^~~~~~~~~~~~~~</span><br><span class="line">../include/linux/device.h:1509:1: note: in expansion of macro ‘module_exit’</span><br><span class="line"> 1509 | module_exit(__driver##_exit);</span><br><span class="line">      | ^~~~~~~~~~~</span><br><span class="line">../include/linux/i2c.h:780:2: note: in expansion of macro ‘module_driver’</span><br><span class="line">  780 |  module_driver(__i2c_driver, i2c_add_driver, \</span><br><span class="line">      |  ^~~~~~~~~~~~~</span><br><span class="line">../drivers/media/i2c/useruto/imx390.c:104:1: note: in expansion of macro ‘module_i2c_driver’</span><br><span class="line">  104 | module_i2c_driver(imx390_serdes_driver);</span><br><span class="line">      | ^~~~~~~~~~~~~~~~~</span><br><span class="line">In file included from ../drivers/media/i2c/useruto/imx390.c:18:</span><br><span class="line">../drivers/media/i2c/useruto/imx390.c:104:19: note: ‘cleanup_module’ target declared here</span><br><span class="line">  104 | module_i2c_driver(imx390_serdes_driver);</span><br><span class="line">      |                   ^~~~~~~~~~~~~~~~~~~~</span><br><span class="line">../include/linux/device.h:1505:20: note: in definition of macro ‘module_driver’</span><br><span class="line"> 1505 | static void __exit __driver##_exit(void) \</span><br><span class="line">      |                    ^~~~~~~~</span><br><span class="line">../drivers/media/i2c/useruto/imx390.c:104:1: note: in expansion of macro ‘module_i2c_driver’</span><br><span class="line">  104 | module_i2c_driver(imx390_serdes_driver);</span><br><span class="line">      | ^~~~~~~~~~~~~~~~~</span><br><span class="line">In file included from ../drivers/media/i2c/useruto/imx390.c:19:</span><br><span class="line">../include/linux/module.h:131:6: warning: ‘init_module’ specifies less restrictive attribute than its target ‘imx390_serdes_driver_init’: ‘cold’ [-Wmissing-attributes]</span><br><span class="line">  131 |  int init_module(void) __attribute__((alias(#initfn)));</span><br><span class="line">      |      ^~~~~~~~~~~</span><br><span class="line">../include/linux/device.h:1504:1: note: in expansion of macro ‘module_init’</span><br><span class="line"> 1504 | module_init(__driver##_init); \</span><br><span class="line">      | ^~~~~~~~~~~</span><br><span class="line">../include/linux/i2c.h:780:2: note: in expansion of macro ‘module_driver’</span><br><span class="line">  780 |  module_driver(__i2c_driver, i2c_add_driver, \</span><br><span class="line">      |  ^~~~~~~~~~~~~</span><br><span class="line">../drivers/media/i2c/useruto/imx390.c:104:1: note: in expansion of macro ‘module_i2c_driver’</span><br><span class="line">  104 | module_i2c_driver(imx390_serdes_driver);</span><br><span class="line">      | ^~~~~~~~~~~~~~~~~</span><br><span class="line">In file included from ../drivers/media/i2c/useruto/imx390.c:18:</span><br><span class="line">../drivers/media/i2c/useruto/imx390.c:104:19: note: ‘init_module’ target declared here</span><br><span class="line">  104 | module_i2c_driver(imx390_serdes_driver);</span><br><span class="line">      |                   ^~~~~~~~~~~~~~~~~~~~</span><br><span class="line">../include/linux/device.h:1500:19: note: in definition of macro ‘module_driver’</span><br><span class="line"> 1500 | static int __init __driver##_init(void) \</span><br><span class="line">      |                   ^~~~~~~~</span><br><span class="line">../drivers/media/i2c/useruto/imx390.c:104:1: note: in expansion of macro ‘module_i2c_driver’</span><br><span class="line">  104 | module_i2c_driver(imx390_serdes_driver);</span><br><span class="line">      | ^~~~~~~~~~~~~~~~~</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/24/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bob">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeJun's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/24/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/" class="post-title-link" itemprop="url">git使用指导</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-11-24 11:11:06" itemprop="dateCreated datePublished" datetime="2023-11-24T11:11:06+08:00">2023-11-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-04-03 17:02:00" itemprop="dateModified" datetime="2024-04-03T17:02:00+08:00">2024-04-03</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="修改-gitignore文件方法"><a href="#修改-gitignore文件方法" class="headerlink" title="修改.gitignore文件方法"></a>修改.gitignore文件方法</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm -r  --cache 要忽略的文件</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#x27;update .gitignore&#x27; </span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="修改commit的历史信息方法"><a href="#修改commit的历史信息方法" class="headerlink" title="修改commit的历史信息方法"></a>修改commit的历史信息方法</h1><h2 id="情况一：修改最近一次commit的信息"><a href="#情况一：修改最近一次commit的信息" class="headerlink" title="情况一：修改最近一次commit的信息"></a>情况一：修改最近一次commit的信息</h2><ol>
+<li>使用git commit –amend进入命令模式修改信息</li>
+<li>^O对应的快捷键 “ Ctrl + ‘O’ “</li>
+<li>M-D对应的快捷键 “ ALT + ‘D’ ”</li>
+</ol>
+<h2 id="情况二：修改最近更早些的commit的信息"><a href="#情况二：修改最近更早些的commit的信息" class="headerlink" title="情况二：修改最近更早些的commit的信息"></a>情况二：修改最近更早些的commit的信息</h2><ol>
+<li><p>使用git log命令查找要修改的commit信息</p>
+</li>
+<li><p>使用git rebase -i HEAD~N显示要修改的信息, N表示最近的n个commit，结果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">pick 27be481ff feat(ne101): SSBSP-998: Create the ne101 project</span><br><span class="line">pick 679632f15 fix(bug):SSBSP-1018:modify dr mode</span><br><span class="line"></span><br><span class="line"># 变基 27be481ff..584136761 到 27be481ff（2 个提交）</span><br><span class="line">#</span><br><span class="line"># 命令:</span><br><span class="line"># p, pick &lt;提交&gt; = 使用提交</span><br><span class="line"># r, reword &lt;提交&gt; = 使用提交，但修改提交说明</span><br><span class="line"># e, edit &lt;提交&gt; = 使用提交，进入 shell 以便进行提交修补</span><br><span class="line"># s, squash &lt;提交&gt; = 使用提交，但融合到前一个提交</span><br><span class="line"># f, fixup &lt;提交&gt; = 类似于 &quot;squash&quot;，但丢弃提交说明日志</span><br><span class="line"># x, exec &lt;命令&gt; = 使用 shell 运行命令（此行剩余部分）</span><br><span class="line"># b, break = 在此处停止（使用 &#x27;git rebase --continue&#x27; 继续变基）</span><br><span class="line"># d, drop &lt;提交&gt; = 删除提交</span><br><span class="line"># l, label &lt;label&gt; = 为当前 HEAD 打上标记</span><br><span class="line"># t, reset &lt;label&gt; = 重置 HEAD 到该标记</span><br><span class="line"># m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]</span><br><span class="line"># .       创建一个合并提交，并使用原始的合并提交说明（如果没有指定</span><br><span class="line"># .       原始提交，使用注释部分的 oneline 作为提交说明）。使用</span><br><span class="line"># .       -c &lt;提交&gt; 可以编辑提交说明。</span><br><span class="line">#</span><br><span class="line"># 可以对这些行重新排序，将从上至下执行。</span><br><span class="line">#</span><br><span class="line"># 如果您在这里删除一行，对应的提交将会丢失。</span><br><span class="line">#</span><br><span class="line"># 然而，如果您删除全部内容，变基操作将会终止。</span><br><span class="line">#</span><br><span class="line"># 注意空提交已被注释掉</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>注：这里显示pick的顺序是最早的提交显示在上面</strong></p>
+</li>
+<li><p>这里要不要修改的commit对应的pick改为edit或者e，退出保存。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">edit 27be481ff feat(ne101): SSBSP-998: Create the ne101 project</span><br><span class="line">pick 679632f15 fix(bug):SSBSP-1018:modify dr mode</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这里会提示你使用git commit –amend修改信息，改完之后使用git rebase –continue完成</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">nova2021@nova2021-ThinkStation-K-C2:~/work/ne100_r1$ git rebase -i HEAD~3</span><br><span class="line">停止在 27be481ff... feat(ne101): SSBSP-998: Create the ne101 project</span><br><span class="line">您现在可以修补这个提交，使用</span><br><span class="line"></span><br><span class="line">  git commit --amend </span><br><span class="line"></span><br><span class="line">当您对变更感到满意，执行</span><br><span class="line"></span><br><span class="line">  git rebase --continue</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用git push命令将修改提交到远端，如果push中提示下列信息，则执行git push -f origin SSBSP-998（不推荐）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git push origin SSBSP-998</span><br><span class="line">提示下列信息：</span><br><span class="line">To 192.168.3.224:ne100-embedded-dev/ne100_r1.git</span><br><span class="line"> ! [rejected]            SSBSP-998 -&gt; SSBSP-998 (non-fast-forward)</span><br><span class="line">error: 无法推送一些引用到 &#x27;git@192.168.3.224:ne100-embedded-dev/ne100_r1.git&#x27;</span><br><span class="line">提示：更新被拒绝，因为您当前分支的最新提交落后于其对应的远程分支。</span><br><span class="line">提示：再次推送前，先与远程变更合并（如 &#x27;git pull ...&#x27;）。详见</span><br><span class="line">提示：&#x27;git push --help&#x27; 中的 &#x27;Note about fast-forwards&#x27; 小节。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>网上也推荐使用下列操作解决上述问题, 但没有实测</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin  </span><br><span class="line">git rebase origin/SSBSP-998</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="更新远端分支的代码修改方法"><a href="#更新远端分支的代码修改方法" class="headerlink" title="更新远端分支的代码修改方法"></a>更新远端分支的代码修改方法</h1><ol>
+<li>追踪远程分支</li>
+</ol>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev902 origin/SSBSP-902-merge</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>更新代码的修改</p>
+</li>
+<li><p>git add “修改的文件”</p>
+</li>
+<li><p>git commit -m “xxxx”</p>
+</li>
+<li><p>git push origin HEAD:SSBSP-902-merge(在git中，HEAD是一个特殊的指针，它通常指向当前检出的分支的最新提交。HEAD可以被视为一个移动的标签，它始终指向当前所在的提交)</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/24/%E5%8A%A0%E5%87%8F%E4%B8%B2%E5%99%A8%E8%B0%83%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bob">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeJun's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/24/%E5%8A%A0%E5%87%8F%E4%B8%B2%E5%99%A8%E8%B0%83%E8%AF%95/" class="post-title-link" itemprop="url">加减串器调试</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-11-24 10:59:24" itemprop="dateCreated datePublished" datetime="2023-11-24T10:59:24+08:00">2023-11-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-07-29 16:40:41" itemprop="dateModified" datetime="2024-07-29T16:40:41+08:00">2024-07-29</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>fps &#x3D; frames per second<br>bpp &#x3D; bits per pixel</p>
+<h1 id="加串器max96712"><a href="#加串器max96712" class="headerlink" title="加串器max96712"></a>加串器max96712</h1><h2 id="1-mipi时钟，lane数和PCLK的关系"><a href="#1-mipi时钟，lane数和PCLK的关系" class="headerlink" title="1. mipi时钟，lane数和PCLK的关系"></a>1. mipi时钟，lane数和PCLK的关系</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MIPI_CLK x LANE_CNT = PCLK x BPP</span><br></pre></td></tr></table></figure>
+<p>例如：24-bit RGB, 4 lanes, 1GHz Mipi clock, 则PCLK为166.667MHz<br>备注：GMSL1模式下PCLK限制到150MHz</p>
+<h2 id="2-video-Configuration-Link"><a href="#2-video-Configuration-Link" class="headerlink" title="2. video&#x2F;Configuration Link"></a>2. video&#x2F;Configuration Link</h2><ul>
+<li>正常模式：</li>
+<li>默认模式：<br>  video-link：需要一个有效的PCLK才能进行操作<br>  在序列化器中设置AUTO_CLINK位&#x3D;1和SEREN &#x3D; 1，这样当没有PCLK存在时，设备就会在视频链接和配置链接之间自动切换</li>
+</ul>
+<h1 id="解串器max96712寄存器"><a href="#解串器max96712寄存器" class="headerlink" title="解串器max96712寄存器"></a>解串器max96712寄存器</h1><h2 id="1-VPRBS寄存器"><a href="#1-VPRBS寄存器" class="headerlink" title="1. VPRBS寄存器"></a>1. VPRBS寄存器</h2><ul>
+<li><strong>PATGEN_CLK_SRC</strong>: Pattern generator clock source for video PRBS7, PRBS9, PRBS24, checkerboard, and gradient patterns. 0&#x3D;150MHz, 1&#x3D;375MHz (default)</li>
+<li><strong>VIDEO_LOCK</strong>：  Video channel is locked and outputting valid video data</li>
+</ul>
+<h2 id="2-BACKTOP22寄存器"><a href="#2-BACKTOP22寄存器" class="headerlink" title="2. BACKTOP22寄存器"></a>2. BACKTOP22寄存器</h2><ul>
+<li><strong>n_vs_block</strong>: Frame block: Block the first 1-15 frames after video lock</li>
+</ul>
+<h2 id="3-FSYNC-16寄存器"><a href="#3-FSYNC-16寄存器" class="headerlink" title="3. FSYNC_16寄存器"></a>3. FSYNC_16寄存器</h2><ul>
+<li><strong>FSYNC_ERR_CNT</strong>: Frame Sync Error Counter (resets to 0 when read or when FSYNC_LOCKED (0x4b6) goes high)</li>
+</ul>
+<h2 id="4-INTR7-0x2A"><a href="#4-INTR7-0x2A" class="headerlink" title="4. INTR7(0x2A)"></a>4. INTR7(0x2A)</h2><p>0x01–&gt;FSYNC_ERR_FLAG</p>
+<p>[BIT1] :REM_ERR_FLAG: Receives remote side error status (inverse of remote side ERRB pin level)</p>
+<p>[BIT0] :FSYNC_ERR_FLAG: Frame Sync Error Flag, FSYNC_ERR_CNT(00x4b0) &gt;&#x3D; FSYNC_ERR_THR(0x4B1)</p>
+<h2 id="5-VIDEO-RX8-0x108-0x11A-0x12C-0x13E-0x150-0x168-0x17A-0x18C"><a href="#5-VIDEO-RX8-0x108-0x11A-0x12C-0x13E-0x150-0x168-0x17A-0x18C" class="headerlink" title="5. VIDEO_RX8(0x108,0x11A,0x12C,0x13E,0x150,0x168,0x17A,0x18C)"></a>5. VIDEO_RX8(0x108,0x11A,0x12C,0x13E,0x150,0x168,0x17A,0x18C)</h2><p><strong>重点</strong>：关注此寄存器，监测mipi数据状态（0x62）</p>
+<p>[BIT7] :VID_BLK_LEN_ERR:	Video Rx block length error detected</p>
+<p>[BIT6] :VID_LOCK:	Video pipeline locked  0b0: video pipeline not locked 0b1:video pipeline locked</p>
+<p>[BIT5] :VID_PKT_EDT:	Video Rx sufficient packet throughput detection  0b0: insufficient packet throughput   0b1: Sufficient packer throughput</p>
+<p>[BIT4] : VID_SEQ_ERR:	Video Rx sequence error detection. 0b0: No video Rx sequence error detected	0b1: Video Rx sequence error detected</p>
+<h2 id="6-VPRBS-0x1DC-0x1FC-0x21C-0x23C-0x27C-0x29C-0x2DC"><a href="#6-VPRBS-0x1DC-0x1FC-0x21C-0x23C-0x27C-0x29C-0x2DC" class="headerlink" title="6. VPRBS(0x1DC, 0x1FC, 0x21C, 0x23C,0x27C,0x29C,0x2DC)"></a>6. VPRBS(0x1DC, 0x1FC, 0x21C, 0x23C,0x27C,0x29C,0x2DC)</h2><p><strong>重点</strong>：此寄存器监测video channel的lock状态（0x81）</p>
+<p>[BIT 0] :VIDEO_LOCK: Video channel is locker and outputing vailid video data. 0b0: Video channel is not locked 0b1: Video channel is locked.</p>
+<h2 id="7-BACKTOP1-0x400"><a href="#7-BACKTOP1-0x400" class="headerlink" title="7. BACKTOP1(0x400)"></a>7. BACKTOP1(0x400)</h2><p>[BIT7] :CSIPLL3_LOCK: CSIPLL3 lock  0b0: PLL not locked 0b1: PLL locked</p>
+<p>[BIT6] :CSIPLL2_LOCK: CSIPLL2 lock  0b0: PLL not locked 0b1: PLL locked</p>
+<p>[BIT5] :CSIPLL1_LOCK: CSIPLL1 lock  0b0: PLL not locked 0b1: PLL locked</p>
+<p>[BIT4] :CSIPLL2_LOCK: CSIPLL0 lock  0b0: CSI2 0 PLL not locked 0b1: CSI2 0 PLL locked</p>
+<p>[BIT0] :BACKTOP_EN: Backtop write logic enable.</p>
+<h2 id="8-BACKTOP11-0x40A"><a href="#8-BACKTOP11-0x40A" class="headerlink" title="8. BACKTOP11(0x40A)"></a>8. BACKTOP11(0x40A)</h2><p>[BIT7] :cmd_overflow3: Pipe 3 command FIFO overflow</p>
+<p>[BIT6] :cmd_overflow2: Pipe 2 command FIFO overflow</p>
+<p>[BIT5] :cmd_overflow1: Pipe 1 command FIFO overflow</p>
+<p>[BIT4] :cmd_overflow0: Pipe 0 command FIFO overflow</p>
+<p>[BIT3] :LMO_3: Pipe 3 line memory overflow sticky register</p>
+<p>[BIT2] :LMO_3: Pipe 2 line memory overflow sticky register</p>
+<p>[BIT1] :LMO_3: Pipe 1 line memory overflow sticky register</p>
+<p>[BIT0] :LMO_3: Pipe 0 line memory overflow sticky register</p>
+<p>备注：该寄存器正常出头的过程中也存在overflow。</p>
+<h2 id="9-BACKTOP11-0x42A"><a href="#9-BACKTOP11-0x42A" class="headerlink" title="9. BACKTOP11(0x42A)"></a>9. BACKTOP11(0x42A)</h2><p>[BIT7] :cmd_overflow7: Pipe 7 command FIFO overflow</p>
+<p>[BIT6] :cmd_overflow6: Pipe 6 command FIFO overflow</p>
+<p>[BIT5] :cmd_overflow5: Pipe 5 command FIFO overflow</p>
+<p>[BIT4] :cmd_overflow4: Pipe 4 command FIFO overflow</p>
+<p>[BIT3] :LMO_7: Pipe 7 line memory overflow sticky register</p>
+<p>[BIT2] :LMO_6: Pipe 6 line memory overflow sticky register</p>
+<p>[BIT1] :LMO_5: Pipe 5 line memory overflow sticky register</p>
+<p>[BIT0] :LMO_4: Pipe 4 line memory overflow sticky register</p>
+<h2 id="10-BACKTOP25-0x438"><a href="#10-BACKTOP25-0x438" class="headerlink" title="10. BACKTOP25(0x438)"></a>10. BACKTOP25(0x438)</h2><p>[BIT7] :mem_err7: Pipe 7 line memory error</p>
+<p>[BIT6] :mem_err6: Pipe 6 line memory error</p>
+<p>[BIT5] :mem_err5: Pipe 5 line memory error</p>
+<p>[BIT4] :mem_err4: Pipe 4 line memory error</p>
+<p>[BIT3] :mem_err3: Pipe 3 line memory error</p>
+<p>[BIT2] :mem_err2: Pipe 2 line memory error</p>
+<p>[BIT1] :mem_err1: Pipe 1 line memory error</p>
+<p>[BIT0] :mem_err0: Pipe 0 line memory error</p>
+<h2 id="11-FSYNC-22-0x4B6"><a href="#11-FSYNC-22-0x4B6" class="headerlink" title="11. FSYNC_22(0x4B6)"></a>11. FSYNC_22(0x4B6)</h2><p>[BIT7] :FSYNC_LOSS_OF_LOCK: Frame Synchronization Lost Lock</p>
+<p>[BIT6] :FSYNC_LOCKED: Frame Synchronization Lock </p>
+<h2 id="12-MIPI-TX2-0x902-0x942-0x982-0x9c2"><a href="#12-MIPI-TX2-0x902-0x942-0x982-0x9c2" class="headerlink" title="12. MIPI_TX2(0x902, 0x942, 0x982, 0x9c2)"></a>12. MIPI_TX2(0x902, 0x942, 0x982, 0x9c2)</h2><p>[BIT7:0] : STATUS: MIPI Tx Status Register</p>
+<p>– 0bxxxxxxx0: SYNC mode disabled</p>
+<p>– 0bxxxxxxx1: SYNC mode enable</p>
+<p>– 0bxxxxxx0x: Video channels not in-sync</p>
+<p>– 0bxxxxxx1x: Video channels in-sync</p>
+<p>– 0bxxxxx0xx: No loss of video sync</p>
+<p>– 0bxxxxx1xx: Video sync lost after last read of this register or reset</p>
+<p>备注：正常多个相机拼图同步，该寄存器的值为0x03, 自我感觉的低两位必须置位。</p>
+<h2 id="13-MIPI-PHY-19-0x8D0"><a href="#13-MIPI-PHY-19-0x8D0" class="headerlink" title="13. MIPI_PHY_19(0x8D0)"></a>13. MIPI_PHY_19(0x8D0)</h2><p>[BIT7:4] :csi2_tx1_pkt_cnt: Packer count of  CSI2 Controller 1</p>
+<p>[BIT3:0] :csi2_tx1_pkt_cnt: Packer count of  CSI2 Controller 0</p>
+<p>– 0bxxx1: PHY copy 0 FIFO overflow</p>
+<p>– 0bxx1x: PHY copy 0 FIFO underflow</p>
+<p>– 0bx1xx: PHY copy 1 FIFO overflow</p>
+<p>– 0b1xxx: PHY copy 1 FIFO underflow</p>
+<h2 id="14-MIPI-PHY-20-0x8D1"><a href="#14-MIPI-PHY-20-0x8D1" class="headerlink" title="14. MIPI_PHY_20(0x8D1)"></a>14. MIPI_PHY_20(0x8D1)</h2><p>[BIT7:4] :csi2_tx1_pkt_cnt: Packer count of  CSI2 Controller 3</p>
+<p>[BIT3:0] :csi2_tx1_pkt_cnt: Packer count of  CSI2 Controller 2</p>
+<p>– 0bxxx1: PHY copy 0 FIFO overflow</p>
+<p>– 0bxx1x: PHY copy 0 FIFO underflow</p>
+<p>– 0bx1xx: PHY copy 1 FIFO overflow</p>
+<p>– 0b1xxx: PHY copy 1 FIFO underflow</p>
+<h2 id="15-MIPI-PHY-21-0x8D2"><a href="#15-MIPI-PHY-21-0x8D2" class="headerlink" title="15. MIPI_PHY_21(0x8D2)"></a>15. MIPI_PHY_21(0x8D2)</h2><p>[BIT7:4] :phy1_pkt_cnt: Packet count of MIPI PHY1</p>
+<p>[BIT3:0] :phy0_pkt_cnt: Packet count of MIPI PHY0</p>
+<p>– 0bxxx1: PHY copy 0 FIFO overflow</p>
+<p>– 0bxx1x: PHY copy 0 FIFO underflow</p>
+<p>– 0bx1xx: PHY copy 1 FIFO overflow</p>
+<p>– 0b1xxx: PHY copy 1 FIFO underflow</p>
+<h2 id="16-MIPI-PHY-22-0x8D3"><a href="#16-MIPI-PHY-22-0x8D3" class="headerlink" title="16. MIPI_PHY_22(0x8D3)"></a>16. MIPI_PHY_22(0x8D3)</h2><p>[BIT7:4] :phy1_pkt_cnt: Packet count of MIPI PHY1</p>
+<p>[BIT3:0] :phy0_pkt_cnt: Packet count of MIPI PHY0</p>
+<p>– 0bxxx1: PHY copy 0 FIFO overflow</p>
+<p>– 0bxx1x: PHY copy 0 FIFO underflow</p>
+<p>– 0bx1xx: PHY copy 1 FIFO overflow</p>
+<p>– 0b1xxx: PHY copy 1 FIFO underflow</p>
+<h2 id="17-VID-PXL-CRC-ERR-INT-0x45"><a href="#17-VID-PXL-CRC-ERR-INT-0x45" class="headerlink" title="17. VID_PXL_CRC_ERR_INT(0x45)"></a>17. VID_PXL_CRC_ERR_INT(0x45)</h2><p>备注：正常出图也会存在ecc错误。</p>
+<ul>
+<li>调试2wh的2个8m相机（异常绿图），该寄存器值为0x00</li>
+<li>调试2wh的2个2m相机（图像正常），该寄存器值为0xc0</li>
+</ul>
+<h2 id="18-MIPI-PHY-0x8d0-0x8d1-0x8d2-0x8d3"><a href="#18-MIPI-PHY-0x8d0-0x8d1-0x8d2-0x8d3" class="headerlink" title="18. MIPI_PHY(0x8d0, 0x8d1, 0x8d2, 0x8d3)"></a>18. MIPI_PHY(0x8d0, 0x8d1, 0x8d2, 0x8d3)</h2><p>备注：正常出图也会存在copy FIFO overflow</p>
+<ul>
+<li>调试2wh的2个8m相机（异常绿图），该寄存器为reg[0x8d0]&#x3D;0x00, reg[0x8d1]&#x3D;0x00</li>
+<li>调试2wh的2个2m相机（图像正常），该寄存器为reg[0x8d0]&#x3D;0xc0, reg[0x8d1]&#x3D;0x0b</li>
+</ul>
+<h1 id="GMSL1外触发配置"><a href="#GMSL1外触发配置" class="headerlink" title="GMSL1外触发配置"></a>GMSL1外触发配置</h1><p>如果外接一个相机，则只配置对应那一路的gpio(0xb08, 0xc08, 0xd08, 0xe08)，否则多配或少配都会导致加串配置失败。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">0x04 0x29 0x03 0x04 0x61</span><br><span class="line">0x04 0x29 0x03 0x0a 0x63</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x04 0xa0 0x08</span><br><span class="line">0x04 0x29 0x04 0xaf 0x1f</span><br><span class="line">0x04 0x29 0x0b 0x08 0x61</span><br><span class="line">#0x04 0x29 0x0c 0x08 0x61</span><br><span class="line">#0x04 0x29 0x0d 0x08 0x61</span><br><span class="line">#0x04 0x29 0x0e 0x08 0x61</span><br><span class="line"></span><br><span class="line">/*加串器配置默认gpio都是打开的，所以不用配置寄存器0xf*/</span><br><span class="line">#0x03 0x40 0xf 0x83</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="调试问题汇总"><a href="#调试问题汇总" class="headerlink" title="调试问题汇总"></a>调试问题汇总</h1><p><strong>问题1：</strong>在调试外部出发2wh模式的时候，GMSLA, GMSLB两路拼图是正常的，但是GMSLC, GMSLD两路拼图，刚开始图像是实时正常，但是几秒钟后图像变为下图的样子并卡死，没有数据流。</p>
+<p><img src="/home/nova2021/Blog/Hexo/source/picture/1080p_2wh_err1.png"></p>
+<p>外部触发寄存器配置如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">0x04 0x29 0x04 0xa0 0x08</span><br><span class="line">0x04 0x29 0x04 0xa2 0x60</span><br><span class="line">0x04 0x29 0x04 0xaf 0x9f</span><br><span class="line">0x04 0x29 0x03 0x06 0x83</span><br><span class="line">0x04 0x29 0x03 0x3D 0x22</span><br><span class="line"></span><br><span class="line">0x04 0x40 0x02 0xbe 0x00</span><br><span class="line">0x00 1</span><br><span class="line">0x04 0x40 0x02 0xbe 0x10</span><br><span class="line">0x04 0x40 0x03 0x18 0x5E</span><br><span class="line">0x00 0.05</span><br><span class="line">0x04 0x40 0x02 0xd5 0x02</span><br><span class="line">0x04 0x40 0x02 0xd3 0x84</span><br></pre></td></tr></table></figure>
+
+<p><strong>解决办法：</strong>更新几个寄存器的配置如下，外触发相机正常出图：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">0x04 0x29 0x04 0xa0 0x08</span><br><span class="line">0x04 0x29 0x04 0xa2 0x60</span><br><span class="line">0x04 0x29 0x04 0xaf 0x9f</span><br><span class="line">0x04 0x29 0x03 0x06 0x83</span><br><span class="line">0x04 0x29 0x03 0x3D 0x22</span><br><span class="line">0x04 0x29 0x03 0x74 0x22</span><br><span class="line">0x04 0x29 0x03 0xAA 0x22</span><br><span class="line"></span><br><span class="line">0x04 0x40 0x02 0xbe 0x00</span><br><span class="line">0x00 1</span><br><span class="line">0x04 0x40 0x02 0xbe 0x10</span><br><span class="line">0x04 0x40 0x03 0x18 0x5E</span><br><span class="line">0x00 0.05</span><br><span class="line">0x04 0x40 0x02 0xd5 0x02</span><br><span class="line">0x04 0x40 0x02 0xd3 0x84</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>问题2：</strong>2个8m相机拼图，有一个相机的图像被拆分并对掉，图像实时</p>
+<p><img src="/../picture/8m_2wh_error.png"></p>
+<p><strong>问题3：</strong>这个是因为配置0x41a寄存器为0xf0导致的问题</p>
+<p><img src="/../picture/parall_err.png"></p>
+<p><strong>问题3:</strong> 分辨率不匹配的问题</p>
+<p><img src="/home/nova2021/Blog/Hexo/source/picture/lep_1288_968.png"></p>
+<p>原因是分倍率没有配置正确导致，实际分倍率是1280x960， 错误配置成为1288x968</p>
+<p><img src="/../picture/spec.png"></p>
+<p><strong>问题4：</strong>配置MIPI的速率低导致图像异常</p>
+<p><img src="/../picture/image-20240126112433332.png" alt="image-20240126112433332"></p>
+<p><strong>解决办法：</strong>调高MIPI每个lane的传输速率，解决问题。</p>
+<p><strong>基于max96712格式raw12相机调试</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line">0x03 0x28 0x01 0x10</span><br><span class="line">0x00 5</span><br><span class="line">0x04 0x29 0x00 0x13 0x40</span><br><span class="line">0x00 3</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x03 0x00 0x81</span><br><span class="line">0x00 0.002</span><br><span class="line">0x04 0x29 0x00 0x01 0xCD</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x04 0x0B 0x00 </span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x08 0xA0 0x04  </span><br><span class="line">0x04 0x29 0x08 0xA3 0xE4</span><br><span class="line">0x04 0x29 0x08 0xA4 0xE4</span><br><span class="line">#0x04 0x29 0x08 0xA3 0x1b</span><br><span class="line">#0x04 0x29 0x08 0xA4 0x1b</span><br><span class="line">#0x04 0x29 0x00 0x51 0x02</span><br><span class="line">#0x04 0x29 0x00 0x52 0x01</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x04 0x14 0x00</span><br><span class="line">0x04 0x29 0x04 0x17 0x00</span><br><span class="line">0x04 0x29 0x09 0x0A 0xC0</span><br><span class="line">0x04 0x29 0x09 0x4A 0xC0</span><br><span class="line">0x04 0x29 0x09 0x8A 0xC0</span><br><span class="line">0x04 0x29 0x09 0xCA 0xC0</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x04 0x29 0x09 0x0B 0x07</span><br><span class="line">0x04 0x29 0x09 0x0C 0x00</span><br><span class="line">0x04 0x29 0x09 0x0D 0x2c</span><br><span class="line">0x04 0x29 0x09 0x0E 0x2c</span><br><span class="line">0x04 0x29 0x09 0x0F 0x00</span><br><span class="line">0x04 0x29 0x09 0x10 0x00</span><br><span class="line">0x04 0x29 0x09 0x11 0x01</span><br><span class="line">0x04 0x29 0x09 0x12 0x01</span><br><span class="line">0x04 0x29 0x09 0x2D 0x15</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x04 0x29 0x09 0x4B 0x07</span><br><span class="line">0x04 0x29 0x09 0x4C 0x00</span><br><span class="line">0x04 0x29 0x09 0x4D 0x2c</span><br><span class="line">0x04 0x29 0x09 0x4E 0x6c</span><br><span class="line">0x04 0x29 0x09 0x4F 0x00</span><br><span class="line">0x04 0x29 0x09 0x50 0x40</span><br><span class="line">0x04 0x29 0x09 0x51 0x01</span><br><span class="line">0x04 0x29 0x09 0x52 0x41</span><br><span class="line">0x04 0x29 0x09 0x6D 0x15</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x04 0x29 0x09 0x8B 0x07</span><br><span class="line">0x04 0x29 0x09 0x8C 0x00</span><br><span class="line">0x04 0x29 0x09 0x8D 0x2c</span><br><span class="line">0x04 0x29 0x09 0x8E 0xac</span><br><span class="line">0x04 0x29 0x09 0x8F 0x00</span><br><span class="line">0x04 0x29 0x09 0x90 0x80</span><br><span class="line">0x04 0x29 0x09 0x91 0x01</span><br><span class="line">0x04 0x29 0x09 0x92 0x81</span><br><span class="line">0x04 0x29 0x09 0xAD 0x15</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x04 0x29 0x09 0xCB 0x07</span><br><span class="line">0x04 0x29 0x09 0xCC 0x00</span><br><span class="line">0x04 0x29 0x09 0xCD 0x2c</span><br><span class="line">0x04 0x29 0x09 0xCE 0xec</span><br><span class="line">0x04 0x29 0x09 0xCF 0x00</span><br><span class="line">0x04 0x29 0x09 0xD0 0xC0</span><br><span class="line">0x04 0x29 0x09 0xD1 0x01</span><br><span class="line">0x04 0x29 0x09 0xD2 0xC1</span><br><span class="line">0x04 0x29 0x09 0xED 0x15</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x04 0x29 0x08 0xA9 0xC8</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x00 0xF0 0x62</span><br><span class="line">0x04 0x29 0x00 0xF1 0xEA</span><br><span class="line">0x04 0x29 0x00 0xF4 0x0F</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x04 0x0C 0x00</span><br><span class="line">0x04 0x29 0x04 0x0D 0x00</span><br><span class="line">0x04 0x29 0x04 0x0E 0xAC</span><br><span class="line">0x04 0x29 0x04 0x0F 0xBC</span><br><span class="line">0x04 0x29 0x04 0x10 0xB0</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x04 0x11 0x48</span><br><span class="line">0x04 0x29 0x04 0x12 0x20</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x04 0x15 0xf9</span><br><span class="line">0x04 0x29 0x04 0x18 0xf9</span><br><span class="line">0x00 0.002</span><br><span class="line">0x04 0x29 0x04 0x1B 0x39</span><br><span class="line">0x04 0x29 0x04 0x1E 0x39</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x00 0x06 0xf2</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x00 0x04 0x0F</span><br><span class="line">0x04 0x29 0x04 0x0B 0x42</span><br><span class="line">#0x04 0x29 0x04 0x0B 0x62</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line">0x03 0x28 0x01 0x1f</span><br><span class="line">0x00 5</span><br><span class="line"></span><br><span class="line">#0x04 0x40 0x02 0xD3 0x10</span><br><span class="line">#0x04 0x40 0x03 0x30 0x00</span><br><span class="line">#0x04 0x40 0x03 0x31 0x33</span><br><span class="line">#0x04 0x40 0x03 0x32 0xEE</span><br><span class="line">#0x04 0x40 0x03 0x33 0xE4</span><br><span class="line">#0x04 0x40 0x03 0x08 0x63</span><br><span class="line">#0x04 0x40 0x03 0x11 0x30</span><br><span class="line">#0x04 0x40 0x00 0x02 0x33</span><br><span class="line"></span><br><span class="line">0x04 0x40 0x03 0x18 0x6c</span><br><span class="line">#0x04 0x40 0x03 0x16 0x52</span><br><span class="line">0x00 0.05</span><br><span class="line"></span><br><span class="line">0xFF</span><br></pre></td></tr></table></figure>
+<p><strong>raw格式的图像</strong><br><img src="/../picture/raw12.png" alt="image-20240126112433332"></p>
+<h1 id="常见采图命令"><a href="#常见采图命令" class="headerlink" title="常见采图命令"></a>常见采图命令</h1><ul>
+<li><p>Gstreamer命令采图</p>
+<ol>
+<li><p>文件存盘</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename1=video1_$(date +%Y%m%d)_$(date +%H%M%S).yuv</span><br><span class="line">filename0=video0_$(date +%Y%m%d)_$(date +%H%M%S).yuv</span><br><span class="line">gst-launch-1.0 v4l2src num-buffers=450 device=/dev/video0 ! &quot;video/x-raw,format=UYVY,width=1280,height=960,framerate=30/1&quot; ! filesink location=$&#123;filename0&#125; &amp;</span><br><span class="line">gst-launch-1.0 v4l2src num-buffers=450 device=/dev/video1 ! &quot;video/x-raw,format=UYVY,width=1280,height=960,framerate=30/1&quot; ! filesink location=$&#123;filename1&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>hdmi预览</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gst-launch-1.0 v4l2src device=/dev/video$1 ! &quot;video/x-raw,format=UYVY,width=$2,height=$3,framerate=30/1&quot; ! xvimagesink -ev sync=false</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>ffplay播放视频</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -video_size 7680x1080 -autoexit -pix_fmt yuv422p camera.yuv</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>调试2个2WH模式的相机问题。</p>
+<p><img src="/home/nova2021/Blog/Hexo/source/picture/image_1.png" alt="图像异常"></p>
+<p>1. </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/22/uart%E6%A8%A1%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bob">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeJun's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/22/uart%E6%A8%A1%E5%9D%97/" class="post-title-link" itemprop="url">uart测试程序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-11-22 15:34:17" itemprop="dateCreated datePublished" datetime="2023-11-22T15:34:17+08:00">2023-11-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-04-22 14:53:34" itemprop="dateModified" datetime="2024-04-22T14:53:34+08:00">2024-04-22</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="UART-RS232-串口协议"><a href="#UART-RS232-串口协议" class="headerlink" title="UART(RS232) 串口协议"></a>UART(RS232) 串口协议</h1><h1 id="串口应用开发"><a href="#串口应用开发" class="headerlink" title="串口应用开发"></a>串口应用开发</h1><h2 id="1-串口奇偶校验配置"><a href="#1-串口奇偶校验配置" class="headerlink" title="1. 串口奇偶校验配置"></a>1. 串口奇偶校验配置</h2><ul>
+<li>奇校验<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">newtio.c_cflag |= PARENB;</span><br><span class="line">newtio.c_cflag |= PARODD;</span><br><span class="line">newtio.c_iflag |= (INPCK | ISTRIP);</span><br></pre></td></tr></table></figure></li>
+<li>偶校验<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">newtio.c_iflag |= (INPCK | ISTRIP);</span><br><span class="line">newtio.c_cflag |= PARENB;</span><br><span class="line">newtio.c_cflag &amp;= ~PARODD;</span><br></pre></td></tr></table></figure></li>
+<li>无校验<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newtio.c_cflag &amp;= ~PARENB;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="2-设置停止位宽"><a href="#2-设置停止位宽" class="headerlink" title="2. 设置停止位宽"></a>2. 设置停止位宽</h2><ul>
+<li>1位停止位<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newtio.c_cflag &amp;=  ~CSTOPB;</span><br></pre></td></tr></table></figure></li>
+<li>2位停止位<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newtio.c_cflag |=  CSTOPB;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="C语言实例"><a href="#C语言实例" class="headerlink" title="C语言实例"></a>C语言实例</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br></pre></td><td class="code"><pre><span class="line">int UART_Open(int fd,char* port)</span><br><span class="line">&#123;</span><br><span class="line">        fd = open(port, O_RDWR|O_NOCTTY|O_NDELAY|O_NONBLOCK);</span><br><span class="line">        if (-1 == fd)&#123;</span><br><span class="line">                clog_report((char *)&quot;Can&#x27;t Open Serial Port&quot;);</span><br><span class="line">                cerr_report(Openerr);</span><br><span class="line">                return -1;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if(fcntl(fd, F_SETFL, 0) &lt; 0)&#123;</span><br><span class="line">                clog_report((char *)&quot;fcntl failed!\n&quot;);</span><br><span class="line">                cerr_report(Fcntlerr);</span><br><span class="line">                return -1;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">                //    printf(&quot;fcntl=%d\n&quot;,fcntl(fd, F_SETFL,0));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if(0 == isatty(STDIN_FILENO))&#123;</span><br><span class="line">                clog_report((char *)&quot;standard input is not a terminal device\n&quot;);</span><br><span class="line">                //cerr_report(Nstdindev);</span><br><span class="line">                //return -1;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return fd;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void UART_Close(int fd)</span><br><span class="line">&#123;</span><br><span class="line">        close(fd);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int UART_Set(int fd,int speed,int flow_ctrl,int databits,int stopbits,int parity)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">        int i;</span><br><span class="line">        int speed_arr[] = &#123; B115200, B38400, B19200, B9600, B4800, B2400, B1200, B300,</span><br><span class="line">                B38400, B19200, B9600, B4800, B2400, B1200, B300</span><br><span class="line">        &#125;;</span><br><span class="line">        int name_arr[] = &#123;</span><br><span class="line">                115200, 38400, 19200, 9600, 4800, 2400, 1200, 300, 38400,</span><br><span class="line">                19200, 9600, 4800, 2400, 1200, 300</span><br><span class="line">        &#125;;</span><br><span class="line">        struct termios options;</span><br><span class="line">        int arrlen = sizeof(speed_arr) / sizeof(int);</span><br><span class="line"></span><br><span class="line">        if(tcgetattr( fd,&amp;options) != 0)&#123;</span><br><span class="line">                perror(&quot;SetupSerial 1&quot;);</span><br><span class="line">                return(-1);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        for(i= 0;i &lt; arrlen;i++) &#123;</span><br><span class="line">                if (speed == name_arr[i]) &#123;</span><br><span class="line">                        cfsetispeed(&amp;options, speed_arr[i]);</span><br><span class="line">                        cfsetospeed(&amp;options, speed_arr[i]);</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        options.c_cflag |= CLOCAL;</span><br><span class="line">        options.c_cflag |= CREAD;</span><br><span class="line">        switch(flow_ctrl)&#123;</span><br><span class="line">                case 0 :</span><br><span class="line">                        options.c_cflag &amp;= ~CRTSCTS;</span><br><span class="line">                        break;</span><br><span class="line">                case 1 :</span><br><span class="line">                        options.c_cflag |= CRTSCTS;</span><br><span class="line">                        break;</span><br><span class="line">                case 2 :</span><br><span class="line">                        options.c_cflag |= IXON | IXOFF | IXANY;</span><br><span class="line">                        break;</span><br><span class="line">        &#125;</span><br><span class="line">        options.c_cflag &amp;= ~CSIZE;</span><br><span class="line">        switch (databits)&#123;</span><br><span class="line">                case 5 :</span><br><span class="line">                        options.c_cflag |= CS5;</span><br><span class="line">                        break;</span><br><span class="line">                case 6    :</span><br><span class="line">                        options.c_cflag |= CS6;</span><br><span class="line">                        break;</span><br><span class="line">                case 7    :</span><br><span class="line">                        options.c_cflag |= CS7;</span><br><span class="line">                        break;</span><br><span class="line">                case 8:</span><br><span class="line">                        options.c_cflag |= CS8;</span><br><span class="line">                        break;</span><br><span class="line">                default:</span><br><span class="line">                        clog_report((char *)&quot;Unsupported data size\n&quot;);</span><br><span class="line">                        return (-1);</span><br><span class="line">        &#125;</span><br><span class="line">        switch (parity) &#123;</span><br><span class="line">                case &#x27;n&#x27;:</span><br><span class="line">                case &#x27;N&#x27;:</span><br><span class="line">                        options.c_cflag &amp;= ~PARENB;</span><br><span class="line">                        options.c_iflag &amp;= ~INPCK;</span><br><span class="line">                        break;</span><br><span class="line">                case &#x27;o&#x27;:</span><br><span class="line">                case &#x27;O&#x27;:</span><br><span class="line">                        options.c_cflag |= (PARODD | PARENB);</span><br><span class="line">                        options.c_iflag |= INPCK;</span><br><span class="line">                        break;</span><br><span class="line">                case &#x27;e&#x27;:</span><br><span class="line">                case &#x27;E&#x27;:</span><br><span class="line">                        options.c_cflag |= PARENB;</span><br><span class="line">                        options.c_cflag &amp;= ~PARODD;</span><br><span class="line">                        options.c_iflag |= INPCK;</span><br><span class="line">                        break;</span><br><span class="line">                case &#x27;s&#x27;:</span><br><span class="line">                case &#x27;S&#x27;:</span><br><span class="line">                        options.c_cflag &amp;= ~PARENB;</span><br><span class="line">                        options.c_cflag &amp;= ~CSTOPB;</span><br><span class="line">                        break;</span><br><span class="line">                default:</span><br><span class="line">                        clog_report((char *)&quot;Unsupported parity&quot;);</span><br><span class="line">                        return (-1);</span><br><span class="line">        &#125;</span><br><span class="line">        switch (stopbits)&#123;</span><br><span class="line">                case 1:</span><br><span class="line">                        options.c_cflag &amp;= ~CSTOPB;</span><br><span class="line">                        break;</span><br><span class="line">                case 2:</span><br><span class="line">                        options.c_cflag |= CSTOPB;</span><br><span class="line">                        break;</span><br><span class="line">                default:</span><br><span class="line">                        clog_report((char *)&quot;Unsupported stop bits&quot;);</span><br><span class="line">                        return (-1);</span><br><span class="line">        &#125;</span><br><span class="line">        options.c_oflag &amp;= ~OPOST;</span><br><span class="line">        options.c_cc[VTIME] = 0;</span><br><span class="line">        options.c_cc[VMIN] = 0;</span><br><span class="line"></span><br><span class="line">        tcflush(fd,TCIFLUSH);</span><br><span class="line"></span><br><span class="line">        if (tcsetattr(fd,TCSANOW,&amp;options) != 0)</span><br><span class="line">        &#123;</span><br><span class="line">                perror(&quot;com set error!/n&quot;);</span><br><span class="line">                return -1;</span><br><span class="line">        &#125;</span><br><span class="line">        return 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int UART_Init(int fd, int speed,int flow_ctrlint ,int databits,int stopbits,char parity)</span><br><span class="line">&#123;</span><br><span class="line">        if (-1 == UART_Set(fd,speed,flow_ctrlint,databits,stopbits,parity)) &#123;</span><br><span class="line">                cerr_report(Initerr);</span><br><span class="line">                return -1;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">                return 1;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int UART_Recv(int fd, char *rcv_buf,int data_len)</span><br><span class="line">&#123;</span><br><span class="line">        int len = 0;</span><br><span class="line">        fd_set fs_read;</span><br><span class="line"></span><br><span class="line">        struct timeval time;</span><br><span class="line"></span><br><span class="line">        FD_ZERO(&amp;fs_read);</span><br><span class="line">        FD_SET(fd,&amp;fs_read);</span><br><span class="line"></span><br><span class="line">        time.tv_sec = 0;</span><br><span class="line">        time.tv_usec = 300000;</span><br><span class="line"></span><br><span class="line">        select(fd+1,&amp;fs_read,NULL,NULL,&amp;time);</span><br><span class="line"></span><br><span class="line">        if(FD_ISSET(fd, &amp;fs_read))&#123;</span><br><span class="line">                len = read(fd,rcv_buf,data_len);</span><br><span class="line">                return len;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">                cerr_report(Recverr);</span><br><span class="line">                return -1;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int UART_Send(int fd, char *send_buf,int data_len)</span><br><span class="line">&#123;</span><br><span class="line">        int ret;</span><br><span class="line"></span><br><span class="line">        ret = write(fd,send_buf,data_len);</span><br><span class="line">        if (data_len == ret )&#123;</span><br><span class="line">                return ret;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">                tcflush(fd,TCOFLUSH);</span><br><span class="line">                cerr_report(Senderr);</span><br><span class="line">                return -1;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int uart3_loopback(void* arg, int *failcnt)</span><br><span class="line">&#123;</span><br><span class="line">        int fd_tx = -1;</span><br><span class="line">        int ret, i;</span><br><span class="line">        char snd_buf[512] = &#123;0&#125;;</span><br><span class="line">        char rcv_buf[512] = &#123;0&#125;;</span><br><span class="line">        char cmd[1024] = &#123;0&#125;;</span><br><span class="line">        int data_len = 0;</span><br><span class="line">        struct uart_data data = *(struct uart_data *)arg;</span><br><span class="line"></span><br><span class="line">        for(i=0; i&lt;99; i++)</span><br><span class="line">        &#123;</span><br><span class="line">                switch(i%2) &#123;</span><br><span class="line">                        case 0:</span><br><span class="line">                                snd_buf[i] = &#x27;c&#x27;;</span><br><span class="line">                                break;</span><br><span class="line">                        case 1:</span><br><span class="line">                                snd_buf[i] = &#x27;5&#x27;;</span><br><span class="line">                                break;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        snd_buf[i] = &#x27;\n&#x27;;</span><br><span class="line"></span><br><span class="line">        fd_tx = UART_Open(fd_tx, data.uart_tx);</span><br><span class="line">        if(-1 == fd_tx)&#123;</span><br><span class="line">                sprintf(cmd, &quot;open %s error&quot;, data.uart_tx);</span><br><span class="line">                clog_report(cmd);</span><br><span class="line">                (*failcnt)++;</span><br><span class="line">                return -1;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ret = UART_Init(fd_tx,data.baudrate,1,8,1,&#x27;N&#x27;);</span><br><span class="line">        if (-1 == fd_tx)&#123;</span><br><span class="line">                sprintf(cmd, &quot;Set %s Port Error&quot;,  data.uart_tx);</span><br><span class="line">                clog_report(cmd);</span><br><span class="line">                (*failcnt)++;</span><br><span class="line">                return -1;</span><br><span class="line">        &#125;</span><br><span class="line">        data_len = strlen(snd_buf);</span><br><span class="line"></span><br><span class="line">        memset(rcv_buf,0,sizeof(rcv_buf));</span><br><span class="line">        tcflush(fd_tx,TCIOFLUSH);</span><br><span class="line"></span><br><span class="line">        ret = UART_Send(fd_tx,snd_buf, data_len);</span><br><span class="line">        if(-1 == ret)&#123;</span><br><span class="line">                sprintf(cmd, &quot;%s(rs422) send failed!&quot;, data.uart_tx);</span><br><span class="line">                clog_report(cmd);</span><br><span class="line">                (*failcnt)++;</span><br><span class="line">                return -1;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">                sprintf(cmd, &quot;port:%s(rs422)[@%ld] send data: %s&quot;, data.uart_tx, data.baudrate, snd_buf);</span><br><span class="line">                clog_report(cmd);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        usleep(600000);</span><br><span class="line"></span><br><span class="line">        ret = UART_Recv(fd_tx, rcv_buf, data_len);</span><br><span class="line">        if( ret &gt; 0)&#123;</span><br><span class="line">                sprintf(cmd, &quot;port:%s(rs422)[@%ld] receive data: %s&quot;, data.uart_tx, data.baudrate, rcv_buf);</span><br><span class="line">                clog_report(cmd);</span><br><span class="line">        &#125;</span><br><span class="line">        tcflush(fd_tx,TCIOFLUSH);</span><br><span class="line"></span><br><span class="line">        ret = strncmp(snd_buf, rcv_buf, data_len);</span><br><span class="line">        if (ret == 0) &#123;</span><br><span class="line">                sprintf(cmd, &quot;Test[@%ld] %s(rs422) ok ...&quot;, data.baudrate, data.uart_tx);</span><br><span class="line">                clog_report(cmd);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">                sprintf(cmd, &quot;Test[@%ld] %s(rs422) failed ...&quot;, data.baudrate, data.uart_tx);</span><br><span class="line">                clog_report(cmd);</span><br><span class="line">                (*failcnt)++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        UART_Close(fd_tx);</span><br><span class="line"></span><br><span class="line">        return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int uart1_uart2_txrx(void* arg, int *failcnt)</span><br><span class="line">&#123;</span><br><span class="line">                int fd_tx = -1;</span><br><span class="line">                int fd_rx = -1;</span><br><span class="line">                int ret;</span><br><span class="line">                char snd_buf[512] = &#123;0&#125;;</span><br><span class="line">                char rcv_buf[512] = &#123;0&#125;;</span><br><span class="line">                char cmd[1024] = &#123;0&#125;;</span><br><span class="line">                int data_len = 0;</span><br><span class="line">                unsigned long i;</span><br><span class="line">                struct uart_data data = *(struct uart_data *)arg;</span><br><span class="line"></span><br><span class="line">                for(i=0; i&lt;99; i++)</span><br><span class="line">                &#123;</span><br><span class="line">                        switch(i%2) &#123;</span><br><span class="line">                                case 0:</span><br><span class="line">                                        snd_buf[i] = &#x27;c&#x27;;</span><br><span class="line">                                        break;</span><br><span class="line">                                case 1:</span><br><span class="line">                                        snd_buf[i] = &#x27;5&#x27;;</span><br><span class="line">                                        break;</span><br><span class="line">                        &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                snd_buf[i] = &#x27;\n&#x27;;</span><br><span class="line"></span><br><span class="line">                fd_tx = UART_Open(fd_tx, data.uart_tx);</span><br><span class="line">                if(-1 == fd_tx)&#123;</span><br><span class="line">                        sprintf(cmd, &quot;open %s error&quot;, data.uart_tx);</span><br><span class="line">                        clog_report(cmd);</span><br><span class="line">                        (*failcnt)++;</span><br><span class="line">                        return -1;</span><br><span class="line">                &#125;</span><br><span class="line">                ret = UART_Init(fd_tx,data.baudrate,1,8,1,&#x27;N&#x27;);</span><br><span class="line">                if (-1 == fd_tx)&#123;</span><br><span class="line">                        sprintf(cmd, &quot;Set %s Port Error&quot;,  data.uart_tx);</span><br><span class="line">                        clog_report(cmd);</span><br><span class="line">                        (*failcnt)++;</span><br><span class="line">                        return -1;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                fd_rx = UART_Open(fd_rx,data.uart_rx);</span><br><span class="line">                if(-1 == fd_rx)&#123;</span><br><span class="line">                        sprintf(cmd, &quot;open %s error&quot;, data.uart_rx);</span><br><span class="line">                        clog_report(cmd);</span><br><span class="line">                        (*failcnt)++;</span><br><span class="line">                        return -1;</span><br><span class="line">                &#125;</span><br><span class="line">                ret = UART_Init(fd_rx,data.baudrate,1,8,1,&#x27;N&#x27;);</span><br><span class="line">                if (-1 == fd_rx)&#123;</span><br><span class="line">                        sprintf(cmd, &quot;Set %s Port Error&quot;,  data.uart_rx);</span><br><span class="line">                        clog_report(cmd);</span><br><span class="line">                        (*failcnt)++;</span><br><span class="line">                        return -1;</span><br><span class="line">                &#125;</span><br><span class="line">                data_len = strlen(snd_buf);</span><br><span class="line"></span><br><span class="line">                memset(rcv_buf,0,sizeof(rcv_buf));</span><br><span class="line">                tcflush(fd_tx,TCIOFLUSH);</span><br><span class="line"></span><br><span class="line">                ret = UART_Send(fd_tx, snd_buf, data_len);</span><br><span class="line">                if(-1 == ret)&#123;</span><br><span class="line">                        sprintf(cmd, &quot;%s write error!&quot;, data.uart_tx);</span><br><span class="line">                        clog_report(cmd);</span><br><span class="line">                        (*failcnt)++;</span><br><span class="line">                        return -1;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                        sprintf(cmd, &quot;port:%s(rs232a)[@%ld] send data: %s&quot;, data.uart_tx, data.baudrate, snd_buf);</span><br><span class="line">                        clog_report(cmd);</span><br><span class="line">                &#125;</span><br><span class="line">                usleep(600000);</span><br><span class="line"></span><br><span class="line">                ret = UART_Recv(fd_rx, rcv_buf,data_len);</span><br><span class="line">                if( ret &gt; 0)&#123;</span><br><span class="line">                        sprintf(cmd, &quot;port:%s(rs232b)[@%ld] receive data: %s&quot;, data.uart_rx, data.baudrate, rcv_buf);</span><br><span class="line">                        clog_report(cmd);</span><br><span class="line">                &#125;</span><br><span class="line">                tcflush(fd_rx,TCIOFLUSH);</span><br><span class="line"></span><br><span class="line">                ret = strncmp(snd_buf, rcv_buf, data_len);</span><br><span class="line">                if (ret == 0) &#123;</span><br><span class="line">                        sprintf(cmd, &quot;Test(@%ld) %s(rs232a) ==&gt; %s(rs232b) ok ...&quot;, data.baudrate, data.uart_tx, data.uart_rx);</span><br><span class="line">                        clog_report(cmd);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                        sprintf(cmd, &quot;Test(@%ld) %s(rs232a) ==&gt; %s(rs232b) failed ...&quot;, data.baudrate, data.uart_tx, data.uart_rx);</span><br><span class="line">                        clog_report(cmd);</span><br><span class="line">                        (*failcnt)++;</span><br><span class="line">                        return -1;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                //loopback</span><br><span class="line">                memset(rcv_buf,0,sizeof(rcv_buf));</span><br><span class="line">                tcflush(fd_rx,TCIOFLUSH);</span><br><span class="line"></span><br><span class="line">                ret = UART_Send(fd_rx, snd_buf, data_len);</span><br><span class="line">                if(-1 == ret)&#123;</span><br><span class="line">                        sprintf(cmd, &quot;write back to [%s] error!\n&quot;, data.uart_rx);</span><br><span class="line">                        clog_report(cmd);</span><br><span class="line">                        (*failcnt)++;</span><br><span class="line">                        return -1;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                        sprintf(cmd, &quot;port:%s(rs232b)[@%ld] send data: %s\n&quot;, data.uart_rx, data.baudrate, snd_buf);</span><br><span class="line">                        clog_report(cmd);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                usleep(600000);</span><br><span class="line"></span><br><span class="line">                ret = UART_Recv(fd_tx, rcv_buf, data_len);</span><br><span class="line">                if(ret &gt; 0)&#123;</span><br><span class="line">                        sprintf(cmd, &quot;port:%s(rs232a)[@%ld] receive data: %s\n&quot;, data.uart_tx, data.baudrate, rcv_buf);</span><br><span class="line">                        clog_report(cmd);</span><br><span class="line">                &#125;</span><br><span class="line">                tcflush(fd_tx,TCIOFLUSH);</span><br><span class="line"></span><br><span class="line">                ret = strncmp(snd_buf, rcv_buf, data_len);</span><br><span class="line">                if (ret == 0) &#123;</span><br><span class="line">                        sprintf(cmd, &quot;Test(@%ld) %s(rs232b) ==&gt; %s(rs232a) ok ...&quot;, data.baudrate, data.uart_rx, data.uart_tx);</span><br><span class="line">                        clog_report(cmd);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                        sprintf(cmd, &quot;Test(@%ld) %s(rs232b) ==&gt; %s(rs232a) failed ...&quot;, data.baudrate, data.uart_rx, data.uart_tx);</span><br><span class="line">                        clog_report(cmd);</span><br><span class="line">                        (*failcnt)++;</span><br><span class="line">                        return -1;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                UART_Close(fd_tx);</span><br><span class="line">                UART_Close(fd_rx);</span><br><span class="line"></span><br><span class="line">                return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(int argc, const char *argv[])</span><br><span class="line">&#123;</span><br><span class="line">        int ret;</span><br><span class="line">        struct uart_data *uart_data_test = NULL;</span><br><span class="line">        int baudrate[3] = &#123;460800, 115200, 9600&#125;;</span><br><span class="line">        char result[20] = &#123;0&#125;;</span><br><span class="line">        int i, failcnt = 0;</span><br><span class="line">        int cnt = atoi(argv[1]);</span><br><span class="line">        int times = 1;</span><br><span class="line">        char msg[100] = &#123;0&#125;;</span><br><span class="line">        struct timeval start, end;</span><br><span class="line">        double maxtime=0,mintime=1000000,tms=0,full_time=0;</span><br><span class="line"></span><br><span class="line">        ret = clog_init((char *)&quot;UART_001&quot;, 2);</span><br><span class="line">        if (ret != 0)</span><br><span class="line">        &#123;</span><br><span class="line">                printf(&quot;test_uart log_init failed\n&quot;);</span><br><span class="line">                return 0;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        uart_data_test = (struct uart_data *)malloc(sizeof(struct uart_data));</span><br><span class="line">        while(cnt) &#123;</span><br><span class="line">                clog_report((char *)&quot;-------------------------------------------------------------------&quot;);</span><br><span class="line">                sprintf(msg, &quot;重复测试总轮数: %d 当前轮数: %d&quot;, atoi(argv[1]), times++);</span><br><span class="line">                clog_report(msg);</span><br><span class="line">                cnt--;</span><br><span class="line"></span><br><span class="line">                gettimeofday(&amp;start, NULL);</span><br><span class="line">                for (i=0; i &lt; 3; i++) &#123;</span><br><span class="line">                        //memset(uart_data_test-&gt;uart_tx, 0, 64);</span><br><span class="line">                        //memset(uart_data_test-&gt;uart_rx, 0, 64);</span><br><span class="line">                        //strcpy(uart_data_test-&gt;uart_tx, &quot;/dev/ttyTHS0&quot;);</span><br><span class="line">                        //strcpy(uart_data_test-&gt;uart_rx, &quot;/dev/ttyTHS1&quot;);</span><br><span class="line">                        //uart_data_test-&gt;baudrate = baudrate[i];</span><br><span class="line"></span><br><span class="line">                        //ret = uart1_uart2_txrx((void*)uart_data_test, &amp;failcnt);</span><br><span class="line">                        //if (ret)</span><br><span class="line">                        //      goto finish;</span><br><span class="line"></span><br><span class="line">                        memset(uart_data_test-&gt;uart_tx, 0, 64);</span><br><span class="line">                        strcpy(uart_data_test-&gt;uart_tx, &quot;/dev/ttyTHS4&quot;);</span><br><span class="line">                        uart_data_test-&gt;baudrate = baudrate[i];</span><br><span class="line"></span><br><span class="line">                        ret = uart3_loopback((void *)uart_data_test, &amp;failcnt);</span><br><span class="line">                        if (ret)</span><br><span class="line">                                goto finish;</span><br><span class="line">                &#125;</span><br><span class="line">                gettimeofday(&amp;end, NULL);</span><br><span class="line">                tms = ((end.tv_sec - start.tv_sec) * 1000000 + (end.tv_usec - start.tv_usec)) / 1000;</span><br><span class="line"></span><br><span class="line">                sprintf(msg, &quot;测试耗时: %lf ms&quot;, tms);</span><br><span class="line">                clog_report(msg);</span><br><span class="line">                maxtime=std::max(maxtime,tms);</span><br><span class="line">                mintime=std::min(mintime,tms);</span><br><span class="line">                full_time+=tms;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">finish:</span><br><span class="line">        sprintf(msg, &quot;最长测试用时: %lf 最短测试用时: %lf 总测试用时: %lf&quot;, maxtime, mintime, full_time);</span><br><span class="line">        clog_report(msg);</span><br><span class="line">        sprintf(msg, &quot;重复测试总轮数: %d 成功轮数: %d 失败轮数: %d&quot;, atoi(argv[1]), atoi(argv[1]) - cnt - failcnt, failcnt);</span><br><span class="line">        clog_report(msg);</span><br><span class="line">        clog_report((char *)&quot;-------------------------------------------------------------------&quot;);</span><br><span class="line">        free(uart_data_test);</span><br><span class="line"></span><br><span class="line">        if(failcnt)</span><br><span class="line">                sprintf(result, &quot;failure&quot;);</span><br><span class="line">        else</span><br><span class="line">                sprintf(result, &quot;pass&quot;);</span><br><span class="line"></span><br><span class="line">        clog_done(result);</span><br><span class="line"></span><br><span class="line">        return Success;</span><br><span class="line">&#125;        </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="python实例"><a href="#python实例" class="headerlink" title="python实例"></a>python实例</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">import subprocess</span><br><span class="line">import os</span><br><span class="line">import serial  </span><br><span class="line">import time  </span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">#打开串口  </span><br><span class="line">ser1 = serial.Serial(&#x27;/dev/ttyS1&#x27;, 9600, timeout=1)  </span><br><span class="line">ser2 = serial.Serial(&#x27;/dev/ttyS2&#x27;, 9600, timeout=1)  </span><br><span class="line">  </span><br><span class="line">#发送数据  </span><br><span class="line">def send_data(ser, data):  </span><br><span class="line">    ser.write(data.encode())  </span><br><span class="line">  </span><br><span class="line">#接收数据  </span><br><span class="line">def receive_data(ser):  </span><br><span class="line">    while True:  </span><br><span class="line">        data = ser.readline().decode().strip()  </span><br><span class="line">        if data:  </span><br><span class="line">            return data  </span><br><span class="line">  </span><br><span class="line">#统计中断数 </span><br><span class="line">#ttys1Result1 = subprocess.check_output(&quot;cat /proc/interrupts | grep ttyS1 | awk &#x27;&#123;print $2&#125;&#x27;&quot;, shell=True)</span><br><span class="line">#ttys2Result1 = subprocess.check_output(&quot;cat /proc/interrupts | grep ttyS2 | awk &#x27;&#123;print $2&#125;&#x27;&quot;, shell=True)</span><br><span class="line">#print(ttys1Result1.decode())</span><br><span class="line">#print(ttys2Result1.decode())</span><br><span class="line"></span><br><span class="line">#发送开始时间</span><br><span class="line">start_time = time.time()</span><br><span class="line">#9600</span><br><span class="line">send_data(ser1, &#x27;c5c5&#x27;*240)  </span><br><span class="line">rcvData = receive_data(ser2)  </span><br><span class="line">if rcvData == &#x27;c5c5&#x27;*240:</span><br><span class="line">    print(&quot;测试通过&quot;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;测试失败&quot;)</span><br><span class="line"></span><br><span class="line">#发送结束时间</span><br><span class="line">end_time = time.time()</span><br><span class="line"></span><br><span class="line">#统计结束后的中断数</span><br><span class="line">#ttys1Result2 = subprocess.check_output(&quot;cat /proc/interrupts | grep ttyS1 | awk &#x27;&#123;print $2&#125;&#x27;&quot;, shell=True)</span><br><span class="line">#ttys2Result2 = subprocess.check_output(&quot;cat /proc/interrupts | grep ttyS2 | awk &#x27;&#123;print $2&#125;&#x27;&quot;, shell=True)</span><br><span class="line">#print(ttys1Result2.decode())</span><br><span class="line">#print(ttys2Result2.decode())</span><br><span class="line">#result1=int(ttys1Result2) - int(ttys1Result1)</span><br><span class="line">#print(result1)</span><br><span class="line">#result2=int(ttys2Result2) - int(ttys2Result1)</span><br><span class="line">#print(result2)</span><br><span class="line">#print(f&quot;发送数据到的时间: &#123;end_time - start_time&#125;秒&quot;)</span><br><span class="line">  </span><br><span class="line">#关闭串口  </span><br><span class="line">ser1.close()  </span><br><span class="line">ser2.close()</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/08/shell%E6%88%AA%E5%8F%96%E5%AD%97%E6%AE%B5%E7%9A%84%E5%AE%9E%E4%BE%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bob">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeJun's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/08/shell%E6%88%AA%E5%8F%96%E5%AD%97%E6%AE%B5%E7%9A%84%E5%AE%9E%E4%BE%8B/" class="post-title-link" itemprop="url">shell截取字段的实例</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-11-08 10:27:05" itemprop="dateCreated datePublished" datetime="2023-11-08T10:27:05+08:00">2023-11-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-03-14 10:55:09" itemprop="dateModified" datetime="2024-03-14T10:55:09+08:00">2024-03-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="shell中特殊符的使用"><a href="#shell中特殊符的使用" class="headerlink" title="shell中特殊符的使用"></a>shell中特殊符的使用</h2><p>参考: <a target="_blank" rel="noopener" href="https://www.cnblogs.com/du-z/p/15322745.html">https://www.cnblogs.com/du-z/p/15322745.html</a></p>
+<p>示例：file&#x3D;”&#x2F;dir1&#x2F;dir2&#x2F;dir3&#x2F;my.file.txt”</p>
+<h3 id="“-”：-表示最短匹配"><a href="#“-”：-表示最短匹配" class="headerlink" title="“#”： 表示最短匹配"></a>“#”： 表示最短匹配</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file#*/&#125;：删掉第一个/ 及其左边的字符串：dir1/dir2/dir3/my.file.txt</span><br></pre></td></tr></table></figure>
+<h3 id="“-”-表示最长匹配"><a href="#“-”-表示最长匹配" class="headerlink" title="“##”: 表示最长匹配"></a>“##”: 表示最长匹配</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file##*/&#125;：删掉最后一个/  及其左边的字符串：my.file.txt</span><br></pre></td></tr></table></figure>
+<h3 id="“-”-表示从右开始的第一个匹配"><a href="#“-”-表示从右开始的第一个匹配" class="headerlink" title="“%”: 表示从右开始的第一个匹配"></a>“%”: 表示从右开始的第一个匹配</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file%/*&#125;：删掉最后一个 /  及其右边的字符串：/dir1/dir2/dir3</span><br></pre></td></tr></table></figure>
+<h3 id="通过从左到右的某个字节数开始截取，截取多少个字节"><a href="#通过从左到右的某个字节数开始截取，截取多少个字节" class="headerlink" title="通过从左到右的某个字节数开始截取，截取多少个字节"></a>通过从左到右的某个字节数开始截取，截取多少个字节</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file:5:5&#125;：提取第5 个字节右边的连续5个字节：/dir2</span><br></pre></td></tr></table></figure>
+<h3 id="计算变量值的长度"><a href="#计算变量值的长度" class="headerlink" title="计算变量值的长度"></a>计算变量值的长度</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo $&#123;#file&#125; </span><br><span class="line">结果：27</span><br></pre></td></tr></table></figure>
+<h3 id="变量值中的字符串替换"><a href="#变量值中的字符串替换" class="headerlink" title="变量值中的字符串替换"></a>变量值中的字符串替换</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$&#123;file/dir/path&#125;：将第一个dir 替换为path：/path1/dir2/dir3/my.file.txt</span><br><span class="line">$&#123;file//dir/path&#125;：将全部dir 替换为path：/path1/path2/path3/my.file.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="反向截取字符的方法"><a href="#反向截取字符的方法" class="headerlink" title="反向截取字符的方法"></a>反向截取字符的方法</h2><h3 id="rev命令是将输入行反转"><a href="#rev命令是将输入行反转" class="headerlink" title="rev命令是将输入行反转"></a>rev命令是将输入行反转</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;2024-03-13_144312-1302944-gpio_001_pass.tar.gz&quot; | rev | awk -F&#x27;-&#x27; &#x27;&#123;print $1&#125;&#x27; | rev</span><br><span class="line">结果：gpio_001_pass.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="实现同名排序（sort）"><a href="#实现同名排序（sort）" class="headerlink" title="实现同名排序（sort）"></a>实现同名排序（sort）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">find -name &quot;*failure*&quot; | rev | awk -F&#x27;-&#x27; &#x27;&#123;print $1&#125;&#x27; | rev | awk -F&#x27;_&#x27; &#x27;&#123;print $1&quot;_&quot;$2&#125;&#x27; | sort</span><br><span class="line">结果如下：</span><br><span class="line">hdmi_121</span><br><span class="line">hdmi_121</span><br><span class="line">hdmi_121</span><br><span class="line">hdmi_121</span><br><span class="line">hdmi_121</span><br><span class="line">hdmi_121</span><br><span class="line">rtc_004</span><br><span class="line">rtc_004</span><br><span class="line">vpu_018</span><br><span class="line">vpu_018</span><br><span class="line">vpu_018</span><br></pre></td></tr></table></figure>
+
+<h3 id="统计同名的个数（uniq-c）"><a href="#统计同名的个数（uniq-c）" class="headerlink" title="统计同名的个数（uniq -c）"></a>统计同名的个数（uniq -c）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">find -name &quot;*failure*&quot; | rev | awk -F&#x27;-&#x27; &#x27;&#123;print $1&#125;&#x27; | rev | awk -F&#x27;_&#x27; &#x27;&#123;print $1&quot;_&quot;$2&#125;&#x27; | sort | uniq -c</span><br><span class="line">统计结果：</span><br><span class="line">  110 hdmi_121</span><br><span class="line">  2 rtc_004</span><br><span class="line">  3 vpu_018</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/28/CAN%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -420,7 +1104,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

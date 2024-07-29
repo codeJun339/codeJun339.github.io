@@ -20,15 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CodeJun&#39;s Blog">
-<meta property="og:url" content="http://example.com/archives/2024/index.html">
+  <meta name="description" content="为了能更好的了解芯片，现对芯片设计中用到的总线知识进行归类总结。 一、概述​	AMBA (Advanced Microcontroller Bus Architecture) 高级微处理器总线架构：AMBA总线在连接和管理IP核方面发挥着至关重要的作用，它就像一种高效的“数	字胶”，能够将不同的IP核紧密地连接在一起，形成一个功能强大的集成电路系统。 ​	主要包括： ​		AHB (Advance">
+<meta property="og:type" content="article">
+<meta property="og:title" content="芯片-总线知识">
+<meta property="og:url" content="http://example.com/2024/04/18/%E8%8A%AF%E7%89%87-%E6%80%BB%E7%BA%BF%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="CodeJun&#39;s Blog">
+<meta property="og:description" content="为了能更好的了解芯片，现对芯片设计中用到的总线知识进行归类总结。 一、概述​	AMBA (Advanced Microcontroller Bus Architecture) 高级微处理器总线架构：AMBA总线在连接和管理IP核方面发挥着至关重要的作用，它就像一种高效的“数	字胶”，能够将不同的IP核紧密地连接在一起，形成一个功能强大的集成电路系统。 ​	主要包括： ​		AHB (Advance">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/picture/v2-ce6880271167b656814a9b9be01aec5e_r.jpg">
+<meta property="article:published_time" content="2024-04-18T09:03:19.000Z">
+<meta property="article:modified_time" content="2024-04-18T09:43:22.406Z">
 <meta property="article:author" content="Bob">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/picture/v2-ce6880271167b656814a9b9be01aec5e_r.jpg">
 
-<link rel="canonical" href="http://example.com/archives/2024/">
+<link rel="canonical" href="http://example.com/2024/04/18/%E8%8A%AF%E7%89%87-%E6%80%BB%E7%BA%BF%E7%9F%A5%E8%AF%86/">
 
 
 <script id="page-configurations">
@@ -36,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | CodeJun's Blog</title>
+  <title>芯片-总线知识 | CodeJun's Blog</title>
   
 
 
@@ -140,234 +146,92 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 20 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/18/%E8%8A%AF%E7%89%87-%E6%80%BB%E7%BA%BF%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bob">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeJun's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          芯片-总线知识
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-04-18 17:03:19 / 修改时间：17:43:22" itemprop="dateCreated datePublished" datetime="2024-04-18T17:03:19+08:00">2024-04-18</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2024</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-07-29T15:35:26+08:00"
-              content="2024-07-29">
-          07-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/07/29/v4l2-ctl%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/" itemprop="url">
-            <span itemprop="name">v4l2-ctl命令使用</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-07-03T15:32:41+08:00"
-              content="2024-07-03">
-          07-03
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/07/03/xavier%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" itemprop="url">
-            <span itemprop="name">xavier使用文档</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-05-29T16:21:13+08:00"
-              content="2024-05-29">
-          05-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/05/29/ubuntu%E4%B8%ADapt%E7%9A%84%E6%BA%90%E6%9B%B4%E6%96%B0%E5%A4%B1%E8%B4%A5/" itemprop="url">
-            <span itemprop="name">ubuntu中apt的源更新失败</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-05-11T17:59:47+08:00"
-              content="2024-05-11">
-          05-11
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/05/11/%E5%B8%B8%E7%94%A8%E5%85%8D%E8%B4%B9%E8%BD%AF%E4%BB%B6/" itemprop="url">
-            <span itemprop="name">常用免费软件</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-04-24T15:08:27+08:00"
-              content="2024-04-24">
-          04-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/04/24/%E5%86%85%E6%A0%B8devres%E6%8E%A5%E5%8F%A3%E5%88%86%E6%9E%90/" itemprop="url">
-            <span itemprop="name">内核devres接口分析</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-04-19T19:16:48+08:00"
-              content="2024-04-19">
-          04-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/04/19/thermal%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" itemprop="url">
-            <span itemprop="name">thermal使用指南</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-04-18T17:03:19+08:00"
-              content="2024-04-18">
-          04-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/04/18/%E8%8A%AF%E7%89%87-%E6%80%BB%E7%BA%BF%E7%9F%A5%E8%AF%86/" itemprop="url">
-            <span itemprop="name">芯片-总线知识</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-02-19T18:52:00+08:00"
-              content="2024-02-19">
-          02-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/02/19/%E9%A9%B1%E5%8A%A8%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%E9%82%A3%E4%BA%9B%E4%BA%8B/" itemprop="url">
-            <span itemprop="name">驱动模块加载那些事</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-02-19T18:07:16+08:00"
-              content="2024-02-19">
-          02-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/02/19/python%E6%A1%88%E4%BE%8B/" itemprop="url">
-            <span itemprop="name">python案例</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-02-04T18:56:40+08:00"
-              content="2024-02-04">
-          02-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/02/04/gpio%E5%AD%90%E7%B3%BB%E7%BB%9F/" itemprop="url">
-            <span itemprop="name">gpio驱动程序</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <p>为了能更好的了解芯片，现对芯片设计中用到的总线知识进行归类总结。</p>
+<h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>​	AMBA (Advanced Microcontroller Bus Architecture) 高级微处理器总线架构：AMBA总线在连接和管理IP核方面发挥着至关重要的作用，它就像一种高效的“数	字胶”，能够将不同的IP核紧密地连接在一起，形成一个功能强大的集成电路系统。</p>
+<p>​	主要包括：</p>
+<p>​		<strong>AHB (Advanced High-performance Bus) 高级高性能总线</strong></p>
+<p>​		AHB主要是针对高效率、高频宽及快速系统模块所设计的总线，它可以连接如微处理器、芯片上或芯片外的内存模块和DMA等高效率模块</p>
+<p>​		<strong>ASB (Advanced System Bus) 高级系统总线—-用的很少</strong></p>
+<p>​		<strong>APB (Advanced Peripheral Bus) 高级外围总线</strong></p>
+<p>​		APB主要用在低速且低功率的外围，可针对外围设备作功率消耗及复杂接口的最佳化；APB在AHB和低带宽的外围设备之间提供了通信的桥梁</p>
+<p>​		<strong>AXI (Advanced eXtensible Interface) 高级可拓展接口</strong></p>
+<p>​		APB主要用在低速且低功率的外围，可针对外围设备作功率消耗及复杂接口的最佳化；APB在AHB和低带宽的外围设备之间提供了通信的桥梁</p>
+<p>​		<img src="/../picture/v2-ce6880271167b656814a9b9be01aec5e_r.jpg" alt="总线区别"></p>
+<h1 id="二、总线之间关联"><a href="#二、总线之间关联" class="headerlink" title="二、总线之间关联"></a>二、总线之间关联</h1><p>AHB2APB同步桥：可以将AHB的信号转换为APB的信号</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/02/19/%E9%A9%B1%E5%8A%A8%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%E9%82%A3%E4%BA%9B%E4%BA%8B/" rel="prev" title="驱动模块加载那些事">
+      <i class="fa fa-chevron-left"></i> 驱动模块加载那些事
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/04/19/thermal%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" rel="next" title="thermal使用指南">
+      thermal使用指南 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2024/page/2/">2</a><a class="extend next" rel="next" href="/archives/2024/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  
+  
 
 
 
@@ -419,6 +283,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">一、概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%80%BB%E7%BA%BF%E4%B9%8B%E9%97%B4%E5%85%B3%E8%81%94"><span class="nav-number">2.</span> <span class="nav-text">二、总线之间关联</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

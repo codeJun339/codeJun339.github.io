@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Thermal框架一、设备树配置 设备树添加温度传感器 1234567891011&amp;i2c3 &amp;#123;    status &#x3D; &quot;okay&quot;;    #address-cells &#x3D; &lt;1&gt;;    #size-cells &#x3D; &lt;0&gt;;    tmp451_0: thermal@4c &amp;#123;        compatible &#x3D; &amp;q">
+<meta property="og:type" content="article">
+<meta property="og:title" content="thermal使用指南">
+<meta property="og:url" content="http://example.com/2024/04/19/thermal%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="CodeJun&#39;s Blog">
+<meta property="og:description" content="Thermal框架一、设备树配置 设备树添加温度传感器 1234567891011&amp;i2c3 &amp;#123;    status &#x3D; &quot;okay&quot;;    #address-cells &#x3D; &lt;1&gt;;    #size-cells &#x3D; &lt;0&gt;;    tmp451_0: thermal@4c &amp;#123;        compatible &#x3D; &amp;q">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-19T11:16:48.000Z">
+<meta property="article:modified_time" content="2024-04-30T07:08:02.476Z">
+<meta property="article:author" content="Bob">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2024/04/19/thermal%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>thermal使用指南 | CodeJun's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="CodeJun's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">CodeJun's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/19/thermal%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bob">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeJun's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          thermal使用指南
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-04-19 19:16:48" itemprop="dateCreated datePublished" datetime="2024-04-19T19:16:48+08:00">2024-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-04-30 15:08:02" itemprop="dateModified" datetime="2024-04-30T15:08:02+08:00">2024-04-30</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Thermal框架"><a href="#Thermal框架" class="headerlink" title="Thermal框架"></a>Thermal框架</h1><h2 id="一、设备树配置"><a href="#一、设备树配置" class="headerlink" title="一、设备树配置"></a>一、设备树配置</h2><ol>
+<li><p>设备树添加温度传感器</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&amp;i2c3 &#123;</span><br><span class="line">    status = <span class="string">&quot;okay&quot;</span>;</span><br><span class="line">    <span class="meta">#address-cells = <span class="string">&lt;1&gt;</span>;</span></span><br><span class="line">    <span class="meta">#size-cells = <span class="string">&lt;0&gt;</span>;</span></span><br><span class="line"></span><br><span class="line">    tmp451_0: thermal@<span class="number">4</span>c &#123;</span><br><span class="line">        compatible = <span class="string">&quot;ti,tmp451&quot;</span>;</span><br><span class="line">        <span class="meta">#thermal-sensor-cells = <span class="string">&lt;1&gt;</span>; <span class="comment">/*必现添加该属性，thermal中才能使用*/</span></span></span><br><span class="line">        reg = &lt;<span class="number">0x4c</span>&gt;;</span><br><span class="line">    &#125;;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设备树cooling_device pwm风扇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fan0: pwm-fan<span class="number">-0</span> &#123;</span><br><span class="line">            compatible = <span class="string">&quot;pwm-fan&quot;</span>;</span><br><span class="line">            pwms = &lt;&amp;pwm0 <span class="number">0</span> <span class="number">101</span>&gt;;</span><br><span class="line">            cooling-min_state = &lt;<span class="number">0</span>&gt;;</span><br><span class="line">            cooling-max_state = &lt;<span class="number">3</span>&gt;;</span><br><span class="line">            <span class="meta">#cooling-cells = <span class="string">&lt;2&gt;</span>; <span class="comment">/*必现添加该属性，thermal中才能使用*/</span></span></span><br><span class="line">            cooling-levels = &lt;<span class="number">50</span> <span class="number">128</span> <span class="number">192</span> <span class="number">255</span>&gt;;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>软件将tsensor和NTC(热敏电阻)等可以获取温度的设备描述为thermal zone， 在代码中以dts的形式来描述。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*thermal_zones 下每一个子节点都是一个 thermal, 在 /sys/class/thermal 下对应一个 thermal_zoneX 目录，ntc的也在里面*/</span></span><br><span class="line">thermal_zones: thermal-zones &#123;</span><br><span class="line">    ...</span><br><span class="line">    soc_max &#123;</span><br><span class="line">        polling-delay = &lt;<span class="number">0</span>&gt;; <span class="comment">/* /* 温控未发生时(超过阈值时)轮询周期(ms) */</span> */</span><br><span class="line">        polling-delay-passive = &lt;<span class="number">0</span>&gt;; <span class="comment">/* 温控发生时(未超过阈值时)的轮询周期(ms) 配置为0，代表不使用轮询方式，通过tsensor中断触发温控。*/</span></span><br><span class="line">        thermal-governor = <span class="string">&quot;step_wise&quot;</span>; <span class="comment">/* 补充的，该温区发生温控时所使用的算法*/</span></span><br><span class="line">        thermal-sensors = &lt;&amp;lvts <span class="number">0</span>&gt;; <span class="comment">/* 对应的sensor，表示使用 lvts 这个温度传感器的通道0 */</span></span><br><span class="line"> </span><br><span class="line">        trips &#123; <span class="comment">/* 温控触发点 */</span></span><br><span class="line">            soc_max_crit: soc_max_crit@<span class="number">0</span> &#123;</span><br><span class="line">                <span class="comment">/* 触发温度为(116500)/1000 = 116.5 度发生温控，对应 trip_point_0_temp 文件 */</span></span><br><span class="line">                temperature = &lt;<span class="number">116500</span>&gt;;</span><br><span class="line">                <span class="comment">/* 滞后温度，表示当下降到(116.5 – 2000/1000) = 114.5 度时解除温控，对应 trip_point_0_hyst 文件 */</span></span><br><span class="line">                hysteresis = &lt;<span class="number">2000</span>&gt;;</span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                 * &quot;critical&quot;表示触发温控后立刻重启，若配置为”passive”，表示当温控发生后由governor控制，</span></span><br><span class="line"><span class="comment">                 * 轮询周期改为使用 polling-delay-passive，对应 trip_point_0_type 文件 </span></span><br><span class="line"><span class="comment">                 */</span></span><br><span class="line">                type = <span class="string">&quot;critical&quot;</span>; </span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>备注：trips 即触发点，每个 thermal zone 可以维护多个 trip point，其 type 为 trip point类型，沿袭PC散热方式，分为四种类型:</p>
+<ul>
+<li>passive — 由 governor 的温控策略来降温</li>
+<li>active — 由 governor 的温控策略来降温</li>
+<li>hot— 由 governor 的温控策略来降温</li>
+<li>critical — 温度触发后直接触发重启</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">thermal_zones: thermal-zones &#123;</span><br><span class="line">        cpu_thermal: cpu &#123;</span><br><span class="line">            polling-delay-passive = &lt;<span class="number">100</span>&gt;;</span><br><span class="line">            polling-delay = &lt;<span class="number">1000</span>&gt;;</span><br><span class="line"></span><br><span class="line">            thermal-sensors = &lt;&amp;tmp451_0 <span class="number">0</span>&gt;;</span><br><span class="line"></span><br><span class="line">            trips &#123;</span><br><span class="line">                cpu_alert0: cpu_alert0 &#123;</span><br><span class="line">                    temperature = &lt;<span class="number">36000</span>&gt;;</span><br><span class="line">                    hysteresis = &lt;<span class="number">2000</span>&gt;;</span><br><span class="line">                    type = <span class="string">&quot;passive&quot;</span>;</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            cooling-maps &#123;</span><br><span class="line">                map0 &#123;</span><br><span class="line">                     trip = &lt;&amp;cpu_alert0&gt;;</span><br><span class="line">                     cooling-device = &lt;&amp;fan0 <span class="number">1</span> <span class="number">2</span>&gt;;</span><br><span class="line">                    &#125;;</span><br><span class="line">            &#125;;</span><br><span class="line">      &#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="二、文件接口"><a href="#二、文件接口" class="headerlink" title="二、文件接口"></a>二、文件接口</h2><ul>
+<li><p>&#x2F;sys&#x2F;class&#x2F;thermal&#x2F;thermal_zoneX&#x2F;sys&#x2F;class&#x2F;thermal&#x2F;thermal_zone0 </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">-r--r--r-- available_policies <span class="comment">//可选的温控governor，如 power_allocator user_space step_wise</span></span><br><span class="line">--w------- emul_temp <span class="comment">//模拟设置thermal的温度，单位毫摄氏度，设置后 update_temperature()中可获取到这个温度，和实际达到这个温度同效果。只有其为0，读取的才是真正的温度值，否则就是echo的模拟值</span></span><br><span class="line">-rw-r--r-- integral_cutoff</span><br><span class="line">-rw-r--r-- k_d</span><br><span class="line">-rw-r--r-- k_i</span><br><span class="line">-rw-r--r-- k_po</span><br><span class="line">-rw-r--r-- k_pu</span><br><span class="line">-rw-r--r-- mode <span class="comment">//此thermalzone是否使能了，若是为disabled,对其sys文件的操作不生效，可以echo enabled使能</span></span><br><span class="line">-rw-r--r-- offset</span><br><span class="line">-rw-r--r-- passive</span><br><span class="line">-rw-r--r-- policy <span class="comment">//当前使用的governor是哪个</span></span><br><span class="line">-rw-r--r-- slope</span><br><span class="line">-rw-r--r-- sustainable_power</span><br><span class="line">-r--r--r-- temp <span class="comment">//该温区的当前温度，测试时往 emul_temp 中写的值也会体现在这里。</span></span><br><span class="line">-rw-r--r-- trip_point_0_hyst <span class="comment">//滞后温度，来自设备树 hysteresis 字段，此例中为 2000。有 trips 节点才会有此文件。</span></span><br><span class="line">-rw-r--r-- trip_point_0_temp <span class="comment">//触发温度，来自设备树 temperature字段，此例中为 116500，可以通过sysfs更改。</span></span><br><span class="line">-r--r--r-- trip_point_0_type <span class="comment">//触发点0的类型，来自设备树 type 字段，此例中为&quot;critical&quot;</span></span><br><span class="line">-r--r--r-- type <span class="comment">//该温区的名称，对应于设备树 thermal_zones 下子节点的名字，此例中为&quot;soc_max&quot;</span></span><br><span class="line">-rw-r--r-- uevent</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x2F;sys&#x2F;class&#x2F;thermal&#x2F;cooling_deviceX</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/sys/<span class="class"><span class="keyword">class</span>/<span class="title">thermal</span>/<span class="title">cooling_device0</span> # <span class="title">ls</span> -<span class="title">l</span></span></span><br><span class="line"><span class="class">-<span class="title">rw</span>-<span class="title">r</span>--<span class="title">r</span>-- <span class="title">cur_state</span> //该 <span class="title">cooling_device</span> 的当前 <span class="title">cooling</span> <span class="title">state</span></span></span><br><span class="line"><span class="class">-<span class="title">r</span>--<span class="title">r</span>--<span class="title">r</span>-- <span class="title">max_state</span> //该 <span class="title">cooling_device</span> 的最大 <span class="title">cooling</span> <span class="title">state</span></span></span><br><span class="line"><span class="class"><span class="title">drwxr</span>-<span class="title">xr</span>-<span class="title">x</span>  <span class="title">stats</span></span></span><br><span class="line"><span class="class">-<span class="title">r</span>--<span class="title">r</span>--<span class="title">r</span>-- <span class="title">type</span> //该<span class="title">cooling</span> <span class="title">device</span>的名称</span></span><br><span class="line"><span class="class">-<span class="title">rw</span>-<span class="title">r</span>--<span class="title">r</span>-- <span class="title">uevent</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">/<span class="title">sys</span>/<span class="keyword">class</span>/<span class="title">thermal</span>/<span class="title">cooling_device0</span> # <span class="title">ls</span> -<span class="title">l</span> <span class="title">stats</span>/</span></span><br><span class="line"><span class="class">--<span class="title">w</span>------- <span class="title">reset</span> //对统计状态进行复位</span></span><br><span class="line"><span class="class">-<span class="title">r</span>--<span class="title">r</span>--<span class="title">r</span>-- <span class="title">time_in_state_ms</span> //在每个<span class="title">state</span>下停留的时间</span></span><br><span class="line"><span class="class">-<span class="title">r</span>--<span class="title">r</span>--<span class="title">r</span>-- <span class="title">total_trans</span> //不同<span class="title">state</span>之间转换的次数</span></span><br><span class="line"><span class="class">-<span class="title">r</span>--<span class="title">r</span>--<span class="title">r</span>-- <span class="title">trans_table</span> //各个<span class="title">state</span>状态转换表，最大只能显示1个页的内容</span></span><br></pre></td></tr></table></figure>
+
+<p>备注：type 为 thermal-cpufreq-X 的 cool device 控制 CPU ClusterX 的频点，比如向 cur_state 中写入 max_state 的值，对应Cluster的 scaling_max_freq 文件将显示被限制到了最小频点。<br>type 为 thermal-cpufreq-X 的是通过 cpufreq_cooling.c 注册的 cool device，type 为 thermal-devfreq-X 的是通过 devfreq_cooling.c 注册的 cool device。</p>
+<p><strong>示例：</strong></p>
+<p>通过sys节点控制风扇转速：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@ub20:/sys/devices/virtual/thermal/cooling_device0</span><br><span class="line">echo 2 &gt; cur_state</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/04/18/%E8%8A%AF%E7%89%87-%E6%80%BB%E7%BA%BF%E7%9F%A5%E8%AF%86/" rel="prev" title="芯片-总线知识">
+      <i class="fa fa-chevron-left"></i> 芯片-总线知识
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/04/24/%E5%86%85%E6%A0%B8devres%E6%8E%A5%E5%8F%A3%E5%88%86%E6%9E%90/" rel="next" title="内核devres接口分析">
+      内核devres接口分析 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Thermal%E6%A1%86%E6%9E%B6"><span class="nav-number">1.</span> <span class="nav-text">Thermal框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%AE%BE%E5%A4%87%E6%A0%91%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">一、设备树配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%96%87%E4%BB%B6%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.2.</span> <span class="nav-text">二、文件接口</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Bob</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bob</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
