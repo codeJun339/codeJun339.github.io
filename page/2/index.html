@@ -146,6 +146,157 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/04/gpio%E5%AD%90%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bob">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CodeJun's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/02/04/gpio%E5%AD%90%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">gpio驱动程序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-02-04 18:56:40" itemprop="dateCreated datePublished" datetime="2024-02-04T18:56:40+08:00">2024-02-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-05-23 15:37:26" itemprop="dateModified" datetime="2024-05-23T15:37:26+08:00">2024-05-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>GPIO是一种灵活的软件控制数字信号。通用可操作的功能：</p>
+<ul>
+<li>输出功能</li>
+<li>输入功能</li>
+<li>中断功能</li>
+</ul>
+<p>在GPIO子系统中，有两种不同的方式来获取和使用gpio：</p>
+<ul>
+<li><p>The descriptor-based interface：gpio操作的首选方式。</p>
+</li>
+<li><p>The legacy integer-based interface：已弃用(但出于兼容性原因仍然可用)，参见：gpio legacy.txt文档</p>
+</li>
+</ul>
+<h1 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h1><ul>
+<li><p><strong>Open Drain:</strong></p>
+<pre><code>CMOS CONFIGURATION   
+        ||--- out          
+ in ----||                  
+        ||--+        
+            |              
+           GND	          
+</code></pre>
+<ul>
+<li>在Open Drain配置中，晶体管（或逻辑门）仅在其输出端驱动低电平信号（通常是0V或接近0V的电压）。当晶体管或逻辑门不驱动时，输出端处于高阻态（即“悬浮”或“未连接”状态），不会主动拉高或拉低信号线。</li>
+<li>为了确保信号线在晶体管不驱动时具有确定的状态，通常会连接一个上拉电阻（pullup resistor）到电源正极（如VCC）。当没有设备驱动信号线为低电平时，上拉电阻会将信号线拉高至高电平状态。</li>
+</ul>
+</li>
+<li><p><strong>Open Source:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">TTL CONFIGURATION</span><br><span class="line">		   +--- out</span><br><span class="line">          |/</span><br><span class="line">   in ----|</span><br><span class="line">          |\</span><br><span class="line">	    GND</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="GPIO子系统"><a href="#GPIO子系统" class="headerlink" title="GPIO子系统"></a>GPIO子系统</h1><p>驱动结构</p>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="center">说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">devres.c</td>
+<td align="center">managed gpio resources</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">gpiolib-devprop.c</td>
+<td align="center">Device property helpers for GPIO chips</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">gpiolib-of.c</td>
+<td align="center">OF helpers for the GPIO API</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">gpio-syscon.c</td>
+<td align="center">YSCON GPIO driver</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">gpiolib-legacy.c</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">gpiolib-sysfs.c</td>
+<td align="center"></td>
+<td align="center">入口sys节点的创建</td>
+</tr>
+<tr>
+<td align="left">gpio-useri.c</td>
+<td align="center">控制器驱动</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">gpiolib.c</td>
+<td align="center"></td>
+<td align="center">gpiolib库</td>
+</tr>
+<tr>
+<td align="left">gpio-mmio.c</td>
+<td align="center">Generic driver for memory-mapped GPIO controllers</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h1 id="Pinctrl子系统"><a href="#Pinctrl子系统" class="headerlink" title="Pinctrl子系统"></a>Pinctrl子系统</h1><p>参见文档：</p>
+<p>[pinctrl文档]: <a target="_blank" rel="noopener" href="https://www.kernel.org/doc/html/latest/driver-api/pin-control.html?highlight=pinctrl">https://www.kernel.org/doc/html/latest/driver-api/pin-control.html?highlight=pinctrl</a>	“文档”</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/05/python%E7%9A%84Excel%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -489,7 +640,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-07-29 16:40:41" itemprop="dateModified" datetime="2024-07-29T16:40:41+08:00">2024-07-29</time>
+                <time title="修改时间：2024-08-01 10:27:25" itemprop="dateModified" datetime="2024-08-01T10:27:25+08:00">2024-08-01</time>
               </span>
 
           
@@ -633,6 +784,8 @@
 <p><strong>基于max96712格式raw12相机调试</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line">0x03 0x28 0x01 0x10</span><br><span class="line">0x00 5</span><br><span class="line">0x04 0x29 0x00 0x13 0x40</span><br><span class="line">0x00 3</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x03 0x00 0x81</span><br><span class="line">0x00 0.002</span><br><span class="line">0x04 0x29 0x00 0x01 0xCD</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x04 0x0B 0x00 </span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x08 0xA0 0x04  </span><br><span class="line">0x04 0x29 0x08 0xA3 0xE4</span><br><span class="line">0x04 0x29 0x08 0xA4 0xE4</span><br><span class="line">#0x04 0x29 0x08 0xA3 0x1b</span><br><span class="line">#0x04 0x29 0x08 0xA4 0x1b</span><br><span class="line">#0x04 0x29 0x00 0x51 0x02</span><br><span class="line">#0x04 0x29 0x00 0x52 0x01</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x04 0x14 0x00</span><br><span class="line">0x04 0x29 0x04 0x17 0x00</span><br><span class="line">0x04 0x29 0x09 0x0A 0xC0</span><br><span class="line">0x04 0x29 0x09 0x4A 0xC0</span><br><span class="line">0x04 0x29 0x09 0x8A 0xC0</span><br><span class="line">0x04 0x29 0x09 0xCA 0xC0</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x04 0x29 0x09 0x0B 0x07</span><br><span class="line">0x04 0x29 0x09 0x0C 0x00</span><br><span class="line">0x04 0x29 0x09 0x0D 0x2c</span><br><span class="line">0x04 0x29 0x09 0x0E 0x2c</span><br><span class="line">0x04 0x29 0x09 0x0F 0x00</span><br><span class="line">0x04 0x29 0x09 0x10 0x00</span><br><span class="line">0x04 0x29 0x09 0x11 0x01</span><br><span class="line">0x04 0x29 0x09 0x12 0x01</span><br><span class="line">0x04 0x29 0x09 0x2D 0x15</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x04 0x29 0x09 0x4B 0x07</span><br><span class="line">0x04 0x29 0x09 0x4C 0x00</span><br><span class="line">0x04 0x29 0x09 0x4D 0x2c</span><br><span class="line">0x04 0x29 0x09 0x4E 0x6c</span><br><span class="line">0x04 0x29 0x09 0x4F 0x00</span><br><span class="line">0x04 0x29 0x09 0x50 0x40</span><br><span class="line">0x04 0x29 0x09 0x51 0x01</span><br><span class="line">0x04 0x29 0x09 0x52 0x41</span><br><span class="line">0x04 0x29 0x09 0x6D 0x15</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x04 0x29 0x09 0x8B 0x07</span><br><span class="line">0x04 0x29 0x09 0x8C 0x00</span><br><span class="line">0x04 0x29 0x09 0x8D 0x2c</span><br><span class="line">0x04 0x29 0x09 0x8E 0xac</span><br><span class="line">0x04 0x29 0x09 0x8F 0x00</span><br><span class="line">0x04 0x29 0x09 0x90 0x80</span><br><span class="line">0x04 0x29 0x09 0x91 0x01</span><br><span class="line">0x04 0x29 0x09 0x92 0x81</span><br><span class="line">0x04 0x29 0x09 0xAD 0x15</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x04 0x29 0x09 0xCB 0x07</span><br><span class="line">0x04 0x29 0x09 0xCC 0x00</span><br><span class="line">0x04 0x29 0x09 0xCD 0x2c</span><br><span class="line">0x04 0x29 0x09 0xCE 0xec</span><br><span class="line">0x04 0x29 0x09 0xCF 0x00</span><br><span class="line">0x04 0x29 0x09 0xD0 0xC0</span><br><span class="line">0x04 0x29 0x09 0xD1 0x01</span><br><span class="line">0x04 0x29 0x09 0xD2 0xC1</span><br><span class="line">0x04 0x29 0x09 0xED 0x15</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x04 0x29 0x08 0xA9 0xC8</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x00 0xF0 0x62</span><br><span class="line">0x04 0x29 0x00 0xF1 0xEA</span><br><span class="line">0x04 0x29 0x00 0xF4 0x0F</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x04 0x0C 0x00</span><br><span class="line">0x04 0x29 0x04 0x0D 0x00</span><br><span class="line">0x04 0x29 0x04 0x0E 0xAC</span><br><span class="line">0x04 0x29 0x04 0x0F 0xBC</span><br><span class="line">0x04 0x29 0x04 0x10 0xB0</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x04 0x11 0x48</span><br><span class="line">0x04 0x29 0x04 0x12 0x20</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x04 0x15 0xf9</span><br><span class="line">0x04 0x29 0x04 0x18 0xf9</span><br><span class="line">0x00 0.002</span><br><span class="line">0x04 0x29 0x04 0x1B 0x39</span><br><span class="line">0x04 0x29 0x04 0x1E 0x39</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x00 0x06 0xf2</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line">0x04 0x29 0x00 0x04 0x0F</span><br><span class="line">0x04 0x29 0x04 0x0B 0x42</span><br><span class="line">#0x04 0x29 0x04 0x0B 0x62</span><br><span class="line">0x00 0.002</span><br><span class="line"></span><br><span class="line">0x03 0x28 0x01 0x1f</span><br><span class="line">0x00 5</span><br><span class="line"></span><br><span class="line">#0x04 0x40 0x02 0xD3 0x10</span><br><span class="line">#0x04 0x40 0x03 0x30 0x00</span><br><span class="line">#0x04 0x40 0x03 0x31 0x33</span><br><span class="line">#0x04 0x40 0x03 0x32 0xEE</span><br><span class="line">#0x04 0x40 0x03 0x33 0xE4</span><br><span class="line">#0x04 0x40 0x03 0x08 0x63</span><br><span class="line">#0x04 0x40 0x03 0x11 0x30</span><br><span class="line">#0x04 0x40 0x00 0x02 0x33</span><br><span class="line"></span><br><span class="line">0x04 0x40 0x03 0x18 0x6c</span><br><span class="line">#0x04 0x40 0x03 0x16 0x52</span><br><span class="line">0x00 0.05</span><br><span class="line"></span><br><span class="line">0xFF</span><br></pre></td></tr></table></figure>
 <p><strong>raw格式的图像</strong><br><img src="/../picture/raw12.png" alt="image-20240126112433332"></p>
+<p><strong>max96712的4wh模式图像先后顺序可配</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">通过配置</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="常见采图命令"><a href="#常见采图命令" class="headerlink" title="常见采图命令"></a>常见采图命令</h1><ul>
 <li><p>Gstreamer命令采图</p>
 <ol>
@@ -958,87 +1111,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/27/hexo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Bob">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CodeJun's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/27/hexo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/" class="post-title-link" itemprop="url">Hexo使用指导</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-10-27 16:05:15" itemprop="dateCreated datePublished" datetime="2023-10-27T16:05:15+08:00">2023-10-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-28 16:21:24" itemprop="dateModified" datetime="2023-10-28T16:21:24+08:00">2023-10-28</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1104,7 +1180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

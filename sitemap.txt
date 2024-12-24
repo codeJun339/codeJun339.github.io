@@ -1,5 +1,6 @@
-http://example.com/2024/07/29/v4l2-ctl%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/
+http://example.com/2024/12/24/%E8%B0%83%E8%AF%95%E8%AE%B0%E5%BD%95/
 http://example.com/2023/11/24/%E5%8A%A0%E5%87%8F%E4%B8%B2%E5%99%A8%E8%B0%83%E8%AF%95/
+http://example.com/2024/07/29/v4l2-ctl%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/
 http://example.com/2024/07/03/xavier%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/
 http://example.com/2024/05/29/ubuntu%E4%B8%ADapt%E7%9A%84%E6%BA%90%E6%9B%B4%E6%96%B0%E5%A4%B1%E8%B4%A5/
 http://example.com/2024/02/04/gpio%E5%AD%90%E7%B3%BB%E7%BB%9F/
