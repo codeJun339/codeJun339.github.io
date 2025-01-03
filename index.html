@@ -169,8 +169,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2025-01-03 10:24:07" itemprop="dateCreated datePublished" datetime="2025-01-03T10:24:07+08:00">2025-01-03</time>
+              <time title="创建时间：2025-01-03 10:24:07 / 修改时间：11:01:39" itemprop="dateCreated datePublished" datetime="2025-01-03T10:24:07+08:00">2025-01-03</time>
             </span>
 
           
@@ -184,7 +185,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <h1 id="应用层CPU亲和性控制"><a href="#应用层CPU亲和性控制" class="headerlink" title="应用层CPU亲和性控制"></a>应用层CPU亲和性控制</h1><h2 id="taskset使用介绍"><a href="#taskset使用介绍" class="headerlink" title="taskset使用介绍"></a>taskset使用介绍</h2><h3 id="1-什么是taskset？"><a href="#1-什么是taskset？" class="headerlink" title="1. 什么是taskset？"></a>1. 什么是taskset？</h3><p>taskset是一个Linux系统命令行工具，主要用于管理进程与CPU核心之间的关系（CPU亲和性），可以指定进程在特定CPU核心上运行。</p>
+<h3 id="2-为什么要用taskset？"><a href="#2-为什么要用taskset？" class="headerlink" title="2. 为什么要用taskset？"></a>2. 为什么要用taskset？</h3><ul>
+<li><p><strong>提升性能</strong></p>
+<ul>
+<li>减少进程在不同核心间切换开销</li>
+<li>提高缓存命中率</li>
+<li>适用于计算密集型任务（如视频编码、科学计算）</li>
+</ul>
+</li>
+<li><p><strong>隔离资源</strong></p>
+<ul>
+<li>保护重要进程不受干扰</li>
+<li>限制问题进程的影响范围</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-使用方法"><a href="#3-使用方法" class="headerlink" title="3. 使用方法"></a>3. 使用方法</h3><h4 id="查看进程CPU亲和性"><a href="#查看进程CPU亲和性" class="headerlink" title="查看进程CPU亲和性"></a>查看进程CPU亲和性</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">taskset -p [进程PID]</span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">taskset -p 1234  <span class="comment"># 1234为进程ID</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="设置进程CPU亲和性"><a href="#设置进程CPU亲和性" class="headerlink" title="设置进程CPU亲和性"></a>设置进程CPU亲和性</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新进程绑定</span></span><br><span class="line">taskset -c [核心编号列表] [命令]</span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">taskset -c 0,1 ./video_encoder &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 已运行进程绑定</span></span><br><span class="line">taskset -<span class="built_in">cp</span> [核心编号] [PID]</span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">taskset -<span class="built_in">cp</span> 2 1234</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="4. 注意事项"></a>4. 注意事项</h3><ul>
+<li>需要root权限（使用sudo）</li>
+<li>核心编号需符合系统实际CPU核心数</li>
+<li>避免过度使用，防止系统负载不均衡</li>
+</ul>
+
       
     </div>
 
